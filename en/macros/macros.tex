@@ -1,0 +1,170 @@
+%%% This file contains definitions of various useful macros and environments %%%
+%%% Please add more macros here instead of cluttering other files with them. %%%
+
+%%% Minor tweaks of style
+
+% These macros employ a little dirty trick to convince LaTeX to typeset
+% chapter headings sanely, without lots of empty space above them.
+% Feel free to ignore.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+
+% This macro defines a chapter, which is not numbered, but is included
+% in the table of contents.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+% Draw black "slugs" whenever a line overflows, so that we can spot it easily.
+\overfullrule=1mm
+
+%%% Macros for definitions, theorems, claims, examples, ... (requires amsthm package)
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{example}[theorem]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{remark}{Remark}
+
+
+%%% An environment for proofs
+
+\newenvironment{myproof}{
+  \par\medskip\noindent
+  \textit{Proof}.
+}{
+\newline
+\rightline{$\qedsymbol$}
+}
+
+%%% An environment for typesetting of program code and input/output
+%%% of programs. (Requires the fancyvrb package -- fancy verbatim.)
+
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
+
+%%% The field of all real and natural numbers
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+%%% Useful operators for statistics and probability
+\DeclareMathOperator{\pr}{\textsf{P}}
+\DeclareMathOperator{\E}{\textsf{E}\,}
+\DeclareMathOperator{\var}{\textrm{var}}
+\DeclareMathOperator{\sd}{\textrm{sd}}
+
+%%% Transposition of a vector/matrix
+\newcommand{\T}[1]{#1^\top}
+
+%%% Various math goodies
+\newcommand{\goto}{\rightarrow}
+\newcommand{\gotop}{\stackrel{P}{\longrightarrow}}
+\newcommand{\maon}[1]{o(n^{#1})}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\isqr}[1]{\frac{1}{\sqrt{#1}}}
+
+%%% Various table goodies
+\newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
+
+
+%%% Custom commands
+\renewcommand{\d}[1]{\, \mathrm{d}#1 \,}
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\Cont}{C}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Schwa}{\mathcal{S}}
+\newcommand{\Domain}{\mathrm{D}}
+\newcommand{\Fourier}{\mathcal{F}}
+\newcommand{\Nbhood}{\mathcal{U}}
+\newcommand{\Hf}{\mathscr{H}}
+\newcommand{\Af}{\mathscr{A}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\hypF}{\vphantom{\mathrm{F}}_1\hspace{-0.7pt}\mathrm{F}_{\!1}}
+
+\newcommand{\Sp}{\sigma}
+\newcommand{\SpP}{\sigma_{\mathrm{p}}}
+\newcommand{\SpAc}{\sigma_{\mathrm{ac}}}
+\newcommand{\SpSc}{\sigma_{\mathrm{sc}}}
+\newcommand{\SpD}{\sigma_{\mathrm{disc}}}
+\newcommand{\SpE}{\sigma_{\mathrm{ess}}}
+
+
+\def\ph{\phantom}
+\def\vph{\vphantom}
+\def\hph{\hphantom}
+\def\rzw{\mathrlap}
+\def\lzw{\mathllap}
+\def\czw{\mathclap}
+\newcommand*{\mask}[2]{\mathord{\makebox[\widthof{\(#1\)}]{\(#2\)}}}
+\newcommand{\scalemath}[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+
+
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pd}[2]{\frac{\partial  #1}{\partial  #2}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+
+\newcommand{\coloneqq}{:=}
+\newcommand{\eqqcolon}{=:}
+
+\newcommand{\digamma}{\Psi} % haha dobrý
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mejroslav
+
+%%% My own symbols
+\newcommand{\vc}[1]{\boldsymbol{#1}} % vektor
+\newcommand{\mat}[1]{\mathbf{#1}} % matice
+
+\newcommand{\norm}[1]{\left \Vert #1 \right \Vert} % norma vektoru
+\newcommand{\set}[1]{ \left \lbrace #1 \right \rbrace} % množina
+\newcommand{\const}{\mathrm{konst}} % konstanta
+
+%Značení derivací a integrálů
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}} % obyčejná derivace
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}} % parciální derivace
+\newcommand{\ppder}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}} % parciální derivace
+\newcommand{\fder}[2]{\frac{\delta #1}{\delta #2}} % funkcionální derivace
+\newcommand{\ffder}[3]{\frac{\delta^2 #1}{\delta #2 \delta #3}} % funkcionální derivace
+
+\newcommand{\D}{\mathrm{d} } % integrační znamení
+\newcommand{\intR}{\int_{-\infty}^{\infty}} % integrál přes reálnou osu
+
+% Značení posloupností, limit a sum
+\newcommand{\sequence}[2]{ \left \lbrace #1 \right \rbrace_{#2=1}^\infty} % posloupnost
+\newcommand{\sumnorm}[1]{\sum_{#1}^\infty} 
+\newcommand{\limplus}[1]{\lim_{#1 \rightarrow + \infty}}
+\newcommand{\limminus}[1]{\lim_{#1 \rightarrow - \infty}}
+
+
+%Značení distribucí
+\newcommand{\dual}[2]{\left \langle #1 ,#2 \right \rangle} % dualita
+\newcommand{\test}{\mathcal{D}} % prostor testovacích funkcí
+\newcommand{\dis}{\mathcal{D'}} % prostor distribucí
+
+\newcommand{\weakstar}{\rightharpoonup^*} % slabá* konvergence 
+\newcommand{\supp}{\mathrm{supp}\,} % nosič funkcí
