@@ -1,6 +1,9 @@
-\chapter{Connection between Riemannian geometry and Hamiltonian mechanics}
+\chapter{The connection between Riemannian geometry and Hamiltonian mechanics}
 
-In this chapter we will prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in homogeneous system of hydrodynamic type. The original result was given by Dubrovin and Novikov and can be found in \cite{Dubrovin-Novikov}. The proof itself and the preceding lemmas are based on quite a few technical computations, which we will try not to omit, in order to be as much readable as possible. 
+In this chapter we shall prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given by Dubrovin and Novikov and can be found in \cite{Dubrovin-Novikov}. The proof itself and the preceding lemmas are based on a considerable amount of technical computations, which we shall clarify in detail in order to offer the reader a comprehensive understanding of the chapter in question.
+
+
+
 
 
 \section{Systems of hydrodynamic type}
@@ -14,9 +17,9 @@ In this chapter we will prove the theorem of the connection between the hydrodyn
     where $u^i(t,x^\alpha)$ are unknown functions, $i = 1, \dots , N$, $\alpha = 1, \dots , d$.
 \end{definition}
 
-Sometimes we refer to number of equations $N$ as the dimensinon of the hydrodynamical phase space and to the number of as the configuration space.
+Sometimes we refer to the number of equations $N$ as the dimension of the hydrodynamical phase space and to the number of spatial variables $d$ as the dimension of the configuration space.
 
-Before we go any further, let us mention a few examples.
+Before we go any further, let us present a few examples.
 
 \begin{example}
     The energy is given by the functional
@@ -46,8 +49,7 @@ Before we go any further, let us mention a few examples.
     which is the usual evolution equation for $\vc F$ in the Eulerian frame.
 \end{example}
 
-It was Riemann who noticed that the theory of systems of the form \eqref{eq:h-system} is the
-theory of tensors.
+It was Riemann who noticed that the functions $f^{i \alpha}_j$ in \eqref{eq:h-system} are in fact tensors [CITACE]\cite{Dubrovin-Novikov}.
 
 \begin{proposition}[Transformation of $f^{i \alpha}_j$] 
     \label{prop:transformace-A} 
@@ -55,7 +57,7 @@ theory of tensors.
     \begin{align}
         u^i = u^i(v^1,\cdots, v^N)
     \end{align}
-    the functions $f^{i\alpha}_{j}$ transform for each a according to the tensor law
+    the functions $f^{i\alpha}_{j}$ transform for each $\alpha$ according to the tensor law
     \begin{align}
         f^{a \alpha}_{b}(v) = \pder{v^a}{u^i} \pder{u^j}{v^b} f^{i \alpha}_j (u) \:.
     \end{align}
@@ -76,9 +78,9 @@ theory of tensors.
     \end{align}
 \end{proof}
 
-According to the previous lemma, if we denote the space of points $(t,x^\alpha) \subset \R \times \R^N$ as some manifold $M$, then the unknown variables $u^i(t,x^\alpha)$ can be seen as the local coordinates on that manifold. The functions $f^{i \alpha}_j$ are transformed as tensors of the type (1,1) in the $i$ and $j$ indices.
+According to the previous lemma, if we denote the space of points $(t,x^\alpha) \subset \R \times \R^N$ as some manifold $M$, then the unknown variables $u^i(t,x^\alpha)$ can be seen as the local coordinates of that manifold. The functions $f^{i \alpha}_j$ are transformed as tensors of the type (1,1) in the $i$ and $j$ indices.
 
-Our next purpose is to gain a richer geometry on that space $M$. If the functions $f^{i \alpha}_j$ have a special form, we can introduce a geometry of the Poisson brackets.
+Our next purpose is to gain a richer geometry of that space $M$. If the functions $f^{i \alpha}_j$ have a special form, we can introduce a geometry of the Poisson brackets.
 
 \begin{definition}
     \begin{enumerate}
@@ -98,11 +100,11 @@ Our next purpose is to gain a richer geometry on that space $M$. If the function
             \set{u^i(x), u^j(y)} = g^{ij \alpha} [u(x)] \delta_\alpha(x-y) + b_k^{ij \alpha} [u(x)] u_\alpha^k(x) \delta(x-y) \:.
         \end{align}
         
-        \item Functional of the hydrodynamic type is a functional of the form
+        \item The functional of hydrodynamic type is a functional of the form
         \begin{align}
             H[u] = \int_{\R^d} h(u(x)) \D^d x \:,
         \end{align}
-        where $h$ is independent $u_\alpha$, $u_{\alpha \beta}$. The function $h$ is called a hamiltonian density.
+        where $h$ is independent of $u_\alpha$, $u_{\alpha \beta}$. The function $h$ is called a hamiltonian density.
 
         \item The hamiltonian system of hydrodynamic type is a system of the form
         \begin{align}
@@ -136,34 +138,27 @@ Our next purpose is to gain a richer geometry on that space $M$. If the function
 \end{proof}
 \todo[inline]{Dokončit a přidělat $\alpha$. kde se předělá $\der{}{x}$ na $\der{}{y}$?}
 
-
-We have not shown yet that the Poisson bracket of the hydrodynamic type defined above is indeed a Poisson bracket in the sense of a classical meaning, that means it satisfies the three properties, skew-symmetry, Leibniz rule and Jacobi identity. In fact, this will be the key theorem of this chapter.
+Note that we have yet to show that the Poisson bracket of the hydrodynamic type defined above is indeed a Poisson bracket in the classical sense. We must verify that it satisfies the three properties: skew-symmetry, Leibniz rule and Jacobi identity. In fact, this will be the key theorem of this chapter.
 
 \section{One-dimensional case}
 
-Consider first the one-dimensional case, the unknown functions $u^i$ are depending only on two variables $(t,x)$. The hamiltonian system is then
+In this section we first consider the one-dimensional case in which the unknown functions $u^i$ depend on only two variables $(t,x)$. The hamiltonian system is then
 \begin{align}
     \pder{u^i}{t} (t,x) =&
     \left[ g^{ij} [u(t,x)] \ppder{h(u)}{u^j}{u^k} + b_k^{ij} [u(t,x)] \pder{h(u)}{u^j} \right] \pder{u^k}{x}(t,x) 
 \end{align}
-and the Poisson bracket of thy hydrodynamic type is of the form
+and the Poisson bracket of hydrodynamic type is of the form
 \begin{align}
     \set{I_1,I_2} = \int \D x
-    \left[ \frac{\delta I_1}{\delta u^q(x)} A^{qp} \frac{\delta I_2}{\delta u^p(x)} \right] \:, \quad A^{qp} = \left( g^{qp}(u) \der{}{x} + b^{qp}_s(u) \pder{u^s}{x} \right) \:.
+    \left[ \frac{\delta I_1}{\delta u^q(x)} A^{qp} \frac{\delta I_2}{\delta u^p(x)} \right] \:,\quad \text{where } A^{qp} = \left( g^{qp}(u) \der{}{x} + b^{qp}_s(u) \pder{u^s}{x} \right) \:.
 \end{align}
 In particular
 \begin{align}
     \label{eq:Poisson1D}
-    \set{u^i(x), u^j(y)} =& g^{ij} [u(t,x)] \delta'(x-y) + b_k^{ij} [u(t,x)] \pder{u^k}{x} \delta(x-y) \:. 
+    \set{u^i(x), u^j(y)} =& g^{ij} [u(t,x)] \partial_x \delta(x-y) + b_k^{ij} [u(t,x)] \pder{u^k}{x} \delta(x-y) \:. 
 \end{align}
 
-We begin to gain a Riemannian geometry on the space $M$.
-
-\begin{definition}
-    We say that the Poisson bracket is non-degenerate if $\det(g^{ij}) \neq 0$.
-\end{definition}
-
-We will show later that the non-degeneracy is invariant under the transformation of the coordinates.
+We say that the Poisson bracket is non-degenerate if $\det(g^{ij}) \neq 0$. We will show later that the non-degeneracy is invariant under the transformation of the coordinates.
 
 \begin{definition}
     Let $(g^{ij}(u))$ be a non-degenerate matrix. We define functions $\Gamma^{i}_{jk}(u)$ by
@@ -172,7 +167,7 @@ We will show later that the non-degeneracy is invariant under the transformation
         \end{align}
 \end{definition}
 
-The choice of the denoting $g^{ij}$ and $\Gamma^{i}_{jk}$ has its purpose. We will show soon that these are in fact the metrics and afinne coeficients on $M$.
+The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$, respectively, has its purpose. We will show soon that these are in fact the metric and afinne coeficients, respectively, on $M$.
 
 \begin{proposition}[Leibniz rule for Poisson bracket]
     The Poisson brackets of the hydrodynamic type satisfy the Leibniz rule
@@ -186,7 +181,7 @@ The choice of the denoting $g^{ij}$ and $\Gamma^{i}_{jk}$ has its purpose. We wi
     \begin{align}
         v^p(u^i(x)) = \int \D x' v^p(u^i(x')) \delta (x-x') \:.
     \end{align}
-    Applying this to the definition of the Poisson bracket, we have
+    Applying this to the definition of the Poisson bracket \label{eq:Poisson1D}, we have
     \begin{align}
         \set{v^p(u^i(x)),v^q(u^j(y))} 
         =& \int \D x' \int \D y' \underbrace{\fder{v^p}{u^i(x')} }_{\pder{v^p}{u^i}(x') \delta(x-x')} \set{u^i(x'),u^j(y')} \underbrace{\fder{v^q}{u^j(y')} }_{\pder{v^q}{u^j}(y') \delta(y-y')}
@@ -195,21 +190,14 @@ The choice of the denoting $g^{ij}$ and $\Gamma^{i}_{jk}$ has its purpose. We wi
 \end{proof}
 
 
-\begin{proposition}[O transformaci proměnných] \label{prop:transoformace}
-    Uvažujme transformaci $u^i \mapsto v^i $  danou vztahem
-    \begin{align}
-        v^i = v^i (u^1, \dots, u^N) \:, \quad i = 1, \dots, N \:, \label{eq:transform}
-    \end{align}
-    která je diffeomorfismem třídy $C^2$.
-    Pak platí následující tvrzení:
+\begin{proposition}[Transformation of $g$ and $\Gamma$] \label{prop:transoformace}
+    Let $u^i \mapsto v^a$ be the smooth change of variables. Then
     \begin{enumerate}
-        \item Poissonovy závorky se transformují jako tensory typu (2,0), tj.
-        
-        \item Koeficienty $g^{ij}(u)$ se transformují jako tensory typu (0,2), tj.
+        \item The coeficients $g^{ij}$ transform as the (2,0) tensors, i.e. 
         \begin{align}
             g^{pq}(v) = \pder{v^p}{u^i} \pder{v^q}{u^j} g^{ij}[u(v)] \:, \quad p, q = 1, \dots, N \:. \label{eq:transformace-metrika}
         \end{align}
-        \item Koeficienty $\Gamma^i_{jk}$ se transformují jako Christoffelovy symboly (složky afinní konexe), tj.
+        \item The coeficients $\Gamma^i_{jk}$ transform like the afinne connection symbols, i.e.
         \begin{align}
             \Gamma^p_{qr} (v) = \pder{v^p}{u^i} \pder{u^j}{v^q} \pder{u^k}{v^r} \Gamma^i_{jk}(u) + \pder{v^p}{u^i} \ppder{u^i}{v^q}{v^r} \:. \label{eq:transformace-konexe}
         \end{align}
@@ -218,212 +206,223 @@ The choice of the denoting $g^{ij}$ and $\Gamma^{i}_{jk}$ has its purpose. We wi
 
 \begin{proof}
     \begin{enumerate}
-        \item Přímým dosazením do definice
-        
-        \item Rozepišme transformaci závorky \eqref{eq:transformace-zavorka} pomocí \eqref{eq:Poisson1D}
+        \item Let us apply the transformation equation \eqref{eq:transformace-zavorka} to the definition of the Poisson bracket \eqref{eq:Poisson1D}. We get 
         \begin{align}
-            g^{pq}[v(u(x))] \delta'(x-y) + b^{pq}_s[v(u(x))] \pder{v^s}{u^k}(x) \pder{u^k}{x} \delta(x-y)
-            = \pder{v^p}{u^i}(x) \pder{v^q}{u^j}(y) \left[ g^{ij}[u(x)] \delta'(x-y) + b^{ij}_k[u(x)] \pder{u^k}{x} \delta(x-y) \right] \:. \label{eq:dosad}
+            g^{pq}[v(u(x))] \partial_x \delta(x-y) + b^{pq}_s[v(u(x))] \pder{v^s}{u^k}(x) \pder{u^k}{x} \delta(x-y) \nonumber
+            \\ = \pder{v^p}{u^i}(x) \pder{v^q}{u^j}(y) \left[ g^{ij}[u(x)] \partial_x \delta(x-y) + b^{ij}_k[u(x)] \pder{u^k}{x} \delta(x-y) \right] \:. \label{eq:dosad}
         \end{align}
-        V dalším pro přehlednost označme
+        From now we denote for readibility
         \begin{align}
             T^a_k(x) := \pder{v^a}{u^k}(x) \:.
         \end{align}
-        Na pravé straně rovnice \eqref{eq:dosad} vyjádříme $T^q_j(y) \delta'(x-y)$ pomocí lemmatu \vref{lemma:delta}. Tím převedeme všechny funkce do proměnné $x$, což už dále nebudeme explicitně vypisovat. Dostaneme
+        On the right-hand side of \eqref{eq:dosad} we apply Dirac identity (Lemma \vref{lemma:delta}) on $T^q_j(y) \partial_x \delta(x-y)$. All functions are then of variable $x$, so from now we won't write it explicitely. We have
         \begin{align}
-            g^{pq}(v) \delta'(x-y) + b^{pq}_n(v) T^n_j \pder{u^j}{x} \delta(x-y) 
-            = T^p_i T^q_j g^{ij}(u) \delta'(x-y) 
-            + \left( \ppder{v^q}{u^j}{u^k} + T^p_i T^q_j b^{ij}_k \right) \pder{u^k}{x} \delta(x-y) \:.
+            g^{pq}(v) \partial_x \delta(x-y) + b^{pq}_n(v) T^n_j \pder{u^j}{x} \delta(x-y) \nonumber
+            \\ = T^p_i T^q_j g^{ij}(u) \partial_x \delta(x-y) 
+            + \left( \ppder{v^q}{u^j}{u^k} + T^p_i T^q_j b^{ij}_k \right) \pder{u^k}{x} \delta(x-y) \:. \label{eq:porovnani}
         \end{align}
-        Porovnáním členů s $\delta'$ dostaneme vztah pro transformaci metriky \eqref{eq:transformace-metrika}.
-        \item Porovnáním členů s $\delta$ dostaneme
+        The terms with $\partial_x \delta$ must be equal to each other, as must $\delta$ terms. From $\partial_x \delta$ terms we get
+        \begin{align}
+            g^{pq}(v) = T^p_i T^q_j g^{ij}(u) \:,
+        \end{align}
+        which is the transformation relation for $g$.
+
+        \item From $\delta$ terms in \eqref{eq:porovnani}, we get
         \begin{align}
             b^{pq}_n(v) T^n_k =
             b^{ij}_k(u) T^p_i T^q_j + g^{ij}(u) T^p_i \ppder{v^q}{u^i}{u^k}
         \end{align}
-        a po rozpisu pomocí \eqref{eq:definice-Gamma}
+        and after \eqref{eq:definice-Gamma}
         \begin{align}
             - g^{ps}(v) \Gamma^{q}_{sn}(v) T^n_k =
             - g^{il}(u) \Gamma^j_{lk}(u) T^p_i T^q_j + g^{ij}(u) T^p_i \ppder{v^q}{u^i}{u^k} \:.
         \end{align}
-        Na levé straně využijeme transformaci metriky \eqref{eq:transformace-metrika} a dostaneme
+        On the left-hand side we use the transformation of $g$ \eqref{eq:transformace-metrika}
         \begin{align}
             -g^{ij}(u) \Gamma^q_{sm}(v) T^p_i T^s_j T^m_k = - g^{ij}(u) \Gamma^l_{jk} T^p_i T^q_l + g^{ij}(u) \ppder{v^q}{u^i}{u^k} T^p_i 
         \end{align}
-        a po zkrácení $g^{ij}(u) T^p_i$
+        and after vectoring out $g^{ij}(u) T^p_i$
         \begin{align}
             \Gamma^l_{jk}(u) T^q_l = \Gamma^q_{sm}(v) T^s_j T^m_k + \ppder{v^q}{u^i}{u^k} \:.
         \end{align}
-        V posledním kroku přenásobíme inverzní maticí $(T^{-1})^a_q$ a dostaneme
+        All that remains is to multiply this equation with $(T^{-1})^a_q$ and we get the final transformation relation for $\Gamma$
         \begin{align}
-            \Gamma^a_{jk}(u) = \Gamma^q_{sm}(v) \pder{v^s}{u^j} \pder{v^m}{u^k} \pder{u^a}{v^q} + \ppder{v^q}{u^i}{u^k} \pder{u^a}{v^q} \:,
+            \Gamma^a_{jk}(u) = \Gamma^q_{sm}(v) \pder{v^s}{u^j} \pder{v^m}{u^k} \pder{u^a}{v^q} + \ppder{v^q}{u^i}{u^k} \pder{u^a}{v^q} \:.
         \end{align}
-        což je hledaný transformační vztah \eqref{eq:transformace-konexe}.
     \end{enumerate}
 \end{proof}
 
-\subsection{Ekvivalence riemannovské a poissonovské struktury}
+Let us summarize the results. We have defined Poisson bracket in the way that it satisfies the Leibniz rule. It remains to investigate the skew-symmetry and Jacobi identity. We have also defined $g^{pq}$ and $\Gamma^p_{qr}$, which transform like tensors and Christoffel symbols, respectively. It remains to show that $g^{pq}$ is indeed symmetric and $\Gamma$ is the Levi-Civita connection, i.e. the corresponding covariant derivative annuls the metric. We are now ready to prove the key theorem of this chapter which shows that these properties are indeed equivalent. Moreover, the corresponding covariant derivative has zero curvature, which indicates that the phase space $M$ is in fact Euclidean space.
 
-
-
-\begin{theorem}[Ekvivalence pseudoriemannovské a hamiltonovské struktury] \label{theorem1:ekvivalence}
-    Nechť $\det(g^{ij}) \neq 0$. Pak je vztahem \eqref{eq:Poisson1D} definována Poissonova závorka splňující antisymetrii, Leibnizovo pravidlo a Jacobiho identitu právě tehdy, když jsou splněny následující podmínky:
+\begin{theorem}[Dubrovin, Novikov] \label{theorem1:ekvivalence}
+    Let $\det(g^{ij}) \neq 0$. Then \eqref{eq:Poisson1D} defines a Poisson bracket with skew-symmetry, Leibniz rule and Jacobi identity if and only if these three conditions are satisfied:
     \begin{enumerate}
-        \item $g^{ij}$ je symetrický tensor, tj. definuje pseudo-riemannovskou metriku na prostoru $M^N$.
-        \item Koeficienty $\Gamma^{i}_{jk}$ jsou složky Levi-Civitovy konexe příslušející metrice $g^{ij}$.
-        \item Odpovídající konexe má nulovou torzi a křivost.
+        \item $g^{ij} = g^{ji}$, that is, $g^{ij}$ is a metric on the phase space $M$.
+        \item $\Gamma^{i}_{jk} = \Gamma^i_{kj}$, that is, $\Gamma^{i}_{jk}$ are affine coeficients, such that the corresponding covariant derivative has zero torsion and anihilate the metric $g^{ij}$.
+        \item The covariant derivative corresponding to $\Gamma^{i}_{jk}$ has zero curvature.
     \end{enumerate}
 \end{theorem}
 
 \begin{corollary}
-    Existují lokální souřadnice $w^i = w^i(u^1, \dots, u^N)$, $i = 1, \dots, N$ takové, že
+    There are local coordinates $w^i = w^i(u^1, \dots, u^N)$, $i = 1, \dots, N$ such that
     \begin{align}
-        \tilde g^{ij}(w) = \const \:, \quad b^{ij}_k (w) = 0 \:.
+        g^{ij}(w) = \tilde g^{ij} = \const \:, \quad \Gamma^i_{jk} (w) = 0 \:.
     \end{align}
-    V těchto souřadnicích je Poissonova závorka konstantní:
+    In these coordinates is Poisson bracket reduced to the constant one
     \begin{align}
-        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \delta'(x-y) \:.
+        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \partial_x \delta(x-y) \:.
     \end{align}
-    Úplný lokální invariant Poissonových závorek je signatura pseudo-eukleidovské metriky $\tilde g^{ij}$.
-    \todo[inline]{Co se tímhle myslí?}
+    The only local invariant of the Poisson bracket is the signature of the metric $g^{ij}(u)$.
+    \todo[inline]{Co se tímhle myslí? Pořád nemám rozmyšleno.}
 \end{corollary}
 
-\begin{proof}[Důkaz věty \ref{theorem1:ekvivalence}]
-    \textbf{Krok 1: Antisymetrie Poissonovy závorky implikuje symetrii metriky a kompatibilitu s $\Gamma^i_{jk}$}
+\begin{proof}[Proof of theorem \ref{theorem1:ekvivalence}]
+    The proof is divided into three steps.
+    \\
+    \textbf{Step 1: Skew-symmetry of Poisson bracket implies the symmetry of $g^{ij}$ and compatibility with $\Gamma^i_{jk}$.}
 
-    Poissonova závorka je antisymetrická, tj.
+    Let the Poisson bracket be skew-symmetric, i.e.
     \begin{align}
         \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)} = 0 \:.
     \end{align}
-    Rozepišme druhou závorku
+    The second bracket reads as
     \begin{align}
-        \set{u^j(y),u^i(x)} =  g^{ji}[u(y)] \delta'(y-x) + b^{ji}_k[u(y)] \pder{u^k}{y} \delta(y-x) \:.
+        \set{u^j(y),u^i(x)} =  g^{ji}[u(y)] \partial_x \delta(y-x) + b^{ji}_k[u(y)] \pder{u^k}{y} \delta(y-x) \:.
     \end{align}
-    Využijeme vztahů
+    Let us apply Dirac identites (Lemma \vref{lemma:delta}) on $g^{ji}[u(y)]\partial_x \delta(y-x)$. We get
     \begin{align}
-        \delta(y-x) = \delta(x-y) \:, \quad \delta'(y-x) = -\delta'(x-y)
-    \end{align}
-    a lemmatu \vref{lemma:delta} aplikovaného na $g^{ji}[u(y)]\delta'(y-x)$. Dostaneme
-    \begin{align}
-        \set{u^j(y),u^i(x)} 
-        = - g^{ji} [u(x)] \delta'(x-y) - \pder{g^{ji}}{u^k}[u(x)] \pder{u^k}{x} \delta(x-y) + b^{ji}_k[u(x)] \pder{u^k}{x} \delta(x-y)
+        \set{u^j(y),u^i(x)} =& \nonumber \\ 
+        = - g^{ji} [u(x)] \partial_x \delta(x-y) -& \pder{g^{ji}}{u^k}[u(x)] \pder{u^k}{x} \delta(x-y) + b^{ji}_k[u(x)] \pder{u^k}{x} \delta(x-y)
         \:.
     \end{align}
-    Celkově
+    The skew-symmetry is then
     \begin{align}
-        0 = \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)} = \left[ g^{ij}[u(x)]  - g^{ji}[u(x)] \right] \delta'(x-y) + \left[ b^{ij}_k - \pder{g^{ji}}{u^k}  + b^{ji}_k  \right] \pder{u^k}{x} \delta(x-y) \:.
+        0 = \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)} = \nonumber
+        \\= \left[ g^{ij}[u(x)]  - g^{ji}[u(x)] \right] \partial_x \delta(x-y) + \left[ b^{ij}_k - \pder{g^{ji}}{u^k}  + b^{ji}_k  \right] \pder{u^k}{x} \delta(x-y) \:.
     \end{align}
-    Výraz na pravé straně bude nulový právě tehdy, jestliže
+    The right-hand side is equal to zero if and only if
     \begin{align}
-        g^{ij} = g^{ji} \:, \label{eq:Th.Novikov-symetrie} \\
-        \pder{g^{ij}}{u^k} = b^{ij}_k + b^{ji}_k  \:. \label{eq:Th.Novikov-konexe}
+        g^{ij}(u) = g^{ji}(u) \:, \label{eq:Th.Novikov-symetrie} \\
+        \pder{g^{ij}}{u^k}(u) = b^{ij}_k(u) + b^{ji}_k(u)  \:. \label{eq:Th.Novikov-konexe}
     \end{align}
-    Rovnice \eqref{eq:Th.Novikov-symetrie} říká, že $g^{ij}$ je symetrický tenzor, dle předpokladu $\det g^{ij} \neq 0$ je nedegenerovaný, tj. definuje metriku na varietě $M^N$. Rovnice \eqref{eq:Th.Novikov-konexe} dává
+    Equation \eqref{eq:Th.Novikov-symetrie} says that $g^{ij}$ is a symmetric tensor. By assumption $\det g^{ij}$ is non-degenerate, so it defines a metric structure on $M$. Equation \eqref{eq:Th.Novikov-konexe} is equivalent to
     \begin{align}
-        \pder{g^{ij}}{u^k} + g^{is} \Gamma_{sk}^j + g^{sj} \Gamma_{sk}^i = 0 \:,
+        \pder{g^{ij}}{u^k} + g^{is} \Gamma_{sk}^j + g^{sj} \Gamma_{sk}^i = 0 \:.
     \end{align}
-    takže $\Gamma_{ij}^k$ dává konexi kompatibilní s metrikou $g^{ij}$.
+    If $\nabla$ is the covariant derivative corresponding to $\Gamma^i_{jk}$, then $\nabla_k g^{ij} = 0$. So $\Gamma_{ij}^k$ are affine connection coeficients and are compatible with $g^{ij}$.
 
-
-    \textbf{Krok 2: Jacobiho identita je ekvivalentní nulové torzi a křivosti} 
+    \textbf{Step 2: Jacobi identity is equivalent to zero torsion and curvature.} 
     
-    Abychom dokázali, že je nulová křivost a torze, využijeme Jacobiho identity. Položme
+    Let us assume that Jacobi identity holds. We denote
     \begin{align}
-        J^{ijk}(x,y,z) = \set{ \set{u^i(x),u^j(y)}, u^k(z) } + \set{ \set{u^j(y), u^k(z)}, u^i(x)} + \set{ \set{u^k(z), u^i(x)}, u^j(y)} \:.
+        \mathcal J^{ijk}(x,y,z) = J^{ijk}(x,y,z)+ J^{jki}(y,z,x)+ J^{kij}(z,x,y) = 0
     \end{align}
-    Musíme ukázat, že je $J^{ijk}(x,y,z) = 0$ ve smyslu distribucí, tedy
+    where
     \begin{align}
-        \dual{J^{ijk}(x,y,z)}{p_i(x)q_j(y)r_k(z)} = 0 \quad \text{pro } p_i, q_j, r_k \in \dis{R}
+        J^{ijk}(x,y,z) = \set{u^k(z) , \set{u^i(x),u^j(y)}} \:.
     \end{align}
-    a protože se jedná o regulární distribuci, ověřujeme
+    \textbf{[TADY TO JEŠTĚ NENÍ HOTOVÉ.]}
+    From now on we shall use the abbreviated notation
     \begin{align}
-        \int_{\R^{3}} J^{ijk}(x,y,z) p_i(x)q_j(y)r_k(z) \, \D x \D y \D z = 0\:.
+        g^{ij}_{,m} = \pder{g^{ij}}{u^m} \:, \quad b^{ij}_{k,m} = \pder{b^{ij}_k}{u^m} \:, \quad u^k_x = \pder{u^k}{x}  \:.
     \end{align}
-    Takový integrál lze převést na jednodimenzionální integrál
-    \begin{align}
-        \int_{\R} \sum_{\sigma, \tau =0}^2 A^{ijk}_{\sigma \tau} p_i q_j^{(\sigma)} r_k^{(\tau)} \, \D x = 0 \:,
-    \end{align}
-    kde koeficienty $A^{ijk}_{\sigma \tau}$ jsou nezávislé na $p,q,r$.
-    Obdržíme tedy systém rovnic \begin{align}
-        A^{ijk}_{\sigma \tau} = 0 \quad \forall i,j,k=1, \dots ,N \:; \quad 0 \leq \sigma, \tau \leq 2 \:.
-    \end{align}\todo[inline]{Rád bych si funkce napsal explicitně, určitě se v nich objeví derivace druhého řádu někde? Ale nedaří se mi to sestavit.}
 
-    Přepišme tyto rovnice explicitně. 
     \begin{align*}
-        \set{\set{u^i(x),u^j(y)},u^k(z)} = \\
-        = \int \D \xi \fder{}{u^m(\xi)} \left[ g^{ij}(x) \partial_x \delta(x-y) + b^{ij}_k(x) \partial_x u^k \delta(x-y)\right] 
-        \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \right] \fder{u^k(z)}{u^n(\xi)} \:.
+        J^{ijk}(x,y,z) =
+        \int \D \xi \fder{u^k(z)}{u^n(\xi)}
+        \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)}  \:.
     \end{align*}
-    Jednotlivé členy jsou
+    The functional derivatives are
     \begin{align}
-        \fder{u^k(z)}{u^n(\xi)} = \delta^k_n \delta(z-\xi) \:, \\
-        \fder{}{u^m(\xi)} \left[ g^{ij}(x) \partial_x \delta(x-y) + b^{ij}_k(x) \partial_x u^k \delta(x-y)\right] = 
-        \\ = \left[ g^{ij}_{,m} \partial_x \delta(x-y) + b^{ij}_{,m}(x) u^k_x \delta(x-y) \right] \delta (x-\xi) \:,
+        \fder{u^k(z)}{u^n(\xi)} =& \delta^k_n \delta(z-\xi) \:, \\
+        \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)} =& \fder{}{u^m(\xi)} \left[ g^{ij}(x) \partial_x \delta(x-y) + b^{ij}_k(x) \partial_x u^k \delta(x-y)\right] = 
+        \nonumber
+        \\ =& \left[ g^{ij}_{,m} \partial_x \delta(x-y) + b^{ij}_{,m}(x) u^k_x \delta(x-y) \right] \delta (x-\xi) \:.
     \end{align}
-    kde jsme označili
-    \begin{align}
-        g^{ij}_{,m} = \pder{g^{ij}}{u^m} \:, \quad b^{ij}_{k,m} = \pder{b^{ij}_k}{u^m} \:, \quad u^k_x = \pder{u^k}{x} \:, \quad \partial_x \delta(x-y) = \pder{}{x} \delta(x-y) \:.
-    \end{align}
-    V integrálu tedy předěláme $\xi$ na $x$ díky členu $\delta(x-\xi)$ a indexy $n$ na $k$ díky $\delta^n_k$. Zůstane
+    Thus we can eliminate the integration in $\xi$ and get rid of the integral.
     \begin{align*}
-        & \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] \left[ g^{mk}(x) \partial_x \delta(z-x) + b^{mk}_p(x) u^p_x \delta(z-x)\right] \:.
-        \\ 
+        & J^{ijk}(x,y,z) = \int \D \xi \delta^k_n \delta(z-\xi) \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \\ 
+        & \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right] 
+        \\
+        =& \left[ g^{mk}(\xi) \partial_z + b^{mk}_p \partial_z u^p \cdot \right] \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right]
+        \\
         =& \left[ g^{ij}_{,m} g^{mk} \partial_x u^m \partial_x \delta(x-y) + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \right] \partial_x \delta(z-x) + 
         \\
         +& \left[ g^{ij}_{,m} b^{mk}_p u^p_x \partial_x \delta(x-y) + b^{ij}_{k,m} b^{mk}_p u_x^p  u_x^k \delta(x-y) \right] \delta(z-x) \:.
     \end{align*}
-    Dostaneme
+
+    %\begin{align*}
+    %    & J^{ijk}(x,y,z) = \\
+    %    & \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] \left[ g^{mk}(x) \partial_x \delta(z-x) + b^{mk}_p(x) u^p_x \delta(z-x)\right] \:.
+    %    \\ 
+    %    =& \left[ g^{ij}_{,m} g^{mk} \partial_x u^m \partial_x \delta(x-y) + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \right] \partial_x \delta(z-x) + 
+    %    \\
+    %    +& \left[ g^{ij}_{,m} b^{mk}_p u^p_x \partial_x \delta(x-y) + b^{ij}_{k,m} b^{mk}_p u_x^p  u_x^k \delta(x-y) \right] \delta(z-x) \:.
+    %\end{align*}
+
+
+    We get four terms which are $\delta$ distributions and their derivatives.
     \begin{align*}
-        \set{\set{u^i(x),u^j(y)},u^k(z)} 
-        =g^{ij}_{,m} g^{mk} \partial_x \delta(x-y) \partial_x \delta(z-x) 
+        J^{ijk}(x,y,z) =
+        g^{ij}_{,m} g^{mk} \partial_x \delta(x-y) \partial_x \delta(z-x) 
         + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \partial_x \delta(z-x) 
         \\+ g^{ij}_m b^{mk}_p u^p_x  \partial_x \delta(x-y) \delta(z-x) 
         + b^{ij}_{k,m} b^{mk}_p u^p_x u^k_x \delta(x-y) \delta(z-x) \:.
     \end{align*}
     Jednotlivé členy označíme \begin{align*}
-        \set{\set{u^i(x),u^j(y)},u^k(z)} = E(x) \partial_x \delta(x-y) \partial_x \delta(z-x) + F(x) \delta (x-y) \partial_x \delta(z-x) 
+        J^{ijk}(x,y,z) = E(x) \partial_x \delta(x-y) \partial_x \delta(z-x) + F(x) \delta (x-y) \partial_x \delta(z-x) 
         \\+ G(x) \partial_x \delta(x-y) \delta(z-x) + H(x) \delta(x-y) \delta(z-x) \:.
     \end{align*}
+    Díky symetrii, resp. antisymetrii $\delta$ funkcí
+    \begin{align}
+        \delta (x-y) = \delta(y-x) \:, \quad \partial_x \delta(x-y) = - \partial_y \delta(y-x)
+    \end{align}
+    Lze členy předělat na tvar
+    \begin{align}
+        J^{ijk}(x,y,z) = E(x) \partial_y \delta(y-x) \partial_z \delta(x-z) - F(x) \delta(y-x) \partial_z \delta(x-z) \\
+        - G(x) \partial_y \delta(y-x) \delta(x-z) + H(x) \delta(x-y)  \delta(x-z)
+    \end{align}
 
 
-
-    Jedna z těchto rovnic dává
+    \textbf{[ODTEĎ UŽ JE TO DODĚLANÉ.]}
+    One of these equations reads as
     \begin{align}
         A_{02}^{ijk} = b^{ij}_s g^{sk} - b^{kj}_s g^{si} = -g^{ip} \Gamma^{j}_{ps} g^{sk} + g^{km} \Gamma^{j}_{ms} g^{si} =0 \:,
     \end{align}
-    odtud (po přenásobení $g_{ai}g_{bk}$)
+    therefore, after multiplying with $g_{ai}g_{bk}$
     \begin{align}
         \Gamma^j_{ab} - \Gamma^j_{ba} = 0 \:.
     \end{align}
-    Tento vztah říká, že jsou koeficienty afinní konexe symetrické, tj. příslušná konexe má nulovou torzi.
+    So the corresponding covariant derivative has zero torsion.
 
-   Další z rovnic dává
+    Another equation reads as
     \begin{align}
         A_{00}^{ijk} = B^{ijk}_p(u) u^p_{xx} + C^{ijk}_{pq}(u) u^p_x u^q_x = 0 \:,
     \end{align}
-    kde 
-    \todo[inline]{Je v původním článku typo??}
+    where
     \begin{align}
         B^{ijk}_p 
         = (b^{jk}_{s,p} - b^{jk}_{p,s}) g^{si} + b_s^{ij} b_p^{sk} - b_s^{ik} b_p^{sj} \:.
     \end{align}
-    Nulovost $B^{ijk}_p$ dává nulovou křivost, jak plyne z rozpisu
+    The function $B^{ijk}_p$ beeing zero implies the zero curvature, which follows from
     \begin{align}
         B^{ijk}_p  
-        =& -g^{is} \left( g^{jm}_{,p} \Gamma^k_{ms} + g^{jm} \Gamma^k_{ms,p} - g^{jm}_{,s} \Gamma^k_{mp} - g^{jm} \Gamma^k_{mp,s} \right) + g^{im} \Gamma^j_{ms} g^{sn} \Gamma^{k}_{np} - g^{im} \Gamma^k_{ms} g^{sn} \Gamma^j_{np}
-        = \\ =& g^{is} g^{jn} \left( \Gamma^m_{np} \Gamma^k_{ms} - \Gamma^{m}_{ns} \Gamma^k_{mp} + \Gamma^{k}_{mp,s} -  \Gamma^{k}_{ms,p} \right) + g^{is} g^{nm} \left( \Gamma^j_{np} \Gamma^{k}_{ms} - \Gamma^j_{ns} \Gamma^k_{mp} \right) + g^{im} g^{sn} \left( \Gamma^j_{ms} \Gamma^k_{np} - \Gamma^k_{ms} \Gamma^j_{np} \right)
+        =& -g^{is} \left( g^{jm}_{,p} \Gamma^k_{ms} + g^{jm} \Gamma^k_{ms,p} - g^{jm}_{,s} \Gamma^k_{mp} - g^{jm} \Gamma^k_{mp,s} \right) 
+        \\ +& g^{im} \Gamma^j_{ms} g^{sn} \Gamma^{k}_{np} - g^{im} \Gamma^k_{ms} g^{sn} \Gamma^j_{np}
+        = \\ =& g^{is} g^{jn} \left( \Gamma^m_{np} \Gamma^k_{ms} - \Gamma^{m}_{ns} \Gamma^k_{mp} + \Gamma^{k}_{mp,s} -  \Gamma^{k}_{ms,p} \right) 
+        \\ +& g^{is} g^{nm} \left( \Gamma^j_{np} \Gamma^{k}_{ms} - \Gamma^j_{ns} \Gamma^k_{mp} \right) + g^{im} g^{sn} \left( \Gamma^j_{ms} \Gamma^k_{np} - \Gamma^k_{ms} \Gamma^j_{np} \right)
         = \\ =& -g^{is} g^{jn} \left( \Gamma^{m}_{ns} \Gamma^k_{mp}  - \Gamma^m_{np} \Gamma^k_{ms} + \Gamma^{k}_{ms,p} - \Gamma^{k}_{mp,s} \right)
         = \\ =& -g^{is} g^{jn} R^k_{nps} \:.
     \end{align}
-    Takže křivost metriky $g^{ij}$ je nulová. Tím jsme dokázali, že pokud je vztahem \eqref{eq:Poisson1D} definována Poissonova závorka, jsou splněny podmínky 1-3.
+    So far we proved that if hydrodynamical Poisson bracket satisfies skew-symmetry and Jacobi identity, the conditions 1-3 are satisfied.
 
-    \textbf{Krok 3: Souřadnice, ve kterých je závorka triviální, dávají postačitelnost}
+    \textbf{Step 3:}
 
-    Jestliže mají koeficienty afinní konexe $\Gamma_{ij}^k$ nulovou torzi i křivost, existují souřadnice $w^i=w^i(u^1,\dots,u^N)$ pro $i=1,\dots,N$ takové, že $g^{ij} = \const$ a $b^{ij}_k = 0$. V těchto souřadnicích je Poissonova závorka konstantní
+    If $\nabla$ has zero torsion and curvature, there are coordinates $w^i=w^i(u^1,\dots,u^N)$ for $i=1,\dots,N$ such that $g^{ij} = \const$ a $b^{ij}_k = 0$. In these coordinates
     \begin{align}
-        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \delta'(x-y) \:.
+        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \partial_x \delta(x-y) \:.
     \end{align}
-    Jacobiho identita, antisymetrie i Leibnizovo pravidlo jsou pro tuto závorku triviálně splněny. Tím jsme ukázali postačitelnost podmínek (1)-(3) pro vlastnosti Poissonovy závorky.
+    Jacobi identity, skew-symmetry and Leibniz rule are for that bracket satisfied trivially. Therefore the three conditions are also sufficient. That finishes the proof.
 \end{proof}
 
 \subsection{Kdy je hydrodynamický systém hamiltonovský?}
@@ -504,7 +503,13 @@ kde $[\cdot,\cdot]$ značí obyčejný komutátor funkcí. Předpokládejme dál
 \end{proof}
 
 
-\section{Vícerozměrný případ}
+\section{Multi-dimensional case}
+
+\begin{proposition}[Changing the space coordinates]
+    For any changes of the spatial variables $x^ \alpha \mapsto c^\alpha_\beta x^\beta$, where $\alpha = 1, \cdots, d$ and $\det (c^\alpha_\beta) = 1$, the metrics $g^{ij \alpha}$ and $b^{ij \alpha}_k$ transforms as components of a vector.
+\end{proposition}
+
+
 
 Ve vícerozměrném případě máme lineární bundle metrik a s nimi spojených konexí. Pro každou záměnu prostorových proměnných $x^\alpha \mapsto c^\alpha_\beta x^\beta$ pro $\alpha = 1, \cdots, d$ splňující $\det c^\alpha_\beta = 1$ se metrika $g^{ij \alpha}$ a konexe $b^{ij \alpha}_k$ transformují jako komponenty vektoru.
 

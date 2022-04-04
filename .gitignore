@@ -28,3 +28,6 @@ pdfa.xmpi
 # BibTeX
 *.bbl
 *.blg
+
+.vscode
+materials

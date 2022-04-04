@@ -1,12 +1,17 @@
 \chapter{Mathematical framework}
 
+In this chapter we shall revise some basic definitions and propositions of the functional calculus, which we will need for the proper formulation of the hydrodynamic geometry. Most of the existing literature on this topic often lacks clarity due to the omittance of certain details. This can include the domains on which functionals are defined or regularity conditions.
 
+Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them, such as in [CITATION]. The same applies to functional variations and the conditions on which they exist. 
+Among physists, however, it is convential to operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
+
+
+After introducing the concept of Gateaux and Frechet derivatives, which are suitable for arbitrary normed space, we shall take a closer look on the space of smooth functions and functionals on it.
 
 \section{Functional derivatives}
 
-In hydrodynamics 
 
-\begin{definition}[Gateuax and Frechet derivative]
+\begin{definition}[Gateaux and Frechet derivative]
     Let $X$ be a normed space, $A: X \to \R$ is a functional and $x \in D(A)$.
     \begin{enumerate}
         \item Gateaux derivative $\delta A(x,h)$ in the direction $h$ is defined as
@@ -33,7 +38,7 @@ The first type is the integral functional
 \begin{align}
     A[u] = \int_\Omega a(x,u(x),u'(x),\cdots,u^{(k)}(x)) \, \D^n x \:, \label{eq:integral-functional}
 \end{align}
-where $a : \R \times \R^{k} \to \R$ is analytic function.
+where $a : \R \times \R^{k} \to \R$ is an analytic function.
 For simplicity we often write this using a physical notation
 \begin{align}
     A[u] = \int a(u) \, \D^n x \:,
@@ -66,14 +71,14 @@ The expression \eqref{eq:perpartes} is very similar to the scalar product on $L^
 \begin{align}
     \dual{f}{g}_{L^2(\Omega)} = \int_\Omega f(x) g(x) \, \D x \:.
 \end{align}
-It makes sense then to write
+Thus, it makes sense to write
 \begin{align}
     DA[u] \cdot h = \int_\Omega \fder{A}{u(x)} h(x) \, \D x = \dual{\fder{A}{u(x)}}{h(x)} \:.
 \end{align}
 
 
 
-It follows from theory (CITATION) that the functional derivative beeing zero is necessery condition for beeing the extremal point of the functional if the corresponding function is smooth enough.
+It follows from theory (CITATION) that the functional derivative beeing zero is a necessery condition for the function beeing the extremal point of the functional (given that the corresponding function is smooth enough).
 
 \begin{theorem}[Euler-Lagrange equations]
     Let $v \in C^\infty(\Omega)$ such that $v(x)$ is stationary point of the functional $A$ in \eqref{eq:integral-functional}, i.e
@@ -140,7 +145,7 @@ Let $a \in C^\infty(\Omega)$. Then it makes sense to define the product of $a$ a
     \dual{a T}{\phi} = \dual{T}{a \phi} \:.
 \end{align}
 
-In the next chapter we will often use some identities of the delta distributions, which are written in the next lemma and which we will refer to as the Dirac identities.
+In the next chapter we shall frequently use the following identities of the delta distributions, which are written in the next lemma and which we will refer to as the Dirac identities.
 
 \begin{lemma}[Dirac identities] \label{lemma:delta}
     \begin{align}
@@ -175,7 +180,7 @@ In the physical notation
 \begin{align}
     A[u(x)] = \int a(u(\xi)) \delta(x-\xi) \, \D^n \xi \:.
 \end{align}
-Therefore it is also common erase the difference between the function itself and its functional meaning and denote them by the same letter $A$:
+Therefore it is also common not to differentiate between the function itself and its corresponding functional form and denote them by the same letter $A$:
 \begin{align}
     A[u(x)] = \int A(u(\xi)) \delta(x-\xi) \, \D^n \xi \:.
 \end{align}
@@ -195,7 +200,7 @@ Therefore it is also common erase the difference between the function itself and
     therefore
     \begin{align}
         \fder{F(u(x))}{u(y)} = \pder{F}{u}(x) \delta(x-y) \:.
-    \end{align}pder{}{} 
+    \end{align}
 \end{example}
 
 \begin{example}
