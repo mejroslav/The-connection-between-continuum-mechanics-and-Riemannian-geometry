@@ -1,0 +1,10 @@
+\contentsline {todo}{vymyslet lepší název kapitoly}{2}{section*.3}%
+\contentsline {todo}{přidat nějaký kontext}{2}{section*.4}%
+\contentsline {todo}{Zmínit se o derivaci distribucí a o tom, že se diraci dají testovat klidně $C^1$ funkcemi, takže souvisejí s teorií v minulé kapitole a můžeme aplikovat teorii funkcionálních derivací i na distribuce.}{4}{section*.5}%
+\contentsline {todo}{Vysvětlit, jak by se dal matematicky přesněji odvodit vztah $ A(u(x)) = \DOTSI \intop \ilimits@ A(u(\xi )) \delta (x-\xi ) \, \mathrm {d} \xi $ pomocí konvoluce distribucí.}{5}{section*.6}%
+\contentsline {todo}{Příklad asi přesunout do jiné kapitoly.}{7}{section*.7}%
+\contentsline {todo}{Dokončit a přidělat $\alpha $. kde se předělá $\frac {\mathrm {d}}{\mathrm {d}x}$ na $\frac {\mathrm {d}}{\mathrm {d}y}$?}{9}{section*.8}%
+\contentsline {todo}{Dokončit část s Jacobiho identitou.}{13}{section*.9}%
+\contentsline {todo}{Ještě někde využít perpartes a sečíst všechny tři jakobiátory?}{14}{section*.10}%
+\contentsline {todo}{Tomuhle nerozumím a myslím si, že v článku mají typo.}{16}{section*.11}%
+\contentsline {todo}{Opravdu?}{16}{section*.12}%
