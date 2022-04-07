@@ -140,8 +140,6 @@ Note that if two regular distributions satisfy $T_a = T_b$, then $a=b$ almost ev
     \end{align}
 \end{definition}
 
-
-
 Let $a \in C^\infty(\Omega)$. Then it makes sense to define the product of $a$ and arbitrary distribution $T$ by
 \begin{align}
     \dual{a T}{\phi} = \dual{T}{a \phi} \:.
@@ -152,23 +150,23 @@ In the next chapter we shall frequently use the following identities of the delt
 \begin{lemma}[Dirac identities] \label{lemma:delta}
     \begin{align}
         f(y) \delta (x-y) =& f(x) \delta(x-y) \:, \\
-        f(y) \delta'(x-y) =& f(x) \delta'(x-y) + f'(x) \delta(x-y) \:.
+        f(y) \partial_x \delta(x-y) =& f(x) \partial_x \delta(x-y) + f'(x) \delta(x-y) \:.
     \end{align}
 \end{lemma}
 \begin{proof}
     The first relation is trivial.
     Direct calculation gives
     \begin{align*}
-        \dual{f(x) \delta'(x-y)}{\psi(x)} 
-        =& \dual{\delta'(x-y)}{f(x) \psi(x)} 
+        \dual{f(x) \partial_x \delta(x-y)}{\psi(x)} 
+        =& \dual{\partial_x \delta(x-y)}{f(x) \psi(x)} 
          \\ =& -\dual{\delta(x-y)}{f'(x)\psi(x)} - \dual{\delta(x-y)}{f(x)\psi'(x)} 
          \\ =& -f'(y) \psi(y) - f(y) \dual{\delta(x-y)}{\psi'(x)} 
-         \\ =& - \dual{f'(x)  \delta(x-y)}{\psi(x)} + f(y) \dual{\delta'(x-y)}{\psi(x)} 
-         \\ =& \dual{f(y) \delta(x-y) - f'(x) \delta'(x-y)}{\psi(x)} \:.
+         \\ =& - \dual{f'(x)  \delta(x-y)}{\psi(x)} + f(y) \dual{\partial_x \delta(x-y)}{\psi(x)} 
+         \\ =& \dual{f(y) \delta(x-y) - f'(x) \partial_x \delta(x-y)}{\psi(x)} \:.
     \end{align*}
     Therefore
     \begin{align}
-        \dual{f(y) \delta'(x-y)}{\psi(x)} = \dual{f'(x) \delta(x-y)}{\psi(x)} + \dual{f(x) \delta'(x-y)}{\psi(x)} \:.
+        \dual{f(y) \partial_x \delta(x-y)}{\psi(x)} = \dual{f'(x) \delta(x-y)}{\psi(x)} + \dual{f(x) \partial_x \delta(x-y)}{\psi(x)} \:.
     \end{align} 
 \end{proof}
 

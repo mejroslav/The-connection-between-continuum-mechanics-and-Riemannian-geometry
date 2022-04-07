@@ -321,13 +321,12 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
     \begin{align}
         J^{ijk}(x,y,z) = \set{\set{u^i(x),u^j(y)}, u^k(z)} \:.
     \end{align}
-    \todo[inline]{Dokončit část s Jacobiho identitou.}
-    \textbf{[TADY TO JEŠTĚ NENÍ HOTOVÉ.]}
+
     From now on we shall use the abbreviated notation
     \begin{align}
         g^{ij}_{,m} = \pder{g^{ij}}{u^m} \:, \quad b^{ij}_{k,m} = \pder{b^{ij}_k}{u^m} \:, \quad u^k_x = \pder{u^k}{x}  \:.
     \end{align}
-
+    One of the Jacobiators reads as
     \begin{align*}
         J^{ijk}(x,y,z) =
         \int \D \xi \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)} 
@@ -335,19 +334,30 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
     \end{align*}
     The functional derivatives are
     \begin{align}
-        \fder{u^k(z)}{u^n(\xi)} =& \delta^k_n \delta(z-\xi) \:, \\
-        \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)} =& \fder{}{u^m(\xi)} \left[ g^{ij}(x) \partial_x \delta(x-y) + b^{ij}_k(x) \partial_x u^k \delta(x-y)\right] = 
+        \fder{u^k(z)}{u^n(\xi)} = \delta^k_n \delta(z-\xi)
+    \end{align}
+    and 
+    \begin{align}
+        \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)} = \fder{}{u^m(\xi)} \left[ g^{ij}(x) \partial_x \delta(x-y) + b^{ij}_k(x) \partial_x u^k \delta(x-y)\right] = 
         \nonumber
-        \\ =& \left[ g^{ij}_{,m} \partial_x \delta(x-y) + b^{ij}_{,m}(x) u^k_x \delta(x-y) \right] \delta (x-\xi) \:.
+        \\ = \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] \delta (x-\xi) - b^{ij}_m(x) \delta(x-y) \partial_\xi \delta(x-\xi) \:.
     \end{align}
     We have
+    \begin{align}
+        J^{ijk}(x,y,z) = J_1^{ijk}(x,y,z) + J_2^{ijk}(x,y,z) 
+    \end{align}
+    where
     \begin{align*}
-        & J^{ijk}(x,y,z) = \int \D \xi  \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right]   \\ 
-        & \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)
+        & J_1^{ijk}(x,y,z) = \int \D \xi  \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right]   \\ 
+        & \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)  
     \end{align*}
-    We use integration with $\delta(x-\xi)$ and get rid of the integral:
+    and 
     \begin{align*}
-        J^{ijk}(x,y,z) =& \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] 
+        J_2^{ijk}(x,y,z) = - \int \D \xi b^{ij}_m(x) \delta(x-y) \partial_\xi \delta(x-\xi) \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)  \:.
+    \end{align*}
+    In $J_1$ we use integration with $\delta(x-\xi)$ and get rid of the integral:
+    \begin{align*}
+        J_1^{ijk}(x,y,z) =& \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] 
         \left[ g^{mk}(\xi) \partial_x + b^{mk}_p \partial_x u^p \cdot \right] \delta(z-x)
         \\
         =& \left[ g^{ij}_{,m} g^{mk} \partial_x \delta(x-y) + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \right] \partial_x \delta(z-x) + 
@@ -355,30 +365,84 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
         +& \left[ g^{ij}_{,m} b^{mk}_p u^p_x \partial_x \delta(x-y) + b^{ij}_{k,m} b^{mk}_p u_x^p  u_x^k \delta(x-y) \right] \delta(z-x) \:.
     \end{align*}
 
-    We get four terms which are $\delta$ distributions and their derivatives.
+    In $J_2$ we first apply integration by parts to get rid of $\partial_\xi \delta(x-\xi)$ and then integrate:
     \begin{align*}
-        J^{ijk}(x,y,z) =
-        \underbrace{g^{ij}_{,m} g^{mk} }_{E^{ijk}(x)} \partial_x \delta(x-y) \partial_x \delta(z-x) 
-        + \underbrace{b^{ij}_{s,m} g^{mk} u^s_x}_{F^{ijk}(x)} \delta(x-y) \partial_x \delta(z-x) 
-        \\+ \underbrace{g^{ij}_{,m} b^{mk}_p u^p_x}_{G^{ijk}(x)}  \partial_x \delta(x-y) \delta(z-x) 
-        + \underbrace{b^{ij}_{s,m} b^{mk}_p u^p_x u^s_x}_{H^{ijk}(x)} \delta(x-y) \delta(z-x) \:.
+        J_2^{ijk}(x,y,z) = \int \D \xi b^{ij}_m(x) \delta(x-y) \delta(x-\xi) \partial_\xi \left[ g^{mk}(\xi) \partial_\xi \delta(z-\xi) + b^{mk}_p \partial_\xi u^p \delta(z-\xi) \right]
+        \\ = b^{ij}_m(x) \delta(x-y) \partial_x \left[ g^{mn}(x) \partial_x \delta(z-x) + b^{mn}_p \partial_x u^p \delta(z-x) \right]
+        \\ = b^{ij}_m(x) \delta(x-y) \big[ g^{mk}_{,s} u^s_x \partial_x \delta (z-x) + g^{mk} \partial_x \partial_x \delta (z-x) 
+        \\ + b^{mk}_{p,s}(x) u^s_x u^p_x \delta (z-x) + b^{mn}_{p}(x) u^p_{xx} \delta (z-x) + b^{mk}_{p}(x) u^p_x \partial_x \delta (z-x) \big]
     \end{align*}
-    Use the compatibility condition \eqref{eq:Th.Novikov-konexe} so
-    \begin{align}
-        E^{ijk}(x) = [b^{ij}_m + b^{ji}_m ]g^{mk} \:, \quad 
-        F^{ijk}(x) = b^{ij}_{p,m} g^{mk} u^p_x \:, \\
-        G^{ijk}(x) =  [b^{ij}_m + b^{ji}_m ]b^{mk}_p u^p_x \:, \quad
-        H^{ijk}(x) = b^{ij}_{p,m} b^{mk}_q u^p_x u^q_x
-    \end{align}
 
-    \begin{align}
-        E^{ijk}(x) \partial_x \delta(x-y) \partial_x \delta(z-x) = - E^{ijk}_{,s}(x) u^s_x \delta(x-y) \partial_x \partial_x \delta(z-x) \\
-        G^{ijk}(x) \partial_x \delta(x-y) \delta(z-x) = - G^{ijk}_{,s}(x) u^s_x \delta(x-y) \partial_x \delta(z-x)
-    \end{align}
-    \todo[inline]{Ještě někde využít perpartes a sečíst všechny tři jakobiátory?}
+    \begin{align*}
+        J_2^{ijk}(x,y,z) =& b^{ij}_m g^{mk}_{,s} u^s_x \delta (x-y) \partial_x \delta (z-x) 
+        + b^{ij}_m g^{mk} \delta(x-y) \partial_x \partial_x \delta (z-x) 
+        \\ +& b^{ij}_m b^{mk}_{p,s} u^s_x u^p_x \delta (x-y) \delta (z-x)
+        + b^{ij}_m b^{mn}_p u^p_{xx} \delta (x-y) \delta(z-x) 
+        \\ +& b^{ij}_m b^{mk}_p u^p_x \delta(x-y) \partial_x \delta(z-x) \:.
+    \end{align*}
 
-    \textbf{[ODTEĎ UŽ JE TO DODĚLANÉ.]}
-    One of these equations reads as
+    In total we end with terms
+    \begin{align}
+        J^{ijk}(x,y,z) =& 
+        E^{ijk}(x) \delta(x-y) \delta(z-x) 
+        \\+& F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) 
+        \\+& G^{ijk}(x) \partial_x \delta(x-y) \delta (z-x) 
+        \\+& H^{ijk}(x) \partial_x \delta(x-y) \partial_x \delta (z-x) 
+        \\+& I^{ijk}(x) \delta(x-y) \partial_x \partial_x \delta (z-x)
+    \end{align}
+    where
+    \begin{align}
+        E^{ijk}(x) =& (b^{ij}_m b^{mk}_{p,s} + b^{ij}_{s,m} b^{mk} ) u^p_x u^s_x + b^{ij}_m b^{mk}_p u^p_{xx} \\
+        F^{ijk}(x) =& (b^{ij}_{s,m} g^{mk} + g^{mk}_{,s} b^{ij}_m + b^{ij}_m b^{mk}_s)u_x^s \\
+        G^{ijk}(x) =& g^{ij}_{,m} b^{mk}_s u^s_x \\
+        H^{ijk}(x) =& g^{ij}_{,m} g^{mk} \\
+        I^{ijk}(x) =& b^{ij}_m g^{mk} \:.
+    \end{align}
+    Now the procedure is the following: firstly we have to add the cyclic permutations $J^{jki}(y,z,x)$ and $J^{kij}(z,x,y)$ to obtain $\mathcal J^{ijk}(x,y,z)$. Secondly, the resulting generalized function $\mathcal J^{ijk}(x,y,z)$ is equal to zero, i.e.
+    \begin{align*}
+        \dual{\mathcal J^{ijk}(x,y,z)}{p_i(x)q_j(y)r_k(z)} = 0
+    \end{align*}
+    or in the integral notation 
+    \begin{align*}
+        \iiint \D x \D y \D z J^{ijk}(x,y,z) p_i(x)q_j(y)r_k(z) = 0 \:.
+    \end{align*}
+    We want to reduce this integral into a one-dimensional integral
+    \begin{align*}
+        \int \D x \sum_{a,b = 0}^2 A^{ijk}_{ab} p_i(x) D^a q_j(x) D^b r_k (x)
+    \end{align*}
+    which is equal to zero if and only if
+    \begin{align*}
+        A^{ijk}_{ab} = 0 \quad \forall a,b = 0,1,2 \:.
+    \end{align*}
+    We illustrate the procedure on one particular expression. For example, we have
+    \begin{align*}
+        \int \big[ F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) 
+        +& F^{jki}(y) \delta(y-z) \partial_y \delta(x-y) 
+        + F^{kij}(z) \delta(z-x) \partial_z \delta(y-z) \big] \times \\ 
+        \times&  p_i(x) q_j(y) r_k(z) \D x \D y \D z \:.
+    \end{align*}
+    We use the antisymmetry of $\delta$-derivatives
+    \begin{align*}
+        \partial_x \delta(z-x) = - \partial_z \delta (z-x) \:, \quad 
+        \partial_y \delta(x-y) = - \partial_x \delta(x-y) \:, \quad 
+        \partial_z \delta(y-z) = - \partial_y \delta (y-z)
+    \end{align*}
+    and obtain
+    \begin{align*}
+        \int \D x F^{ijk}(x) p_i q_j D r_k + \int \D x F^{jki}(x) D p_i q_j r_k +
+        \int \D x F^{kij}(x) p_i D q_j r_k \:.
+    \end{align*}
+    In the term containing $D p_i$ we perform integration by parts. The result is
+    \begin{align*}
+        \int \D x (F^{ijk}-F^{jki}) p_i q_j D r_k +
+        \int \D x (F^{kij}-F^{jki}) p_i D q_j r_k -
+        \int \D x \partial_x F^{jki} p_i q_j r_k \:.
+    \end{align*}
+    In this particular case, we end up with terms, witch contribute to $A^{ijk}_{01}$, $A^{ijk}_{10}$ and $A^{ijk}_{00}$.
+
+    Other terms in $\mathcal J^{ijk}(x,y,z)$ are handled in the similar way. We are insterested only in functions $A^{ijk}_{00}$ and $A^{ijk}_{02}$. We shall also use the compatibility condition \eqref{eq:Th.Novikov-konexe}. 
+
+    The $A^{ijk}_{02}$ function reads as
     \begin{align}
         A_{02}^{ijk} = b^{ij}_s g^{sk} - b^{kj}_s g^{si} = -g^{ip} \Gamma^{j}_{ps} g^{sk} + g^{km} \Gamma^{j}_{ms} g^{si} =0 \:,
     \end{align}
@@ -388,9 +452,9 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
     \end{align}
     So the corresponding covariant derivative has zero torsion.
 
-    Another equation reads as
+    The $A^{ijk}_{00}$ function reads as
     \begin{align}
-        A_{00}^{ijk} = B^{ijk}_p(u) u^p_{xx} + C^{ijk}_{pq}(u) u^p_x u^q_x = 0 \:,
+        A_{00}^{ijk} = B^{ijk}_p(u) u^p_{xx} + C^{ijk}_{ps}(u) u^p_x u^s_x = 0 \:,
     \end{align}
     where
     \begin{align}
