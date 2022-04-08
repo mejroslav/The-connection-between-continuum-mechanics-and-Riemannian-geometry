@@ -1,8 +1,8 @@
 \contentsline {todo}{vymyslet lepší název kapitoly}{2}{section*.3}%
 \contentsline {todo}{přidat nějaký kontext}{2}{section*.4}%
-\contentsline {todo}{Zmínit se o derivaci distribucí a o tom, že se diraci dají testovat klidně $C^1$ funkcemi, takže souvisejí s teorií v minulé kapitole a můžeme aplikovat teorii funkcionálních derivací i na distribuce.}{4}{section*.5}%
-\contentsline {todo}{Vysvětlit, jak by se dal matematicky přesněji odvodit vztah $ A(u(x)) = \DOTSI \intop \ilimits@ A(u(\xi )) \delta (x-\xi ) \, \mathrm {d} \xi $ pomocí konvoluce distribucí.}{5}{section*.6}%
-\contentsline {todo}{Příklad asi přesunout do jiné kapitoly.}{7}{section*.7}%
-\contentsline {todo}{Dokončit a přidělat $\alpha $. kde se předělá $\frac {\mathrm {d}}{\mathrm {d}x}$ na $\frac {\mathrm {d}}{\mathrm {d}y}$?}{9}{section*.8}%
-\contentsline {todo}{Tomuhle nerozumím a myslím si, že v článku mají typo.}{18}{section*.9}%
-\contentsline {todo}{Opravdu?}{18}{section*.10}%
+\contentsline {todo}{Hodit regulární distribuce před tuhle část?}{3}{section*.5}%
+\contentsline {todo}{Rozmysli si, Míro, rozmysli.}{5}{section*.6}%
+\contentsline {todo}{Příklad asi přesunout do jiné kapitoly.}{8}{section*.7}%
+\contentsline {todo}{Dokončit a přidělat $\alpha $. kde se předělá $\frac {\mathrm {d}}{\mathrm {d}x}$ na $\frac {\mathrm {d}}{\mathrm {d}y}$?}{10}{section*.8}%
+\contentsline {todo}{Tomuhle nerozumím a myslím si, že v článku mají typo.}{19}{section*.9}%
+\contentsline {todo}{Opravdu?}{19}{section*.10}%

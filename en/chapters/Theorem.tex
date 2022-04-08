@@ -168,10 +168,10 @@ We say that the Poisson bracket is non-degenerate if $\det(g^{ij}) \neq 0$. We w
         \end{align}
 \end{definition}
 
-The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$, respectively, has its purpose. We will show soon that these are in fact the metric and afinne coeficients, respectively, on $M$.
+The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$ has its purpose. We will show soon that these are in fact the metric and afinne coeficients, respectively, on $M$.
 
 \begin{proposition}[Leibniz rule for Poisson bracket]
-    The Poisson brackets of the hydrodynamic type satisfy the Leibniz rule
+    The Poisson bracket of the hydrodynamic type satisfies the Leibniz rule
     \begin{align}
         \label{eq:transformace-zavorka}
         \set{v^p(u^i(x)),v^q(u^j(y))} = \pder{v^p}{u^i}(x) \pder{v^q}{u^j}(y) \set{u^i(x),u^j(y)} \:. 
@@ -182,7 +182,7 @@ The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$, respectively, has its p
     \begin{align}
         v^p(u^i(x)) = \int \D x' v^p(u^i(x')) \delta (x-x') \:.
     \end{align}
-    Applying this to the definition of the Poisson bracket \label{eq:Poisson1D}, we have
+    Applying this to the definition of the Poisson bracket \eqref{eq:Poisson1D}, we have
     \begin{align}
         \set{v^p(u^i(x)),v^q(u^j(y))} 
         =& \int \D x' \int \D y' \underbrace{\fder{v^p}{u^i(x')} }_{\pder{v^p}{u^i}(x') \delta(x-x')} \set{u^i(x'),u^j(y')} \underbrace{\fder{v^q}{u^j(y')} }_{\pder{v^q}{u^j}(y') \delta(y-y')}
@@ -194,11 +194,11 @@ The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$, respectively, has its p
 \begin{proposition}[Transformation of $g$ and $\Gamma$] \label{prop:transoformace}
     Let $u^i \mapsto v^a$ be the smooth change of variables. Then
     \begin{enumerate}
-        \item The coeficients $g^{ij}$ transform as the (2,0) tensors, i.e. 
+        \item The $g^{ij}$ coeficients transform as the (2,0) tensors, i.e. 
         \begin{align}
             g^{pq}(v) = \pder{v^p}{u^i} \pder{v^q}{u^j} g^{ij}[u(v)] \:, \quad p, q = 1, \dots, N \:. \label{eq:transformace-metrika}
         \end{align}
-        \item The coeficients $\Gamma^i_{jk}$ transform like the afinne connection symbols, i.e.
+        \item The $\Gamma^i_{jk}$ coeficients  transform like Christoffel symbols, i.e.
         \begin{align}
             \Gamma^p_{qr} (v) = \pder{v^p}{u^i} \pder{u^j}{v^q} \pder{u^k}{v^r} \Gamma^i_{jk}(u) + \pder{v^p}{u^i} \ppder{u^i}{v^q}{v^r} \:. \label{eq:transformace-konexe}
         \end{align}
@@ -212,11 +212,11 @@ The choice of denotation $g^{ij}$ and $\Gamma^{i}_{jk}$, respectively, has its p
             g^{pq}[v(u(x))] \partial_x \delta(x-y) + b^{pq}_s[v(u(x))] \pder{v^s}{u^k}(x) \pder{u^k}{x} \delta(x-y) \nonumber
             \\ = \pder{v^p}{u^i}(x) \pder{v^q}{u^j}(y) \left[ g^{ij}[u(x)] \partial_x \delta(x-y) + b^{ij}_k[u(x)] \pder{u^k}{x} \delta(x-y) \right] \:. \label{eq:dosad}
         \end{align}
-        From now we denote for readibility
+        From now on (for readibility) we denote 
         \begin{align}
             T^a_k(x) := \pder{v^a}{u^k}(x) \:.
         \end{align}
-        On the right-hand side of \eqref{eq:dosad} we apply Dirac identity (Lemma \vref{lemma:delta}) on $T^q_j(y) \partial_x \delta(x-y)$. All functions are then of variable $x$, so from now we won't write it explicitely. We have
+        We apply Dirac identity (Lemma \vref{lemma:delta}) to $T^q_j(y) \partial_x \delta(x-y)$ on the right-hand side of \eqref{eq:dosad}. Hence all functions are then of variable $x$, from now on we shall not write it explicitely. We have
         \begin{align}
             g^{pq}(v) \partial_x \delta(x-y) + b^{pq}_n(v) T^n_j \pder{u^j}{x} \delta(x-y) \nonumber
             \\ = T^p_i T^q_j g^{ij}(u) \partial_x \delta(x-y) 
@@ -392,11 +392,11 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
     \end{align}
     where
     \begin{align}
-        E^{ijk}(x) =& (b^{ij}_m b^{mk}_{p,s} + b^{ij}_{s,m} b^{mk} ) u^p_x u^s_x + b^{ij}_m b^{mk}_p u^p_{xx} \\
-        F^{ijk}(x) =& (b^{ij}_{s,m} g^{mk} + g^{mk}_{,s} b^{ij}_m + b^{ij}_m b^{mk}_s)u_x^s \\
-        G^{ijk}(x) =& g^{ij}_{,m} b^{mk}_s u^s_x \\
-        H^{ijk}(x) =& g^{ij}_{,m} g^{mk} \\
-        I^{ijk}(x) =& b^{ij}_m g^{mk} \:.
+        E^{ijk} =& (b^{ij}_m b^{mk}_{p,s} + b^{ij}_{s,m} b^{mk} ) u^p_x u^s_x + b^{ij}_m b^{mk}_p u^p_{xx} \\
+        F^{ijk} =& (b^{ij}_{s,m} g^{mk} + g^{mk}_{,s} b^{ij}_m + b^{ij}_m b^{mk}_s)u_x^s \\
+        G^{ijk} =& g^{ij}_{,m} b^{mk}_s u^s_x \\
+        H^{ijk} =& g^{ij}_{,m} g^{mk} \\
+        I^{ijk} =& b^{ij}_m g^{mk} \:.
     \end{align}
     Now the procedure is the following: firstly we have to add the cyclic permutations $J^{jki}(y,z,x)$ and $J^{kij}(z,x,y)$ to obtain $\mathcal J^{ijk}(x,y,z)$. Secondly, the resulting generalized function $\mathcal J^{ijk}(x,y,z)$ is equal to zero, i.e.
     \begin{align*}
@@ -440,19 +440,30 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
     \end{align*}
     In this particular case, we end up with terms, witch contribute to $A^{ijk}_{01}$, $A^{ijk}_{10}$ and $A^{ijk}_{00}$.
 
-    Other terms in $\mathcal J^{ijk}(x,y,z)$ are handled in the similar way. We are insterested only in functions $A^{ijk}_{00}$ and $A^{ijk}_{02}$. We shall also use the compatibility condition \eqref{eq:Th.Novikov-konexe}. 
+    Other terms in $\mathcal J^{ijk}(x,y,z)$ are handled in the similar way. We are insterested only in functions $A^{ijk}_{00}$ and $A^{ijk}_{02}$. We shall also use the compatibility condition \eqref{eq:Th.Novikov-konexe}, which is
+    \begin{align}
+        g^{ij}_{,m} = b^{ij}_m + b^{ji}_m \:.
+    \end{align}
 
     The $A^{ijk}_{02}$ function reads as
-    \begin{align}
-        A_{02}^{ijk} = b^{ij}_s g^{sk} - b^{kj}_s g^{si} = -g^{ip} \Gamma^{j}_{ps} g^{sk} + g^{km} \Gamma^{j}_{ms} g^{si} =0 \:,
-    \end{align}
+    \begin{align*}
+        A_{02}^{ijk} =& I^{ijk} + I^{jki} - H^{jki}
+        \\ =& b^{ij}_m g^{mk} + b^{jk}_m g^{mi} - g^{jk}_{,m} g^{mi} 
+        \\ =& b^{ij}_m g^{mk} + b^{jk}_m g^{mi} - b^{jk}_m g^{mi} - b^{kj}_m g^{mi}
+        \\ =& b^{ij}_m g^{mk} - b^{kj}_m g^{mi} 
+        \\ =& -g^{ip} \Gamma^{j}_{pm} g^{mk} + g^{ks} \Gamma^{j}_{sm} g^{mi} \:,
+    \end{align*}
     therefore, after multiplying with $g_{ai}g_{bk}$
     \begin{align}
         \Gamma^j_{ab} - \Gamma^j_{ba} = 0 \:.
     \end{align}
-    So the corresponding covariant derivative has zero torsion.
+    So the covariant derivative corresponding to $\Gamma^{j}_{ab}$ has zero torsion.
 
     The $A^{ijk}_{00}$ function reads as
+    \begin{align}
+        A_{00}^{ijk} = E^{ijk} + E^{jki} + E^{kij} - \partial_x F^{jki} - \partial_x G^{kij}
+    \end{align}
+    which can be modified into
     \begin{align}
         A_{00}^{ijk} = B^{ijk}_p(u) u^p_{xx} + C^{ijk}_{ps}(u) u^p_x u^s_x = 0 \:,
     \end{align}
@@ -462,7 +473,7 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
         = (b^{jk}_{s,p} - b^{jk}_{p,s}) g^{si} + b_s^{ij} b_p^{sk} - b_s^{ik} b_p^{sj} \:.
     \end{align}
     The function $B^{ijk}_p$ beeing zero implies the zero curvature, which follows from
-    \begin{align}
+    \begin{align*}
         B^{ijk}_p  
         =& -g^{is} \left( g^{jm}_{,p} \Gamma^k_{ms} + g^{jm} \Gamma^k_{ms,p} - g^{jm}_{,s} \Gamma^k_{mp} - g^{jm} \Gamma^k_{mp,s} \right) 
         \\ +& g^{im} \Gamma^j_{ms} g^{sn} \Gamma^{k}_{np} - g^{im} \Gamma^k_{ms} g^{sn} \Gamma^j_{np}
@@ -470,7 +481,7 @@ Let us summarize the results. We have defined Poisson bracket in the way that it
         \\ +& g^{is} g^{nm} \left( \Gamma^j_{np} \Gamma^{k}_{ms} - \Gamma^j_{ns} \Gamma^k_{mp} \right) + g^{im} g^{sn} \left( \Gamma^j_{ms} \Gamma^k_{np} - \Gamma^k_{ms} \Gamma^j_{np} \right)
         = \\ =& -g^{is} g^{jn} \left( \Gamma^{m}_{ns} \Gamma^k_{mp}  - \Gamma^m_{np} \Gamma^k_{ms} + \Gamma^{k}_{ms,p} - \Gamma^{k}_{mp,s} \right)
         = \\ =& -g^{is} g^{jn} R^k_{nps} \:.
-    \end{align}
+    \end{align*}
     So far we proved that if hydrodynamical Poisson bracket satisfies skew-symmetry and Jacobi identity, the conditions 1-3 are satisfied.
 
     \textbf{Step 3:}

@@ -4,7 +4,7 @@
 In this chapter we shall revise some basic definitions and propositions of the functional calculus, which we will need for the proper formulation of the hydrodynamic geometry. Most of the existing literature on this topic often lacks clarity due to the omittance of certain details. This can include the domains on which functionals are defined or regularity conditions.
 
 Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them, such as in [CITATION]. The same applies to functional variations and the conditions on which they exist. 
-Among physists, however, it is convential to operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
+Among physicists, however, it is convential to operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
 
 
 After introducing the concept of Gateaux and Frechet derivatives, which are suitable for arbitrary normed space, we shall take a closer look on the space of smooth functions and functionals on it.
@@ -14,25 +14,31 @@ After introducing the concept of Gateaux and Frechet derivatives, which are suit
 \todo[inline]{přidat nějaký kontext}
 
 \begin{definition}[Gateaux and Frechet derivative]
-    Let $X$ be a normed space, $A: X \to \R$ is a functional and $x \in D(A)$.
+    Let $X$ be a normed space, $A: X \to \R$ is a functional and $x \in \Dom(A)$.
     \begin{enumerate}
-        \item Gateaux derivative $\delta A(x,h)$ in the direction $h$ is defined as
+        \item Let $h \in D(A)$. Gateaux derivative $\delta A(x,h)$ in the direction $h$ is defined as
         \begin{align}
-            \delta A (x,h) = \der{}{t} A(x+th) |_{t=0} = \lim_{t \rightarrow 0} \frac{A(x+th)-A(x)}{t} \:.
+            \delta A (x,h) \coloneqq \der{}{t} A(x+th) |_{t=0} = \lim_{t \rightarrow 0} \frac{A(x+th)-A(x)}{t} \:.
         \end{align}
 
-        \item Fréchet derivative $DA(x)$ is defined as the unique linear bounded functional satisfying the relation
+        \item Fréchet diferential $\DD_x A$ is defined as the unique linear bounded functional satisfying the relation
         \begin{align}
-            \lim_{h \rightarrow 0} \frac{A(x+h)-A(x)- DA(h)}{\norm{h}} = 0 \:.
+            \lim_{\norm{h} \rightarrow 0} \frac{A(x+h)-A(x)- \DD_x A(h)}{\norm{h}} = 0 \:.
         \end{align}
     \end{enumerate}
 \end{definition}
 
-We are intersted in such functionals, where $X$ is the subspace of functions $ f \in C^k(\Omega)$, $\Omega$ is a subset of $\R^n$, satisfying $f,f',\cdots,f^{(k-1)} = 0$ on $\partial \Omega$, equipped with the norm
+We are intersted in such functionals, where $X$ is the space of smooth functions with The smoothness is required because the functionals would operate with derivatives, and the values beeing zero on the boundary is required because we shall use integration by parts.
+
+One of possible choices is to take
 \begin{align}
-    \norm{u}_X = \sum_{j=1}^n \sup_{x \in \Omega} |u^{(j)}(x)| \:.
+    X^k \coloneqq \set{f \in C^k(\Omega) \,|\, \DD^\alpha f = 0 \text{ on } \partial \Omega \text{ for } |\alpha| = 1, \cdots, k-1 } \:.
 \end{align}
-There are two main types of functionals on that space. 
+This space can be equipped with the usual supremum norm
+\begin{align}
+    \norm{f}_k \coloneqq \sum_{|\alpha| \leq k} \sup_{x \in \Omega} |\DD^\alpha f(x)| \:.
+\end{align}
+There are two main types of functionals on these spaces -  the integral functionals and Dirac's delta distributions.
 
 \subsection{Integral functionals}
 
@@ -41,7 +47,7 @@ The first type is the integral functional
     A[u] = \int_\Omega a(x,u(x),u'(x),\cdots,u^{(k)}(x)) \, \D^n x \:, \label{eq:integral-functional}
 \end{align}
 where $a : \R \times \R^{k} \to \R$ is an analytic function.
-For simplicity we often write this using a physical notation
+For simplicity we often write this using a physicist's notation
 \begin{align}
     A[u] = \int a(u) \, \D^n x \:,
 \end{align}
@@ -53,32 +59,31 @@ Gateaux derivative of $A$ is computed as follows:
 \end{align}
 The functional $\delta A[u,h]$ is linear and bounded in $h$, so the Fréchet derivative of $A$ exists and is given by
 \begin{align}
-    DA[u] \cdot h = \delta A[u,h] \:.
+    \DD_u A [h] = \delta A[u,h] \:.
 \end{align}
-To get rid of the derivatives of $h(x)$ in \eqref{eq:Gateaux}, we use integration by parts in each term of the sum, obtaining
+To get rid of the derivatives of $h(x)$ in \eqref{eq:Gateaux}, we use integration by parts in each term of the sum (exploiting the fact that boundary terms are zero), obtaining
 \begin{align}
-    DA[u] \cdot h = \int_\Omega \left[ \pder{a}{u}(x) - \der{}{x} \pder{a}{u'}(x) + \der{^2}{x^2} \pder{a}{u''}(x) - \cdots + (-1)^k \der{^k}{x^k} \pder{a}{u^{(k)}}(x) \right] h(x) \, \D^n x \:. \label{eq:perpartes}
+    \DD_u A [h] = \int_\Omega \left[ \pder{a}{u}(x) - \der{}{x} \pder{a}{u'}(x) + \cdots + (-1)^k \der{^k}{x^k} \pder{a}{u^{(k)}}(x) \right] h(x) \, \D^n x \:. \label{eq:perpartes}
 \end{align}
 
 It is natural to give a special name to the integrand in \eqref{eq:perpartes}.
 
-\begin{definition}[Functional derivative]
-    Let $A$ be the integral functional given by \eqref{eq:integral-functional}. The functional derivative o $A$ is the function
+\begin{definition}[Functional derivative of the integral functional]
+    Let $A$ be the integral functional given by \eqref{eq:integral-functional}. The functional derivative of $A$ is the function
     \begin{align}
-        \fder{A}{u(x)} = \pder{a}{u}(x) - \der{}{x} \pder{a}{u'}(x) + \der{^2}{x^2} \pder{a}{u''} - \cdots + (-1)^n \der{^k}{x^k} \pder{a}{u^{(k)}}(x) \:.
+        \fder{A}{u(x)} = \pder{a}{u}(x) - \der{}{x} \pder{a}{u'}(x) + \der{^2}{x^2} \pder{a}{u''} - \cdots + (-1)^k \der{^k}{x^k} \pder{a}{u^{(k)}}(x) \:.
     \end{align}
 \end{definition}
 
-The expression \eqref{eq:perpartes} is very similar to the scalar product on $L^2(\Omega)$ given by
+The functional derivative can be seen as the density of the integral functional $\DD_u A$ applicated on $h$: 
 \begin{align}
-    \dual{f}{g}_{L^2(\Omega)} = \int_\Omega f(x) g(x) \, \D x \:.
+    \DD_u A[h] = \int_\Omega \fder{A}{u(x)} h(x) \, \D x
 \end{align}
-Thus, it makes sense to write
+Since the Fréchet derivative is always linear bounded functional, another way to look at this relation is the following: $\DD_u A$ is a regular distribution represented by some smooth function $\fder{A}{u(x)}$, i.e.
 \begin{align}
-    DA[u] \cdot h = \int_\Omega \fder{A}{u(x)} h(x) \, \D x = \dual{\fder{A}{u(x)}}{h(x)} \:.
+    \DD_u A[h] = \dual{T_{\fder{A}{u(x)}}}{h(x)} \:.
 \end{align}
-
-
+\todo[inline]{Hodit regulární distribuce před tuhle část?}
 
 It follows from theory (CITATION) that the functional derivative beeing zero is a necessery condition for the function beeing the extremal point of the functional (given that the corresponding function is smooth enough).
 
@@ -101,13 +106,13 @@ where
 \begin{align}
     \lim_{\norm{h} \rightarrow 0} \frac{o(h)}{\norm{h}} = 0 \:.
 \end{align}
-In physical notation, the function $h$ is often denoted as $\delta u$.
+In physicist's notation, the function $h$ is often denoted as $\delta u$.
 
 
 \subsection{Distributions}
 
 \begin{definition}[Distributions]
-    Let $\test(\Omega)$ be the space of functions with compact support in $\Omega \subseteq \R^n$. The space of distributions $\dis(\Omega)$ is the dual space, i.e. the space of bounded linear functionals on $\test(\Omega)$. An element $T \in \dis(\Omega)$ is called a distribution.
+    Let $\test(\Omega)$ be the space of smooth functions with compact support in $\Omega \subseteq \R^n$. The space of distributions $\dis(\Omega)$ is the dual space, i.e. the space of bounded linear functionals on $\test(\Omega)$. An element $T \in \dis(\Omega)$ is called a distribution.
 \end{definition}
 
 \begin{definition}[Regular distribution]
@@ -126,19 +131,25 @@ Note that if two regular distributions satisfy $T_a = T_b$, then $a=b$ almost ev
     \end{align}
 \end{definition}
 
-
-\todo[inline]{Zmínit se o derivaci distribucí a o tom, že se diraci dají testovat klidně $C^1$ funkcemi, takže souvisejí s teorií v minulé kapitole a můžeme aplikovat teorii funkcionálních derivací i na distribuce.}
-
 \begin{definition}[Derivatives of distributions]
     Let $T \in \dis(\Omega)$ be a distribution. We define its derivative by
     \begin{align}
-        \dual{D^\alpha T}{\phi} = (-1)^{|\alpha|} \dual{T}{D^\alpha \phi} q \:,
+        \dual{D^\alpha T}{\phi} = (-1)^{|\alpha|} \dual{T}{D^\alpha \phi} \:,
     \end{align}
     where $\alpha$ is a multiindex and
     \begin{align}
         D^\alpha f = \frac{\partial^{|\alpha|} f}{\partial x_1^{\alpha_1} \partial x_2^{\alpha_2} \cdots \partial x^{\alpha_N}_N} \:.
     \end{align}
 \end{definition}
+
+The reason, why distributions have such a "nice" behaviour and are often used by mathematicians, is that every distribution is diferentiable infinitely many times. However, if we abandon this property and require only the existence of derivatives of the $k$-th order, we can extend regular and Dirac distributions on previously defined space $X^k$. Indeed,
+\begin{align}
+    | \dual{\partial_x^k \delta(x-y)}{f(x)} | \leq \norm{f}_k \:,
+\end{align}
+so Dirac distributions and their derivatives are also bounded linear functionals on $X^k$ iup to the order $k$.
+
+\todo{Rozmysli si, Míro, rozmysli.}
+
 
 Let $a \in C^\infty(\Omega)$. Then it makes sense to define the product of $a$ and arbitrary distribution $T$ by
 \begin{align}
@@ -170,28 +181,37 @@ In the next chapter we shall frequently use the following identities of the delt
     \end{align} 
 \end{proof}
 
-
-\todo[inline]{Vysvětlit, jak by se dal matematicky přesněji odvodit vztah $ A(u(x)) = \int A(u(\xi)) \delta (x-\xi) \, \D \xi$ pomocí konvoluce distribucí.}
-The function $a(u)$ can be thus identified with a functional $A[u]$ defined by the relation
+The convolution of two distributions is not so simple to construct in rigorous way. The procedure is the following. First the tensor product of distributions is defined
 \begin{align}
-    \dual{A[u(x)]}{\phi(x)}  = \dual{a(u(\xi)) \delta(x-\xi)}{\phi(\xi)}
+    \dual{A(x) \otimes B(y)}{\phi(x,y)} = \dual{A(x)}{\dual{B(y)}{\phi(x,y)}} \:.
 \end{align}
-In the physical notation
+The product defined in this way satisfies comutativity, associativity and it is indeed a distribution (altough the proof of these properties is non-trivial). Then the convolution of distribution is defined by
 \begin{align}
-    A[u(x)] = \int a(u(\xi)) \delta(x-\xi) \, \D^n \xi \:.
+    \dual{A \star B}{\phi(x)} = \dual{A(x) \otimes B(y)}{\phi(x+y)} \:,
 \end{align}
-Therefore it is also common not to differentiate between the function itself and its corresponding functional form and denote them by the same letter $A$:
+with additional requirements on $A \otimes B$ and $\phi$. Convolution defined in this way satisfies associativity and if it exists, then
 \begin{align}
-    A[u(x)] = \int A(u(\xi)) \delta(x-\xi) \, \D^n \xi \:.
+    D^\alpha (A \star B) = D^\alpha A \star B = A \star D^\alpha B \:.
 \end{align}
 
-
-
+The convolution with $\delta$ and arbitrary distribution $A$ always exists and is equal to
+\begin{align}
+    A(y) \star \delta(x-y) = A(x) \:.
+\end{align}
+This means, in particular, that given an integral functional $T[u]$ one can write
+\begin{align}
+    T[u(x)] = T[u(y)]  \star \delta(x-y)  \:,
+\end{align}
+or in physicist's notation
+\begin{align}
+    T[u(x)] = \int \D y \, T[u(y)] \, \delta(x-y) \:. \label{eq:konvoluce-s-deltou}
+\end{align}
+The equation \eqref{eq:konvoluce-s-deltou} is very important in calculations of functional derivatives.
 \begin{example}
-    Let $u(x)$ be a field variable and $F[u(x)]$ a function(al). 
+    Let $u(x)$ be a field variable and $F[u(x)]$ an integral functional. 
     To compute its functional derivative w.r.t. $u(y)$ in different position $y$, we use the integral expression of $F$
     \begin{align}
-        F[u(x)] = \int \D y F(u(y)) \delta (x-y) \:.
+        F[u(x)] = \int \D y F[u(y)] \delta (x-y) \:.
     \end{align}
     Its Gateaux diferential is
     \begin{align}
@@ -206,21 +226,20 @@ Therefore it is also common not to differentiate between the function itself and
 \begin{example}
     In the special case of performing functional derivative w.r.t. the same field but in the different position,
     \begin{align}
-        \fder{u^i(x)}{u^j(y)} = \delta^i_j \delta(x-y) \:.   
+        \fder{u^i(x)}{u^j(y)} = \delta^i_j \delta(x-y) \:,
     \end{align}
-\end{example}
-
-\begin{example}
+    because
     \begin{align}
-        \set{I,J} = \int_\Omega \D x' \int_\Omega \D y' \fder{I}{u^i(x)} P^{ij}(x',y') \fder{J}{u^j(y)} \:,
+        \fder{u^i(x)}{u^j(y)} = \fder{}{u^j(y)} \int \D y u^i(y) \delta (x-y) = \pder{u^i}{u^j}(y) \delta (x-y) = \delta^i_j \delta (x-y) \:.
     \end{align}
-    where
+    The same applies to
     \begin{align}
-        I = I[u], \: J = J[u] \:, \quad P^{ij}(x',y') = \alpha^{ij}(x',y') \der{}{x'} \:.
+        \fder{}{u^j(y)} \partial_x u^i(x) = - \delta^i_j \partial_x \delta(x-y) \:,
     \end{align}
-    Then
+    because
     \begin{align}
-        \set{u^a(x),u^b y)} = \int_\Omega \D x' \int_\Omega \D y' \delta^a_i \delta(x-x') \alpha^{ij}(x',y') \delta^b_j \delta(y-y') = \alpha^{ab}(x,y) \:.
+        \fder{}{u^j(y)} \partial_x u^i(x) = \fder{}{u^j(y)} \int \D y \partial_y u^i(y) \delta(x-y) 
+        \\ = -\fder{}{u^j(y)} \int \D y u^i(y) \partial_y \delta(x-y) = - \delta^i_j \partial_x \delta(x-y) \:.
     \end{align}
 \end{example}
 
