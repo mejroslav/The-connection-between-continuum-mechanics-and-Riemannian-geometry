@@ -1,0 +1,105 @@
+
+\section{Multi-dimensional case}
+
+In the multi-dimensional case, we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, where $\alpha = 1 , \cdots, d$. We can again introduce Christoffel symbols defined by
+\begin{align}
+    b^{i j \alpha}_k = - g^{is \alpha} \Gamma^{j \alpha}_{sk}\:,
+\end{align}
+(there is no summation over $\alpha$) and the corresponding set of covariant derivatives $\nabla^{\alpha}_j$. The first observation is, that these coefficients represent coordinates of a vector under a orthogonal transformation of the space coordinates $x^\alpha$.
+\todo[inline]{Skutečně se mění jenom závislost $u$ na $x^\alpha$, nebo i něco jiného? Může to platit i při nějaké obecné transformaci?}
+\begin{proposition}[Orthogonal transformation the space coordinates]
+    For any changes of the spatial variables $\tilde x^\alpha \coloneqq c^\alpha_\beta x^\beta$, where $\alpha = 1, \cdots, d$ and $\det (c^\alpha_\beta) = 1$, the metrics $g^{ij \alpha}$ and $b^{ij \alpha}_k$ transforms as components of a vector.
+\end{proposition}
+
+\begin{proof}
+    The only variable that changes is $\pder{u^i}{x^\alpha}$
+    \begin{align}
+        \pder{u^i}{x^\beta} = \pder{u^i}{\tilde x^\alpha} \pder{\tilde x^\alpha}{x^\beta} = \pder{u^i}{\tilde x^\alpha} c^\alpha_\beta \:.
+    \end{align}
+    So
+    \begin{align}
+        g^{ij \alpha}[u(\tilde x)] = c^\alpha_\beta g^{ij \beta}[u(x)] \:, \quad b^{ij \alpha}_k [u(\tilde x)] = c^\alpha_\beta b^{ij \beta}_k [u(x)] \:.
+    \end{align}
+\end{proof}
+
+\begin{definition}[Strongly non-degenerate metrics]
+    We say that the vector of metrics $g^{ij \alpha}$ is strongly non-degenerate, if there are some constants $c_\alpha \in \R$ such that $c_\alpha g^{ij \alpha}$ is non-degenerate metric.
+\end{definition}
+(Of course, linear combination of symmetric tensors is symmetric, so the only condition for strong non-degeneracy is to have $\det (c_\alpha g^{ij \alpha}) \neq 0$.)
+
+\begin{theorem}
+    Let the Hamiltonian system be strongly non-degenerate. Then
+    \begin{enumerate}
+        \item for $N=1$ the system can be reduced to constant form
+        \begin{align}
+            g^{ij}(u) = \tilde g^{ij}(u) \:,
+        \end{align}
+
+        \item for $N \geq 2$ can be reduced to linear form
+        \begin{align}
+            g^{ij \alpha}(u) = g^{ij \alpha}_k u^k + \tilde g^{ij \alpha} \:, \quad \alpha = 1, \cdots , d \:, \\
+        \end{align}
+        where the coefficients $g^{ij \alpha}_{,k} = b^{ij \alpha}_k + b^{ij \alpha}_k$, $\tilde g^{ij \alpha}$ and $b^{ij \alpha}_k$ are constant.
+    \end{enumerate}
+\end{theorem}
+
+The formulation of the generalized form of the Dubrovin-Novikov theorem (Theorem \vref{Theorem-Dubrovin-Novikov-1D}) is given by Mokhov in \cite{Mochov}.
+
+\begin{theorem}[Mokhov]
+    A Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket} is a Poisson bracket if and only if the following relations for the coefficients are furfilled:
+    \begin{align}
+        g^{ij \alpha} = g^{ji \alpha} \:, \label{eq:Mochov-A} \\
+        g^{ij \alpha}_{,k} = b^{ij \alpha}_k + b^{ji \alpha}_k \:, \label{eq:Mochov-B}
+    \end{align}
+    \begin{align}
+        \sum_{(\alpha, \beta)} (g^{mi \alpha} b^{jk \beta}_m - g^{m j \beta} b^{i k \alpha}_m) = 0 \:, \label{eq:Mochov-C}\\
+        \sum_{(i,j,k)} (g^{mi \alpha} b^{jk \beta}_m - g^{m j \beta} b^{ik \alpha}_m) = 0 \:, \label{eq:Mochov-D}\\
+        \sum_{(\alpha, \beta)} \left[ g^{si \alpha} (b^{jk \beta}_{s,q} - b^{jk \beta}_{q,s} ) + b^{ij \alpha}_s b^{s k \beta}_q - b^{i k \alpha}_s b^{k j \beta}_q \right] = 0 \label{eq:Mochov-E}\:,
+    \end{align}
+    \begin{align}
+        g^{si \beta} b^{j k \alpha}_{q,s} - b^{ij \beta}_s b^{s k \alpha}_q - b^{i k \beta}_s b^{j s \alpha}_q = g^{s j \alpha} b^{i k \beta}_{q,s} - b^{ji \alpha}_s b^{s k \beta}_q - b^{is \beta}_q b^{jk \alpha}_s \label{eq:Mochov-F}\:,
+    \end{align}
+    \begin{align}
+        \pder{}{u^r} \left[ g^{si \alpha} (b^{j k \beta}_{s,q} - b^{j k \beta}_{q,s}) + b^{ij \alpha}_s b^{s k \beta}_q - b^{i k \alpha}_s b^{s j \beta}_q \right] 
+        \nonumber \\+ \pder{}{u^q} \left[ g^{si \beta} (b^{j k  \alpha}_{s,k} - b^{j k \alpha}_{r,s}) + b^{ij \beta}_s b^{s k \alpha}_{s,r} + b^{ij \beta}_s b^{s k \alpha}_r - b^{i k \beta}_s b^{k j \alpha}_s \right] \label{eq:Mochov-G}
+        \\+ \sum_{(i,j,k)} \left[ b^{si \beta}_q (b^{j k \alpha}_{r,s} - b^{j k \alpha}_{s,r}) + b^{s i \alpha}_r (b^{j k \beta}_{q,s} - b^{j k \beta}_{s,q}) \right] \nonumber
+        = 0 \:.
+    \end{align}
+\end{theorem}
+The summation $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ means summations over all cyclic permutations of the indicated indices.
+
+\begin{remark}
+    In the proof of the Dubrovin-Novikov theorem (\vref{Theorem-Dubrovin-Novikov-1D}) in \textbf{Step 2} we end up with six functions $A^{ijk}_{ab}$, which must be equal to zero if the bracket is Poisson. However, for the rest of the proof, we used only $A^{ijk}_{00}$ and $A^{ijk}_{02}$, because they corresponded to the zero torsion and curvature, which gave the existence of the flat coordinates. Altough their existence was formulated as a corollary (\vref{Corollary: existence of flat coordinates}), they played the essential role in the \textbf{Step 3}, because in such coordinates Jacobi identity and skew-symmetry holds immediately. Therefore we did not need to assume the rest of functions $A^{ijk}_{ab}$ to be zero, because that was satisfied automatically.
+
+    Indeed, in the case of $d = 1$, the relation \eqref{eq:Mochov-D} follows from \eqref{eq:Mochov-C} and the relation \eqref{eq:Mochov-F} follows from \eqref{eq:Mochov-B}, \eqref{eq:Mochov-C} and \eqref{eq:Mochov-E}. If we assume non-degeneracy, then \eqref{eq:Mochov-A} gives the symmetry of metric, \eqref{eq:Mochov-B} the compatibility, \eqref{eq:Mochov-C} is equivalent with \eqref{eq:Mochov-B}, \eqref{eq:Mochov-E} gives the zero curvature and the last relation \eqref{eq:Mochov-F} follows from \eqref{eq:Mochov-F} and \eqref{eq:Mochov-C}.
+    \todo[inline]{Asi rozepsat celé ještě jednou pro přehlednost.}
+
+    Unfortunately, in the multi-dimensional case, the zero torsion and curvature are not sufficient.
+\end{remark}
+
+\begin{definition}
+    We define an obstruction tensor
+    \begin{align}
+        T^{i \alpha \beta}_{jk} (u) = \Gamma^{i \beta}_{jk}(u) - \Gamma^{i \alpha}_{jk}(u)
+    \end{align}
+    for each pair of distinct indices $\alpha$ and $\beta$.
+\end{definition}
+We shall also use its fully contravariant form
+\begin{align}
+    T^{ijk \alpha \beta}(u) = g^{ks \beta}(u) g^{i r \alpha}(u) T^{j \alpha \beta}_{rs} (u) \:.
+\end{align}
+
+\begin{theorem}[Mokhov]
+    Flat non-degenerate metrics $g^{ij \alpha}$ define a multidimensional Poisson bracket if and only if the following relations are fulfilled:
+    \begin{align}
+        T^{ijk \alpha \beta}(u) = T^{kji \alpha \beta}(u) \:, \label{eq:Mochov-1}\\
+        \sum_{(i,j,k)} T^{ijk \alpha \beta}(u) = 0 \:, \label{eq:Mochov-2}\\
+        T^{ij s \alpha \beta}(u) T^{k \alpha \beta}_{st}(u) = T^{i k s \alpha \beta}(u) T^{j \alpha \beta}_{st} (u) \:, \label{eq:Mochov-3}\\
+        \nabla^\alpha_r T^{ijk \alpha \beta}(u) = 0 \:, \label{eq:Mochov-4}
+    \end{align}
+    where $\nabla^\alpha_k$ is the Levi-Civita covariant derivative generated by the metric $g^{ij \alpha}(u)$ and $\Gamma^{i \alpha}_{jk}(u)$ are the corresponding Christoffel symbols. 
+\end{theorem}
+
+\begin{remark}
+    The relations \eqref{eq:Mochov-1} and \eqref{eq:Mochov-3} were found by Dubrovin and Novikov in \cite{Dubrovin-Novikov}. In \cite{Mochov} it was proved that this set of tensor relations is not complete and the remaining two were obtained.
+\end{remark}
