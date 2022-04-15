@@ -55,7 +55,7 @@
 \usepackage[h]{esvect}		% vv
 \usepackage{makecell}		% makecell
 \usepackage{calc}			% widthof
-
+\usepackage{tensor}			% writing tensors with ordered indices 
 %%% Basic information on the thesis
 % Thesis title in English (exactly as in the formal assignment)
 
@@ -63,6 +63,9 @@
 \usepackage{caption}
 \usepackage[english]{varioref} % More descriptive referencing
 
+
+% Experimentation with different fonts
+%\usepackage{libertinus} %\usepackage[expert]{mathdesign}
 
 %%% Basic information on the thesis
 
@@ -141,12 +144,15 @@ Abstract.
 %\include{formal/preface}
 
 \include{chapters/Mathematical-Framework.tex}
+\input{chapters/Riemann.tex}
+\input{chapters/Poisson.tex}
+
 \include{chapters/Theorem.tex}
 \input{chapters/Multi-dimensional.tex}
 %\include{formal/epilog}
 
 %%% Bibliography
-\include{bibliography.bib}
+\include{bibliography}
 
 %%% Figures used in the thesis (consider if this is needed)
 \listoffigures

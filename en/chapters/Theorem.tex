@@ -1,4 +1,4 @@
-\chapter{The connection between Riemannian geometry and Hamiltonian mechanics}
+\chapter{Systems of hydrodynamic type: one-dimensional case}
 
 In this chapter we shall prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given by Dubrovin and Novikov and can be found in \cite{Dubrovin-Novikov}. The proof itself and the preceding lemmas are based on a considerable amount of technical computations, which we shall clarify in detail in order to offer the reader a comprehensive understanding of the chapter in question.
 
@@ -10,7 +10,7 @@ In this chapter we shall prove the theorem of the connection between the hydrody
     A homogeneous system of hydrodynamic type is an equation of the form
     \begin{align}
         \label{eq:h-system}
-        \pder{u^i}{t} = f_j^{i \alpha} (u) \pder{u^j}{x^\alpha} 
+        \pder{u^i}{t} = f_j^{i \alpha} (u) \pder{u^j}{x^\alpha} \:,
     \end{align}
     where $u^i(t,x^\alpha)$ are unknown functions, $i = 1, \dots , N$, $\alpha = 1, \dots , d$.
 \end{definition}
@@ -23,17 +23,17 @@ Before we go any further, let us present a few examples.
 \begin{example}
     The energy is given by the functional
     \begin{align}
-        E = \int e(\rho, \vc m, s, \vc F) \, \D \vc x
+        E = \int e(\rho, \vc m, s, \vc F) \, \D \vc x \:.
     \end{align}
     The evolution equations in the Eulerian frame are
     \begin{align}
-        \partial_t \rho =& - \partial_i (\rho E_{m_i}) 
+        \partial_t \rho =& - \partial_i (\rho E_{m_i}) \:,
         \\
-        \partial_t m_i =& - \partial_j(m_i E_{m_j}) - \rho \partial_i E_\rho - m_j \partial_i E_{m_j} - m_j \partial_i E_{m_j} 
+        \partial_t m_i =& - \partial_j(m_i E_{m_j}) - \rho \partial_i E_\rho - m_j \partial_i E_{m_j} - m_j \partial_i E_{m_j} \:,
         \\
-        -& s \partial_i E_s - F^j_J \partial_i E_{F^j_J} + \partial_j(F^j_I E_{F^i_I} + F^i_O E_{F^i_I}) 
+        -& s \partial_i E_s - F^j_J \partial_i E_{F^j_J} + \partial_j(F^j_I E_{F^i_I} + F^i_O E_{F^i_I}) \:,
         \\
-        \partial_t s =& - \partial_i (sE_{m_i})
+        \partial_t s =& - \partial_i (sE_{m_i}) \:,
         \\
         \partial_t F^i_I =& - E_{m_k} \partial_k F^i_I + F^j_I \partial_j E_{m_i} \:.
     \end{align}
@@ -54,7 +54,7 @@ It was Riemann who noticed that the functions $f^{i \alpha}_j$ in \eqref{eq:h-sy
     \label{prop:transformace-A} 
     Under smooth change of variables $u^i \mapsto v^a$ of the form
     \begin{align}
-        u^i = u^i(v^1,\cdots, v^N)
+        u^i = u^i(v^1,\cdots, v^N) \:,
     \end{align}
     the functions $f^{i\alpha}_{j}$ transform for each $\alpha$ according to the tensor law
     \begin{align}
@@ -62,28 +62,28 @@ It was Riemann who noticed that the functions $f^{i \alpha}_j$ in \eqref{eq:h-sy
     \end{align}
 \end{proposition}
 \begin{proof}
-    Using a direct calculation we obtain
+    Using a direct calculation, we obtain
     \begin{align}
         \pder{u^i}{t}(v) = \pder{u^i}{v^a} \pder{v^a}{t} \:, \\
-        \pder{u^j}{x^\alpha}(v) = \pder{u^j}{v^b} \pder{v^b}{x^\alpha}\:,
+        \pder{u^j}{x^\alpha}(v) = \pder{u^j}{v^b} \pder{v^b}{x^\alpha}\:.
     \end{align}
-    so
+    Hence
     \begin{align}
-        \pder{u^i}{v^a} \pder{v^a}{t} = \pder{u^j}{v^b} f^{i \alpha}_j (v(u)) \pder{v^b}{x^\alpha}
+        \pder{u^i}{v^a} \pder{v^a}{t} = \pder{u^j}{v^b} f^{i \alpha}_j (v(u)) \pder{v^b}{x^\alpha} \:,
     \end{align}
-    and therefore
+    therefore
     \begin{align}
         \pder{v^a}{t} = \underbrace{\pder{v^a}{u^i} \pder{u^j}{v^b} f^{i \alpha}_j(v(u))}_{f^{a \alpha}_b(v)} \pder{v^b}{x^\alpha} \:.
     \end{align}
 \end{proof}
 
-According to the previous lemma, if we denote the space of points $(t,x^\alpha) \subset \R \times \R^N$ as some manifold $M$, then the unknown variables $u^i(t,x^\alpha)$ can be seen as the local coordinates of that manifold. The functions $f^{i \alpha}_j$ are transformed as tensors of the type (1,1) in the $i$ and $j$ indices.
+According to the previous lemma, if we denote the space of points $(t,x^\alpha) \subset \R \times \R^N$ as some manifold $M$, then the unknown variables $u^i(t,x^\alpha)$ can be seen as the local coordinates of that manifold. The functions $f^{i \alpha}_j$ are transformed as tensors of the type $(1,1)$ in the $i$ and $j$ indices.
 
 Our next purpose is to gain a richer geometry of that space $M$. If the functions $f^{i \alpha}_j$ have a special form, we can introduce a geometry of the Poisson brackets.
 
-\begin{definition}Theorem
+\begin{definition}
     \begin{enumerate}
-        \item A Dubrovin-Novikov bracket of two functionals $I_1$ a $I_2$ is defined as
+        \item The Dubrovin-Novikov bracket of two functionals $I_1$ a $I_2$ is defined as
         \begin{align}
             \set{I_1,I_2} = \sum_{\alpha = 1}^ d \int \D x 
             \left[ \frac{\delta I_1}{\delta u^p(x)} \left( g^{pq \alpha}(u) \der{}{x^\alpha} + b^{pq\alpha}_s(u) \pder{u^s}{x^\alpha} \right) \frac{\delta I_2}{\delta u^q(x)} \right] \:, \label{eq:Dubrovin-Novikov bracket}
@@ -109,6 +109,11 @@ Our next purpose is to gain a richer geometry of that space $M$. If the function
         where $H[u]$ is the functional of the hydrodynamic type and $h$ the hamiltonian density.
     \end{enumerate}
 \end{definition}
+
+%\begin{remark}
+%    In the literature, other names for the Dubrovin-Novikov bracket are used. The authors themselves in \cite{Dubrovin-Novikov} refer to the Poisson bracket of the hydrodynamic type, other authors refer to the 1st degree homogeneous 
+%\end{remark}
+
 
 \todo[inline]{...Jednoduché cvičení a zároveň důležité...}
 
@@ -149,12 +154,12 @@ Later we shall show that the Dubrovin-Novikov bracket defined above can be seen 
 In this section we first consider the one-dimensional case in which the unknown functions $u^i$ depend on only two variables $(t,x)$. The hamiltonian system is then
 \begin{align}
     \pder{u^i}{t} (t,x) =&
-    \left[ g^{ij} [u(t,x)] \ppder{h(u)}{u^j}{u^k} + b_k^{ij} [u(t,x)] \pder{h(u)}{u^j} \right] \pder{u^k}{x}(t,x) \:,
+    \left[ g^{ij} [u(t,x)] \ppder{h(u)}{u^j}{u^k} + b_k^{ij} [u(t,x)] \pder{h(u)}{u^j} \right] \pder{u^k}{x}(t,x) \:, 
 \end{align}
 and the Dubrovin-Novikov bracket is of the form
 \begin{align}
     \set{I_1,I_2} = \int \D x
-    \left[ \frac{\delta I_1}{\delta u^p(x)} \left( g^{pq}[u(x)] \der{}{x} + b^{pq}_s[u(x)] \pder{u^s}{x} \right) \frac{\delta I_2}{\delta u^q(x)} \right] \:.
+    \left[ \frac{\delta I_1}{\delta u^p(x)} \left( g^{pq}[u(x)] \der{}{x} + b^{pq}_s[u(x)] \pder{u^s}{x} \right) \frac{\delta I_2}{\delta u^q(x)} \right] \:. \label{eq:Dubrovin-Novikov bracket 1D}
 \end{align}
 In particular
 \begin{align}
@@ -190,7 +195,7 @@ We say that the Poisson bracket is non-degenerate if $\det(g^{ij}) \neq 0$. We s
 
 Let $g^{ij}(u)$ be non-degenerate. Then we can define functions $\Gamma^{i}_{jk}(u)$ as
 \begin{align}
-    \Gamma^i_{jk}(u) \coloneqq - g_{js}(u) b^{s i}_k(u) \:.
+    \Gamma^i_{jk}(u) \coloneqq - g_{js}(u) b^{s i}_k(u) \:. \label{eq:Gamma=g*b}
 \end{align}
 Note that this relation allows to decompose
 \begin{align}
@@ -261,43 +266,56 @@ The choice of denotation $g^{ij}(u)$ and $\Gamma^{i}_{jk}(u)$ has its purpose. W
     \end{enumerate}
 \end{proof}
 
-Let us summarize the results. We have defined Dubrovin-Novikov bracket in the way that it satisfies the Leibniz rule. It remains to investigate the skew-symmetry and Jacobi identity. For that, we defined $g^{ij}$ and $\Gamma^i_{jk}$, which transform like tensors and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e. the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric, i.e.
-\begin{align}
-    \nabla_k g^{ij} \coloneqq \pder{g^{ij}}{u^k} + \Gamma^{i}_{ks} g^{sj} + \Gamma^{j}_{ks} g^{is} = 0\:.
-\end{align}
+
+
+\section{Dubrovin-Novikov theorem}
+
+Let us summarize, what we have investigated so far. We have defined Dubrovin-Novikov bracket in the way that it satisfies the Leibniz rule. It remains to investigate the skew-symmetry and Jacobi identity. For that, we defined $g^{ij}$ and $\Gamma^i_{jk}$, which transform like tensors and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e. the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric.
+
 We are now ready to prove the key theorem of this chapter which shows that these properties are indeed equivalent. Moreover, the corresponding covariant derivative has zero curvature, which indicates that the phase space $M$ is in fact Euclidean space.
 
 \begin{theorem}[Dubrovin, Novikov] \label{Theorem-Dubrovin-Novikov-1D}
-    Let $\det(g^{ij})$ be non-degenerate. Then the Dubrovin-Novikov bracket \eqref{eq:Poisson1D} is a Poisson bracket with skew-symmetry, Leibniz rule and Jacobi identity if and only if these three conditions are satisfied:
+    Let $g^{ij}$ be non-degenerate. Then the Dubrovin-Novikov bracket \eqref{eq:Poisson1D} is a Poisson bracket with skew-symmetry, Leibniz rule and Jacobi identity if and only if these three conditions are satisfied:
     \begin{enumerate}
         \item $g^{ij} = g^{ji}$, that is, $g^{ij}$ is a metric on the phase space $M$.
-        \item $\Gamma^{i}_{jk} = \Gamma^i_{kj}$, that is, $\Gamma^{i}_{jk}$ are affine coefficients, such that the corresponding covariant derivative has zero torsion and anihilate the metric $g^{ij}$.
+        \item $\Gamma^{i}_{jk} = \Gamma^i_{kj}$, that is, $\Gamma^{i}_{jk}$ are Christoffel symbols corresponding to the Levi-Civita covariant derivative compatible with $g^{ij}$.
         \item The covariant derivative corresponding to $\Gamma^{i}_{jk}$ has zero curvature.
     \end{enumerate}
 \end{theorem}
 
 \begin{corollary} \label{Corollary: existence of flat coordinates}
-    There are local coordinates $w^i = w^i(u^1, \dots, u^N)$, $i = 1, \dots, N$ such that
+    There exist local coordinates $w^i = w^i(u^1, \dots, u^N)$, $i = 1, \dots, N$ such that the metric is flat:
     \begin{align}
-        g^{ij}(w) = \tilde g^{ij} = \const \:, \quad \Gamma^i_{jk} (w) = 0 \:.
+        g^{ij}(w) = \eta^{ij} = \const \:, \quad \Gamma^i_{jk} (w) = 0 \:.
     \end{align}
-    In these coordinates is Poisson bracket reduced to the constant one
+    In these flat coordinates is the Dubrovin-Novikov bracket reduced to the constant form
     \begin{align}
-        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \partial_x \delta(x-y) \:.
+        \set{w^i(x),w^j(y)} = \eta^{ij} \partial_x \delta(x-y) \:.
     \end{align}
     The only local invariant of the Poisson bracket is the signature of the metric $g^{ij}(u)$.
 \end{corollary}
 
-\begin{proof}[Proof of theorem \ref{Theorem-Dubrovin-Novikov-1D}]
-    The proof is divided into three steps.
-    \\
-    \textbf{Step 1: Skew-symmetry of Poisson bracket implies the symmetry of $g^{ij}$ and compatibility with $\Gamma^i_{jk}$.}
+Due to the relatively large length of the proof we divide it into four steps.
+\begin{itemize}
+    \item \textbf{Step 1:} We show that the skew-symmetry of the bracket implies the symmetry of the metric $g^{ij}$ and compatibility with the Christoffel symbols $\Gamma^i_{jk}$.
+    \item \textbf{Step 2:} We formulate the conditions under witch the Jacobi identity for the bracket holds.
+    \item \textbf{Step 3:} We show that two of these conditions implies the zero torsion and zero curvature of the covariant derivative associated to $\Gamma^i_{jk}$. That finishes the implication in one direction.
+    \item \textbf{Step 4:} We prove the converse implication via the existence of the flat coordinates.
+\end{itemize}
 
-    Let the Poisson bracket be skew-symmetric, i.e.
+\begin{lemma}[Step 1: skew-symmetry] \label{lemma:skew-symmetry}
+    If the skew-symmetry of the Dubrovin-Novikov bracket holds, then
+    \begin{align}
+        &g^{ij} = g^{ji} \:, \label{eq:skew-1}\\
+        &g^{ij}_{,m} = b^{ij}_m + b^{ji}_m \label{eq:skew-2} \:.
+    \end{align}
+\end{lemma}
+\begin{proof}
+    The skew-symmetry reads as
     \begin{align}
         \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)} = 0 \:.
     \end{align}
-    The second bracket reads as
+    According to the definition, the exact form of the second bracket is
     \begin{align}
         \set{u^j(y),u^i(x)} =  g^{ji}[u(y)] \partial_x \delta(y-x) + b^{ji}_k[u(y)] \pder{u^k}{y} \delta(y-x) \:.
     \end{align}
@@ -317,15 +335,20 @@ We are now ready to prove the key theorem of this chapter which shows that these
         g^{ij}(u) = g^{ji}(u) \:, \label{eq:Th.Novikov-symetrie} \\
         \pder{g^{ij}}{u^k}(u) = b^{ij}_k(u) + b^{ji}_k(u)  \:. \label{eq:Th.Novikov-konexe}
     \end{align}
-    Equation \eqref{eq:Th.Novikov-symetrie} says that $g^{ij}$ is a symmetric tensor. By assumption $\det g^{ij}$ is non-degenerate, so it defines a metric structure on $M$. Equation \eqref{eq:Th.Novikov-konexe} is equivalent to
-    \begin{align}
-        \pder{g^{ij}}{u^k} + g^{is} \Gamma_{sk}^j + g^{sj} \Gamma_{sk}^i = 0 \:.
-    \end{align}
-    If $\nabla$ is the covariant derivative corresponding to $\Gamma^i_{jk}$, then $\nabla_k g^{ij} = 0$. So $\Gamma_{ij}^k$ are affine connection coefficients and are compatible with $g^{ij}$.
+\end{proof}
 
-    \textbf{Step 2: Jacobi identity implies zero torsion and curvature.} 
-    
-    Let us assume that Jacobi identity holds. We denote
+\begin{lemma}[Step 2: Jacobi identity] \label{lemma:Jacobi}
+    The Jacobi identity for the bracket is equivalent to 
+    \begin{align}
+        &b^{ij}_m g^{mk} = b^{ik}_m g^{mj} \:, \label{eq:Jacobi-1}\\ 
+        &b^{ij}_{m} b^{mk}_s - b^{ik}_m b^{mj}_s = g^{mi} \left( b^{jk}_{s,m} - b^{jk}_{m,s} \right) \:, \label{eq:Jacobi-2}\\
+        \sum_{(i,j,k)}& \left[ (b^{ij}_{t,p} - b^{ij}_{p,t}) b^{tk}_s + (b^{ij}_{t,s} - b^{ij}_{s,t}) b^{tk}_p \right] = 0 \:, \label{eq:Jacobi-3}
+    \end{align}
+    where the summation $\sum_{(i,j,k)}$ means summation over cyclic permutations of indices $i,j,k$.
+\end{lemma}
+
+\begin{proof}
+    We denote
     \begin{align}
         \mathcal J^{ijk}(x,y,z) = J^{ijk}(x,y,z)+ J^{jki}(y,z,x)+ J^{kij}(z,x,y) = 0
     \end{align}
@@ -455,60 +478,78 @@ We are now ready to prove the key theorem of this chapter which shows that these
 
     The list of the resulting functions is the following:
     \begin{align}
-        A_{00}^{ijk} =& E^{ijk} + E^{kij} + E^{jki} + \partial_x \partial_x I^{jki} - \partial_x F^{jki} - \partial_x G^{kij} \:, \\
-        A_{01}^{ijk} =& F^{ijk} - F^{jki} + G^{jki} - G^{kij} - \partial_x H^{jki} + 2 \delta_x I^{jki} \:, \\
-        A_{10}^{ijk} =& F^{kij} - F^{jki} + G^{ijk} - G^{kij} - \partial_x H^{kij} + 2 \partial_x I^{jki} \:, \\
-        A_{11}^{ijk} =& H^{ijk} - H^{jki} - H^{kij} + 2 \partial_x I^{jki} \:, \\
-        A_{02}^{ijk} =& I^{ijk} + I^{jki} - H^{jki}\:, \\
-        A_{20}^{ijk} =& I^{jki} + I^{kij} - H^{kij}\:, \\
+        A_{00}^{ijk} =& E^{ijk} + E^{kij} + E^{jki} + \partial_x \partial_x I^{jki} - \partial_x F^{jki} - \partial_x G^{kij} \:, \label{eq:A00}\\
+        A_{01}^{ijk} =& F^{ijk} - F^{jki} + G^{jki} - G^{kij} - \partial_x H^{jki} + 2 \partial_x I^{jki} \:, \label{eq:A01}\\
+        A_{10}^{ijk} =& F^{kij} - F^{jki} + G^{ijk} - G^{kij} - \partial_x H^{kij} + 2 \partial_x I^{jki} \:, \label{eq:A10}\\
+        A_{11}^{ijk} =& H^{ijk} - H^{jki} - H^{kij} + 2 \partial_x I^{jki} \:, \label{eq:A11} \\
+        A_{02}^{ijk} =& I^{ijk} + I^{jki} - H^{jki}\:, \label{eq:A02}\\
+        A_{20}^{ijk} =& I^{jki} + I^{kij} - H^{kij}\:, \label{eq:A20} \\
         A^{ijk}_{12} =& A^{ijk}_{21} = 0 \:.
     \end{align}
-    
-    We are insterested only in functions $A^{ijk}_{00}$ and $A^{ijk}_{02}$, since they correspond to the zero curvature and torsion, respectively. We shall also use the compatibility condition \eqref{eq:Th.Novikov-konexe}, which is
+    Note that \eqref{eq:A20} is just a cyclic permutation of \eqref{eq:A02}. If we also use the symmetry conditon \eqref{eq:skew-1} and the compatibility condition \eqref{eq:skew-2}, then the equation \eqref{eq:Jacobi-1} follows from \eqref{eq:A02}. Equation \eqref{eq:A00} has the form
     \begin{align}
-        g^{ij}_{,m} = b^{ij}_m + b^{ji}_m \:.
+        A_00^{ijk} = B^{ijk}_s u^s_{xx} + C^{ijk}_{sp} u^s_x u^p_x \:.
     \end{align}
-
-    The $A^{ijk}_{02}$ function reads as
-    \begin{align*}
-        A_{02}^{ijk} = b^{ij}_m g^{mk} - b^{kj}_m g^{mi} 
-        = -g^{ip} \Gamma^{j}_{pm} g^{mk} + g^{ks} \Gamma^{j}_{sm} g^{mi} = 0\:.
-    \end{align*}
-    After multiplying this relation with $g_{ai}g_{bk}$, we get
-    \begin{align}
-        \Gamma^j_{ab} - \Gamma^j_{ba} = 0 \:,
-    \end{align}
-    therefore Christoffel symbols are symmetric in the lower indices, which implies that the covariant derivative corresponding to them has zero torsion.
-
-    The $A^{ijk}_{00}$ function reads as
-    \begin{align}
-        A_{00}^{ijk} = B^{ijk}_p(u) u^p_{xx} + C^{ijk}_{ps}(u) u^p_x u^s_x = 0 \:,
-    \end{align}
-    where
-    \begin{align}
-        B^{ijk}_p 
-        = (b^{jk}_{s,p} - b^{jk}_{p,s}) g^{si} + b_s^{ij} b_p^{sk} - b_s^{ik} b_p^{sj} \:.
-    \end{align}
-    The function $B^{ijk}_p$ beeing zero implies the zero curvature, which follows from
-    \begin{align*}
-        B^{ijk}_p  
-        =& -g^{is} \left( g^{jm}_{,p} \Gamma^k_{ms} + g^{jm} \Gamma^k_{ms,p} - g^{jm}_{,s} \Gamma^k_{mp} - g^{jm} \Gamma^k_{mp,s} \right) 
-        \\ +& g^{im} \Gamma^j_{ms} g^{sn} \Gamma^{k}_{np} - g^{im} \Gamma^k_{ms} g^{sn} \Gamma^j_{np}
-        \\ =& g^{is} g^{jn} \left( \Gamma^m_{np} \Gamma^k_{ms} - \Gamma^{m}_{ns} \Gamma^k_{mp} + \Gamma^{k}_{mp,s} -  \Gamma^{k}_{ms,p} \right) 
-        \\ +& g^{is} g^{nm} \left( \Gamma^j_{np} \Gamma^{k}_{ms} - \Gamma^j_{ns} \Gamma^k_{mp} \right) + g^{im} g^{sn} \left( \Gamma^j_{ms} \Gamma^k_{np} - \Gamma^k_{ms} \Gamma^j_{np} \right)
-        \\ =& -g^{is} g^{jn} \left( \Gamma^{m}_{ns} \Gamma^k_{mp}  - \Gamma^m_{np} \Gamma^k_{ms} + \Gamma^{k}_{ms,p} - \Gamma^{k}_{mp,s} \right)
-        \\ =& -g^{is} g^{jn} R^k_{nps} \:.
-    \end{align*}
-    So far we proved that if Dubrovin-Novikov bracket satisfies skew-symmetry and Jacobi identity, the conditions 1-3 are satisfied.
-
-    \textbf{Step 3: Zero curvature and torsion imply properties of the Poisson bracket.}
-
-    If $\nabla$ has zero torsion and curvature, there are coordinates $w^i=w^i(u^1,\dots,u^N)$ for $i=1,\dots,N$ such that $g^{ij} = \const$ a $b^{ij}_k = 0$. In these coordinates
-    \begin{align}
-        \set{w^i(x),w^j(y)} = \tilde{g}^{ij} \partial_x \delta(x-y) \:.
-    \end{align}
-    Jacobi identity, skew-symmetry and Leibniz rule are for that bracket satisfied trivially. Therefore the three conditions are also sufficient. That finishes the proof.
+    The expression on the right hand side is zero if and only if both $B^{ijk}_s$ and $C^{ijk}_{sp} = 0$. From the function $B^{ijk}_s$ beeing zero follows \eqref{eq:Jacobi-2} and from $C^{ijk}_{sp}$ follows \eqref{eq:Jacobi-3}. Finally, equations \eqref{eq:A01}, \eqref{eq:A10} and \eqref{eq:A11} are satisfied trivally if \eqref{eq:A00} and \eqref{eq:A02} hold.
 \end{proof}
+
+It is useful to write once more all the equations from lemmas \vref{lemma:skew-symmetry} and \vref{lemma:Jacobi} together. Since they first appeared in \cite{Grinberg}, we refer to them as to the Grinberg conditions.
+\begin{lemma}[Grinberg conditions] \label{Grinberg conditions}
+    If the Dubrovin-Novikov bracket satisfies skew-symmetry and Jacobi identity, then the following conditions hold:
+    \begin{align}
+        &g^{ij} = g^{ji} \:, \label{eq:Grinberg-1}\\
+        &g^{ij}_{,m} = b^{ij}_m + b^{ji}_m \:, \label{eq:Grinberg-2}\\
+        &b^{ij}_m g^{mk} = b^{ik}_m g^{mj} \:, \label{eq:Grinberg-3}\\
+        &b^{ij}_{m} b^{mk}_s - b^{ik}_m b^{mj}_s = g^{mi} \left( b^{jk}_{s,m} - b^{jk}_{m,s} \right) \:, \label{eq:Grinberg-4}\\
+        \sum_{(i,j,k)}& \left[ (b^{ij}_{t,p} - b^{ij}_{p,t}) b^{tk}_s + (b^{ij}_{t,s} - b^{ij}_{s,t}) b^{tk}_p \right] = 0 \:. \label{eq:Grinberg-5}
+    \end{align}
+\end{lemma}
+
+Up to now, we did not assume non-degeneracy of the bracket. Note that non-degeneracy allows to use $\Gamma^{i}_{jk} = - g_{js} b^{si}_k$, since in the degenerate case the inverse $g_{js}$ does not exist. If we reformulate the Grinberg conditions in terms of $\Gamma^{i}_{jk}$, we get the compatiblity, zero torsion and curvature.
+
+\begin{lemma}[Step 3: Zero curvature and torsion]
+    If the Grinberg conditions hold and the $g^{ij}$ is non-degenerate, then $g^{ij}$ is a metric, the covariant derivative $\nabla_i$ associated to $\Gamma^{i}_{jk}$ is compatible with $g^{ij}$ and it has zero torsion and curvature, i.e. $\nabla_i$ is a Levi-Civita covariant derivative with zero curvature.
+\end{lemma}
+\begin{proof}
+    Equation \eqref{eq:Grinberg-1} says that $g^{ij}$ is a symmetric tensor. By assumption $\det g^{ij}$ is non-degenerate, so it defines a metric structure on $M$. Equation \eqref{eq:Grinberg-2} is equivalent to
+    \begin{align}
+        g^{ij}_{,k} + g^{is} \Gamma_{sk}^j + g^{sj} \Gamma_{sk}^i = 0 \:.
+    \end{align}
+    If $\nabla_k$ is the covariant derivative corresponding to $\Gamma^i_{jk}$, then $\nabla_k g^{ij} = 0$. So $\Gamma_{ij}^k$ are affine connection coefficients, compatible with $g^{ij}$.
+
+    To obtain zero torsion, we use \eqref{eq:Grinberg-3}, which reads as 
+    \begin{align}
+        g^{mk} g^{sj} \Gamma^i_{ms} = g^{mk} g^{sj} \Gamma^i_{sm} \:.
+    \end{align}
+    Hence the Christoffel symbols are symmetric in the lower indices, which implies that the covariant derivative corresponding to them has zero torsion.
+
+    Zero curvature follows from \eqref{eq:Grinberg-4}, which reads as
+    \begin{align}
+        g^{in} g^{ml} (\Gamma^j_{nm} \Gamma^{k}_{ls} - \Gamma^k_{nm} \Gamma^j_{ls}) = - g^{im} \pder{}{u^m} \left( g^{jl} \Gamma^k_{ls}\right) + g^{im} \pder{}{u^s}\left( g^{jl} \Gamma^k_{lm}\right) \:,
+    \end{align}
+    and reduces to
+    \begin{align}
+        g^{im} g^{jn} \left( \Gamma^{l}_{nm} \Gamma^{k}_{ls} - \Gamma^{l}_{ns} \Gamma^k_{lm} + \Gamma^k_{nm,s} - \Gamma^k_{ns,m} \right) = 0 \:.
+    \end{align}
+    This means that the Riemann tensor $R\indices{_n_m^k_s}$ is equal to zero.
+\end{proof}
+
+The final step is to prove the converse statement and the corollary \vref{Corollary: existence of flat coordinates}, which turns out to be very simple due to the non-degeneracy of the bracket. 
+
+\begin{lemma}[Step 4: The converse statement]
+    If $g^{ij}$ is non-degenerate metric and $\Gamma^i_{jk}$ correspond to the Levi-Civita covariant derivative $\nabla$ with zero curvature, then the Dubrovin-Novikov bracket is a Poisson bracket, i.e. it satisfies skew-symmetry, Leibniz rule and Jacobi identity.
+\end{lemma}
+
+\begin{proof}
+    If $\nabla$ has zero torsion and curvature, there are coordinates $w^i=w^i(u^1,\dots,u^N)$ for $i=1,\dots,N$ such that $g^{ij} \eqqcolon \eta^{ij} =\const$ a $b^{ij}_k = 0$. In these coordinates
+    \begin{align}
+        \set{w^i(x),w^j(y)} = \eta^{ij} \partial_x \delta(x-y) \:.
+    \end{align}
+    Jacobi identity, skew-symmetry and Leibniz rule are for that bracket satisfied trivially due to the antisymmetry of the delta distribution.
+\end{proof}
+Thus the proof of the Dubrovin-Novikov theorem \vref{Theorem-Dubrovin-Novikov-1D} is finished.
+
+\section{Applications of Dubrovin-Novikov theorem}
 
 It follows from the theorem \vref{Theorem-Dubrovin-Novikov-1D} that we can write the original functions $f^{i}_j$ in \eqref{eq:h-system} by the Laplace-Beltrami operator.
 

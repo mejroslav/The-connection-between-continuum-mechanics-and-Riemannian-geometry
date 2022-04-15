@@ -1,0 +1,62 @@
+\subsection{Poisson brackets}
+    
+\begin{definition}[Poisson bracket]
+    A Poisson bracket is a bilinear operation $\set{\cdot, \cdot} : \F M \times \F M \to \F M$ which satisfies
+    \begin{align}
+        &\set{f,g} = -\set{g,f} \quad \textbf{(skew-symmetry)} \:, \\
+        &\set{fg,h} = f \set{g,h} + g \set{f,h} \quad \textbf{(Leibniz identity)} \:, \\
+        &\set{\set{f,g},h} + \set{\set{g,h},f} + \set{\set{h,f},g} = 0 \quad \textbf{(Jacobi identity)} \:.
+    \end{align}
+\end{definition}
+
+\begin{definition}[Symplectic 2-form]
+    A skew-symmetric 2-form $\vc \omega \in \T^0_2 M$ is said to be symplectic if it is closed and nondegenerate, i.e.
+    \begin{align}
+        &\D \vc \omega = 0 \quad \textbf{(closedness)} \:, \\
+        &\det \vc \omega \neq 0 \quad \textbf{(nondegeneracy)}\:.
+    \end{align}
+    A pair $(M,\vc \omega)$ is called sympletic manifold.
+\end{definition}
+
+Since in odd dimension every skew-symmetric 2-form is degenerate, the dimension $m$ of the symplectic manifold $M$ must be even number. The following statement holds.
+
+\begin{theorem}[Darboux theorem - symplectic forms formulation]
+    Let $(M,\vc \omega)$ be a $2n$-dimensional symplectic manifold and $x \in M$. Then there is a neighbourhood $U(x)$ and a coordinate system $(p_1,\cdots,p_n,q^1,\cdots,q^n)$ such that $\vc \omega$ has the form
+    \begin{align}
+        \vc \omega = \D p_a \wedge \D q^a \quad \text{on } U(x) \:. \label{eq:standart form}
+    \end{align}
+\end{theorem}
+We refer to this coordinate system as to the standard coordinates \\$(x^1,\cdots, x^{2n}) = (p_1,\cdots,p_n,q^1,\cdots,q^n)$ and to the form \eqref{eq:standard form} as to the standard form of $\vc \omega$.
+
+\begin{definition}[Poisson bivector]
+    Let $(M,\vc \omega)$ be a symplectic manifold.
+    The Poisson bivector $\vc P \in \T^2_0 M$ is the inverse of $\vc \omega$, i.e.
+    \begin{align}
+        \vc P^{ij} \vc \omega_{jk} = \vc \delta^i_k \:.
+    \end{align}
+\end{definition}
+Thus a symplectic manifold $(M,\vc \omega)$ has its associated Poisson bracket given by
+\begin{align}
+    \set{f,g} \coloneqq \vc P (\D f, \D g) = \vc P^{ab} \D_a f \D_b g \quad \forall f,g \in \F M \:. 
+\end{align}
+In the standard coordinates
+\begin{align}
+    \set{f,g} = \sum_{i=1}^n \left( \pder{f}{q^i} \pder{g}{p_i} - \pder{f}{p_i} \pder{g}{q^i} \right) \:.
+\end{align}
+
+In the standard coordinates we have
+\begin{align}
+    \set{x^i,x^j} =& \vc P^{ij} \:, \\
+    \set{\set{x^i,x^j},x^k} =& \pder{\vc P^{ij}}{x^m} \pder{x^k}{x^n} \vc P^{mn} = \pder{\vc P^{ij}}{x^m} \vc P^{m k} \:,
+\end{align}
+so the Jacobi identity is given by
+\begin{align}
+    \pder{\vc P^{ij}}{x^m} \vc P^{m k} + \pder{\vc P^{jk}}{x^m} \vc P^{m i} + \pder{\vc P^{ki}}{x^m} \vc P^{m j} = 0 \:.
+\end{align}
+
+\begin{definition}[The Casimir of the Poisson bracket]
+    The function $g \in \F M$ is called a Casimir for the given Poisson bracket $\set{\cdot,\cdot}$, if
+    \begin{align}
+        \set{f,g} = 0 \quad \forall g \in \F M \:.
+    \end{align}
+\end{definition}

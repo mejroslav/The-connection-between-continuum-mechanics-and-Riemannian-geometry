@@ -1,0 +1,108 @@
+\section{Geometrical preliminarities}
+
+In this section $M$ represents a finite-dimensional smooth manifold, $\mathcal F M$ the space of smooth functions $M \to \R$, $T_x M$ the tangent space in $x \in M$, $T M$ the tangent bundle on $M$, $T^p_q M$ the bundle of tensors of rank $(p,q)$ on $M$. We also automatically assume the so called Einstein summation over contravariant and covariant indices. Vectors, covectors and tensors of arbitrary rank are denoted (only in this chapter) by bold symbols, for the purpose of higliting the difference between the abstract indices (denoted by normal letters $i,j,\cdots$) and vector indices (denoted by bold letters $\vc A$, $\vc b$, $\cdots$)
+
+\subsection{Covariant derivative. Torsion and curvature}
+
+\begin{definition}
+    A metric tensor $\vc g_{ij} \in \T^0_2 M$ is symmetric and non-degenerate, i.e.
+    \begin{align}
+        \vc g_{ij} =&\, \vc g_{ji} \quad \textbf{(symmetry)}\:, \\ \det \vc g_{ij} \neq&\, 0 \quad \textbf{(non-degeneracy)}\:.
+    \end{align}
+\end{definition}
+
+If the metric $\vc g_{ij}$ is positive quadratic form, the manifold $M$ is said to be Riemannian. If it is indefinite, the manifold is said to be pseudo-Riemannian.
+
+Non-degeneracy of the metric $\vc g_{ij}$ allows us to define the inverse metric $\vc g^{ij}$ defined by the property
+\begin{align}
+    \vc g^{ij} \vc g_{jk} = \vc \delta^i_k \:.
+\end{align}
+
+\begin{definition}[Covariant derivative]
+    Let $\vc a \in TM$. A covariant derivative $\nabla_{\vc a}$ in the direction $\vc a$ is an operation on $T^p_q M$ satisfying these properties:
+    \begin{align}
+        &\nabla_{\vc a} (\vc A + r \vc B) = \nabla_{\vc a} \vc A + r \nabla_{\vc a} \vc B \quad \forall \vc A,\vc B \in T^k_l M \:,\: r \in \R \:, \quad \textbf{(linearity)} \\
+        &\nabla_{\vc a} (\vc A \otimes \vc B) = (\nabla_{\vc a} \vc A) \otimes \vc B + \vc A \otimes (\nabla_{\vc a} \vc B) \quad \forall \vc A,\vc B \in T^k_l M \:, \quad \textbf{(Leibniz rule)} \\
+        &\nabla_{\vc a} (\mathsf{C} \vc A) = \mathsf{C} (\nabla_{\vc a} \vc A) \quad \forall \vc A \in T^k_l M \:, \quad \textbf{(commutation with contraction)} \\
+        &\nabla_{\vc a} f = \vc a[f] = \vc a \cdot \D f \quad \forall f \in \mathcal F M \:, \quad \textbf{(gradient on scalars)}
+    \end{align}
+    where $\mathsf{C}$ is the contraction operation.
+\end{definition}
+(Note that the covariant derivative $\nabla_{\vc a}$ has the lower index bold, as it refers to the vector $\vc a$.)
+
+If we multiply the vector field $\vc a \in T M$ by some smooth function $f \in \mathcal F M$, then
+\begin{align}
+    \nabla_{f \vc a} \vc A = f \nabla_{\vc a} \vc A \quad \forall \vc A \in T^p_q M \quad \textbf{(ultralocality)}\:.
+\end{align}
+Therefore we can introduce the covariant differential $\nabla_j$ (with the normal lower index) as the operation from $\nabla : \T^p_q \to \T^p_{q+1}$ defined by the property
+\begin{align}
+    \nabla_{\vc a} \vc A = \vc a \cdot \nabla \vc A \:,
+\end{align} 
+or equivalently in the index notation
+\begin{align}
+    \nabla_{\vc a} \vc A^{ij\cdots}_{kl\cdots} = \vc a^k \nabla_k \vc A^{ij\cdots}_{kl\cdots} \:.
+\end{align}
+
+Any covariant diferential $\nabla_i$ can be expressed via the partial derivative with respect to the coordinates $(x^j)$ as
+\begin{align}
+    \nabla_i \vc A^{ab \dots}_{cd \dots} = \vc A^{ab \dots}_{cd \dots, i} + \vc \Gamma^{a}_{im} \vc A^{mb \dots}_{cd \dots} + \vc \Gamma^{b}_{im} \vc A^{am \dots}_{cd \dots} + \cdots
+    - \vc \Gamma^{m}_{ic} \vc A^{ab \dots}_{md \dots} - \vc \Gamma^{m}_{id} \vc A^{ab \dots}_{cm \dots} - \cdots \:,
+\end{align}
+where $\vc \Gamma^{a}_{bc}$ are the affine connection coefficients (Christoffel symbols). Given two coordinate systems $(x^i)$ and $(\tilde x^a)$, the Christoffel symbols transform as
+\begin{align}
+    \vc {\tilde\Gamma}^{a}_{bc} = \vc {\Gamma}^i_{jk} \pder{x^j}{\tilde  x^b} \pder{x^k}{\tilde x^c}  \pder{\tilde x^a}{x^i} + \pder{\tilde x^a}{x^m} \ppder{x^m}{\tilde x^b}{\tilde x^c} \:.
+\end{align}
+
+\begin{definition}[Torsion and Riemann tensors]
+    Let $[\cdot,\cdot]$ be the Lie bracket of two vector fields.
+
+    \begin{enumerate}
+        \item The torsion tensor $\vc T^{k}_{mn}$ is defined by
+        \begin{align}
+            \vc T^k_{mn} \vc a^m \vc b^n = \vc a^m \nabla_m \vc b^k - \vc b^m \nabla_m \vc a^k - [\vc a, \vc b]^k \quad \forall \vc a, \vc b \in TM \:.
+        \end{align}
+        \item The Riemann curvature tensor $\vc R\indices{_i_j^k_l}$ is defined by
+        \begin{align}
+            \vc R\indices{_i_j^k_l} \vc a^i \vc b^j \vc c^l = [\nabla_{\vc a} \nabla_{\vc b} - \nabla_{\vc b} \nabla_{\vc a} - \nabla_{[\vc a, \vc b]}] \vc c^k \quad \forall \vc a, \vc b, \vc c \in TM \:,
+        \end{align}
+    \end{enumerate}
+\end{definition}
+
+
+The torsion tensor represents the commutator of the second covariant diferentials applied on functions
+\begin{align}
+    [\nabla_i \nabla_j - \nabla_j \nabla_i] f = - \vc T^{m}_{ij} \D_m f \quad \forall f \in \mathcal F M \:.
+\end{align}
+and Riemann tensor represents the commutator on vectors
+\begin{align}
+    [\nabla_i \nabla_j - \nabla_j \nabla_i] \vc a^k =  - \vc T_{ij}^m \nabla_m \vc a^k + \vc R\indices{_i_j^k_m} \vc a^m \:. 
+\end{align}
+
+\begin{proposition}[Zero torsion and symmetry of the Christoffel symbols]
+    The torsion tensor $\vc T^i_{jk}$ of the covariant derivative $\nabla_i$ is zero if and only if the corresponding Christoffel symbols are symmetric in the lower indices, i.e. $\vc \Gamma^i_{jk} = \vc \Gamma^i_{kj}$.
+\end{proposition}
+
+
+\begin{definition}[Levi-Civita covariant derivative]
+    Let $M$ be a pseudo-Riemannian manifold with the metric $\vc g_{ij}$. Levi-Civita covariant derivative $\vc \nabla_k$ is defined by the following properties:
+    \begin{align}
+        \vc \nabla_k \vc g_{ij} = \vc g_{ij,k} - \vc \Gamma^m_{ki} \vc g_{mj} - \vc \Gamma^m_{kj} \vc g_{im}  =& 0 \quad \textbf{(compatibility with metric)} \:, \\
+        \vc T^{i}_{jk} =& 0 \quad \textbf{(zero torsion)} \:,
+    \end{align}
+    where $\vc T^i_{jk}$ is the torsion corresponding to $\vc \nabla_j$.
+\end{definition}
+
+If $\vc g_{ij}$ is non-degenerate, i.e. $\det \vc g_{ij} \neq 0$, then the Levi-Civita covariant derivative is always defined and its Christoffel symbols are given by
+\begin{align}
+    \vc \Gamma^m_{ij} =\frac{1}{2} \vc g^{mn} \left( \vc g_{jn,i} + \vc g_{ni,j} - \vc g_{ij,n} \right) \:.
+\end{align}
+
+The covariant derivative compatible with the metric commutes with the operation of lowering and uppering indices of a tensor. For example:
+\begin{align}
+    \nabla_i \vc T^{ab} = \nabla_i (\vc g^{am} \vc T^b_m) = \vc g^{am} \nabla_i \vc T^b_m \:.
+\end{align}
+
+The Riemann curvature tensor for the Levi-Civita covariant derivative is
+\begin{align}
+    \vc R\indices{_i_j^k_l} = \vc \Gamma^k_{jl,i} - \vc \Gamma^k_{il,j} + \vc \Gamma^k_{im} \vc \Gamma^m_{jl} - \vc \Gamma^k_{jm} \vc \Gamma^m_{il} \:.
+\end{align}

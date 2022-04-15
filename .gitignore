@@ -29,5 +29,7 @@ pdfa.xmpi
 *.bbl
 *.blg
 
+*.tdo
+
 .vscode
 materials
