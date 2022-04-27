@@ -1,5 +1,7 @@
 \chapter{Systems of hydrodynamic type:  multi-dimensional case}
 
+\section{Multi-dimensional brackets. Mokhov conditions}
+
 In the case with multi-dimensional bracket
 \begin{align}
     \set{I_1,I_2} = \sum_{\alpha = 1}^ d \int \D x 
@@ -26,9 +28,6 @@ we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, wher
     \end{align}
 \end{proof}
 
-Every summand on the right-side of the multi-dimensional bracket \eqref{eq:multi-dimensional bracket} is one-dimensional Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket 1D}, i.e. each multidimensional bracket of the form \eqref{eq:multi-dimensional bracket} is always the sum of one-dimensional brackets \eqref{eq:Dubrovin-Novikov bracket 1D} with respect to each of the independent variables $x^\alpha$.
-
-\section{Tensor obstructions}
 
 The formulation of the generalized form of the Dubrovin-Novikov theorem (Theorem \vref{Theorem-Dubrovin-Novikov-1D}) is given (without proof) by Mokhov in \cite{Mochov}.
 
@@ -53,7 +52,11 @@ The formulation of the generalized form of the Dubrovin-Novikov theorem (Theorem
         = 0 \:.
     \end{align}
 \end{theorem}
-The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations over all cyclic permutations of the indicated indices.
+The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations over all cyclic permutations of the indicated indices. Note that in \eqref{eq:Mochov-C}-\eqref{eq:Mochov-G} the indices $\alpha$ and $\beta$ do not have to be distinct indices (the cyclic permutation $\sum_{(\alpha, \beta)}$ can be ommited in that case). Thus, in particular, we get an important lemma.
+\begin{lemma}
+    Every summand on the right-side of the multi-dimensional bracket \eqref{eq:multi-dimensional bracket} is one-dimensional Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket 1D}, i.e. each multidimensional bracket of the form \eqref{eq:multi-dimensional bracket} is always the sum of one-dimensional brackets \eqref{eq:Dubrovin-Novikov bracket 1D} with respect to each of the independent variables $x^\alpha$.
+\end{lemma}
+
 
 \begin{remark}
     Let us take once again a closer look to the case of $d=1$ and compare it to the Grinberg conditions (\vref{Grinberg conditions}). The Mokhov conditions are following:
@@ -77,6 +80,9 @@ The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations ove
      The last relation \eqref{eq:Mochov1D-G} is the one remaining Grinberg condition \eqref{eq:Grinberg-5}. Only if we assume non-degeneracy, it follows from the zero torsion and curvature, otherwise it must be involved as a separate assumption.
 \end{remark}
 
+
+\section{Tensor obstructions}
+
 \begin{definition}[The obstruction tensors]
     We define the obstruction tensors
     \begin{align}
@@ -86,7 +92,7 @@ The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations ove
 \end{definition}
 We shall also use their fully contravariant form
 \begin{align}
-    T^{ijk \alpha \beta}(u) = g^{ks \beta}(u) g^{i r \alpha}(u) T^{j \alpha \beta}_{rs} (u) \:.
+    T^{ijk \alpha \beta}(u) \coloneqq g^{i r \alpha}(u) g^{ks \beta}(u) T^{j \alpha \beta}_{rs} (u) \:.
 \end{align}
 Note that $T^{i \alpha \beta}_{jk} (u)$ are transformed as tensors only in the upper $\alpha$, $\beta$ indices (since in the remaining they transform as Christoffel symbols).
 
@@ -113,7 +119,23 @@ Note that $T^{i \alpha \beta}_{jk} (u)$ are transformed as tensors only in the u
     The relations \eqref{eq:Mochov-1} and \eqref{eq:Mochov-3} were found by Dubrovin and Novikov in \cite{Dubrovin-Novikov}. In \cite{Mochov} it was proved that this set of tensor relations is not complete and the remaining two were obtained.
 \end{remark}
 
-\section{Classification of one-component brackets}
+\begin{proof}
+    The first equation \eqref{eq:Mochov-1} reads as
+    \begin{align}
+        g^{ir \alpha} g^{ks \beta} (\Gamma^{j\beta}_{rs} - \Gamma^{j \alpha}_{rs}) = g^{kr \alpha} g^{is \beta} (\Gamma^{j\beta}_{rs} - \Gamma^{j \alpha}_{rs}) \:,
+    \end{align}
+    which is equivalent to
+    \begin{align}
+        \Gamma^{j \beta}_{rs} - \Gamma^{j \alpha}_{rs} = 0 \:,
+    \end{align}
+    thus follows from \eqref{eq:Mochov-C}.
+
+    The equation \eqref{eq:Mochov-2} is equivalent to \eqref{eq:Mochov-D}, \eqref{eq:Mochov-3} is equivalent to \eqref{eq:Mochov-E}, \eqref{eq:Mochov-4} is equivalent to \eqref{eq:Mochov-F}. The last condition \eqref{eq:Mochov-G} is a direct consequence of the relations \eqref{eq:Mochov-A}-\eqref{eq:Mochov-F} in the non-degenerate case.
+    \todo[inline]{Je potřeba to rozepisovat podrobněji?}
+\end{proof}
+
+\begin{example}[Classification of one-component brackets]
+    
 
 It is not complicated to obtain a complete classification of all one-component brackets
 \begin{align}
@@ -150,28 +172,74 @@ By the virtue of lemma \vref{lemma:T=0} by local changing of coordinates we can 
     \pder{w}{t} = \eta^\alpha \pder{w}{x^\alpha} \:.
 \end{align}
 
-The degenerate case is also trivial. If for some $\alpha$ is $g^\alpha(u) = 0$, then from \eqref{eq:Mochov-B} follows $b^\alpha(u) = 0$ and from \eqref{eq:Mochov-C} follows that 
+The degenerate case is also trivial. If for some $\alpha$ is $g^\alpha(u) = 0$, then from \eqref{eq:Mochov-B} follows $b^\alpha(u) = 0$.
 
+\end{example}
 
-\section{Strong non-degeneracy}
+\section{Compatible brackets}
 
-\begin{definition}[Strongly non-degenerate metrics]
-    We say that the vector of metrics $g^{ij \alpha}$ is strongly non-degenerate, if there are some constants $c_\alpha \in \R$ such that $c_\alpha g^{ij \alpha}$ is non-degenerate metric.
+In this section we introduce the theory of compatible metrics constructed by Mochov in \cite{Mochov} and show that the study of non-degenerate multi-dimensional brackets is connected to the study of compatible one-dimensional brackets. 
+
+\begin{definition}[Compatible metrics]
+    Let $g^{ij1}(u)$ and $g^{ij2}(u)$ be non-degenerate psudo-Riemannian metrics with Levi-Civita connections $\Gamma^{ij1}_k(u)$, $\Gamma^{ij2}_k(u)$. We say that $g^{ij1}$ and $g^{ij2}$ are compatible if for any linear combination of these metrics
+    \begin{align}
+        g^{ij}(u) = \lambda_1 g^{ij1}(u) + \lambda_2 g^{ij2}(u) \:,
+    \end{align}
+    where $\lambda_{1,2}$ are arbitrary constant such that $\det g^{ij} \neq 0$, the coefficients of the corresponding Levi-Civita connections and the components of the corresponding Riemann tensors are related by the same linear formula:
+    \begin{align}
+        \Gamma^{ij}_k = \lambda_1 \Gamma^{ij1}_k + \lambda_2 \Gamma^{ij2}_k \:, \label{eq:compatible-Gamma}\\
+        R\indices{_a_b^k_c} = \lambda_1 R\indices{_a_b^k_c^1} + \lambda_2 R\indices{_a_b^k_c^2} \label{eq:compatible-R}\:.
+    \end{align}
+    If for any linear combination of metrics only \eqref{eq:compatible-Gamma} is fulfilled, then the metrics are called almost compatible.
 \end{definition}
-(Of course, linear combination of symmetric tensors is symmetric, so the only condition for strong non-degeneracy is to have $\det (c_\alpha g^{ij \alpha}) \neq 0$.)
 
-\begin{theorem}
-    Let the Hamiltonian system be strongly non-degenerate. Then
-    \begin{enumerate}
-        \item for $N=1$ the system can be reduced to constant form
-        \begin{align}
-            g^{ij}(u) = \tilde g^{ij}(u) \:,
-        \end{align}
 
-        \item for $N \geq 2$ can be reduced to linear form
-        \begin{align}
-            g^{ij \alpha}(u) = g^{ij \alpha}_k u^k + \tilde g^{ij \alpha} \:, \quad \alpha = 1, \cdots , d \:, \\
-        \end{align}
-        where the coefficients $g^{ij \alpha}_{,k} = b^{ij \alpha}_k + b^{ij \alpha}_k$, $\tilde g^{ij \alpha}$ and $b^{ij \alpha}_k$ are constant.
-    \end{enumerate}
+\begin{definition}[Compatible Poisson brackets]
+    We say that two Poisson brackets are compatible if each their linear combination is a Poisson bracket.
+\end{definition}
+
+\begin{definition}[L-affinor]
+    Let $g^{ij1}(u)$ and $g^{ij2}(u)$ be two metrics.
+    We define the L-affinor $L^i_j$ by
+    \begin{align}
+        L^i_j(u) = g^{ik2}(u) g_{kj1}(u) \:,
+    \end{align}
+\end{definition}
+
+\begin{theorem}[Vanishing of the Nijenhuis tensor]
+    The metrics $g^{ij1}(u)$ and $g^{ij2}(u)$ are almost compatible if and only if the Nijenhuis tensor of the L-affinor is zero, i.e.
+    \begin{align}
+        N^i_{jk} \coloneqq L^s_j L^{i}_{k,s} - L^s_k L^{i}_{j,s} - L^i_s L^s_{k,j} - L^i_s L^s_{j,k} = 0 \:.
+    \end{align}
 \end{theorem}
+
+Note that that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mokhov-compatibility}. 
+
+\begin{theorem}[Mutual compatibility of the metrics]
+    All metrics $g^{ij \alpha}(u)$, $1 \leq \alpha \leq N$, defining a multi-dimensional Poisson bracket \eqref{eq:multi-dimensional bracket} are mutually compatible. All one-dimensional Dubrovin-Novikov brackets forming a multi-dimensional bracket are mutually compatible.
+\end{theorem}
+\todo[inline]{Podívat se na důkaz tohoto.}
+\begin{proof}
+    The equation \eqref{eq:Mochov-1} is equivalent to \eqref{eq:Mochov-C} and also to the vanishing of the obstruction tensor, witch means
+    \begin{align}
+        \Gamma^{i\alpha}_{jk} = \Gamma^{i \beta}_{jk} \:.
+    \end{align}
+    Hence their linear combination is also Levi-Civita connection for the same linear combination of metrics.
+    The equation \eqref{eq:Mochov-3} is equivalent to \eqref{eq:Mochov-E} and thus to
+    \begin{align}
+        R\indices{_a_b^k_l^\alpha} =  R\indices{_a_b^k_l^\beta} \:.
+    \end{align}
+\end{proof}
+
+\begin{theorem}[Mokhov classification theorem]
+    If for a nondegenerate multidimensional Poisson bracket one of the metrics $g^{ij \alpha}(u)$ forms nonsingular pairs with all the remaining metrics, i.e.
+    \begin{align}
+        \:,
+    \end{align}
+    then this Poisson bracket can be reduced to a constant form by a local change of coordinates.
+\end{theorem}
+
+\begin{proof}
+    \todo{inline}[podívat se na důkaz]
+\end{proof}
+
