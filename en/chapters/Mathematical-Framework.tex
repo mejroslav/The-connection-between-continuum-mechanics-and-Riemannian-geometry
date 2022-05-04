@@ -1,8 +1,8 @@
 \chapter{Mathematical Preliminarities}
 
-In this chapter, we shall revise some basic definitions and propositions of the functional calculus which we will need for the proper formulation of the hydrodynamic geometry. \todo[inline]{Vylepšit kritiku.} Most of the existing literature on this topic often lacks clarity due to the omittanc e of certain details. This can include the domains on which functionals are defined or regularity conditions.
+In this chapter, we shall revise some basic definitions and propositions of the functional calculus which we will need for the proper formulation of the hydrodynamic geometry. 
 
-Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them, such as in [CITATION]. The same applies to functional variations and the conditions on which they exist. 
+Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them. For the reader who seeks for a nice introduction to this theory accompanied with several physical applications, we would recommend the book by R.P.Kanwal \cite{Kanwal}. The same applies to functional variations and the conditions on which they exist. A book written with a deep pedagogical attention on this topic is e.g. the university text by von Brunt \cite{Brunt}.
 Among physicists, however, it is convential to operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
 
 
@@ -13,7 +13,7 @@ After introducing the concept of Gateaux and Frechet derivatives, which are suit
 \todo[inline]{přidat nějaký kontext}
 
 \begin{definition}[Gateaux and Frechet derivative]
-    Let $X$ be a normed space, $A: X \to \R$ is a functional and $x \in \Dom(A)$.
+    Let $X$ be a normed space, $A: X \to \R$ a functional and $x \in \Dom(A)$.
     \begin{enumerate}
         \item Let $h \in D(A)$. Gateaux derivative $\delta A(x,h)$ in the direction $h$ is defined as
         \begin{align}
@@ -146,9 +146,6 @@ The reason, why distributions have such a "nice" behaviour and are often used by
     | \dual{\partial_x^n \delta(x-y)}{f(x)} | \leq \norm{f}_n \quad \forall n = 0,1,\cdots, k\:,
 \end{align}
 so Dirac distributions and their derivatives are also bounded linear functionals on $X^k$ up to the order $k$.
-
-\todo[inline]{Rozmysli si, Míro, rozmysli.}
-
 
 Let $a \in C^\infty(\Omega)$. Then it makes sense to define the product of $a$ and arbitrary distribution $T$ by
 \begin{align}

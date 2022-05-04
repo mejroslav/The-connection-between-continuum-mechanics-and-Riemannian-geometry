@@ -1,15 +1,25 @@
 \chapter{Systems of hydrodynamic type:  multi-dimensional case}
 
+When one moves to more dimensions, the theory becomes much more complicated, opposite to the one dimension, where the non-degeneracy of the bracket together with skew-symmetry and Jacobi identity leads not only to the Levi-Civita covariant derivative with zero curvature, but also to the existence of the flat coordinates.
+The questions are
+\begin{enumerate}
+    \item To find conditions under which the multi-dimensional bracket is Poisson, i.e. satisfies skew-symmetry, Leibniz rule and Jacobi identity.
+    \item To find such coordinates, where the nondegenerate Poisson bracket is reduced to the constant form.
+    \item To classify the degenerate brackets.
+\end{enumerate}
+
+The first problem was solved in 2006 by O.I.Mochov in \cite{Mochov}, where also the complete classification of nonsingular nondegenerate brackets was found. A key role in the second problem is played by the theory of compatible metrics. The classification of two-dimensional systems was given by Ferapontov, Lorenzoni and Savoldi. The main results are summarised in the Doctoral Thesis of the latter author \cite{Savoldi}.
+
 \section{Multi-dimensional brackets. Mokhov conditions}
 
-In the case with multi-dimensional bracket
+In the case with multi-dimensional Dubrovin-Novikov bracket
 \begin{align}
     \set{I_1,I_2} = \sum_{\alpha = 1}^ d \int \D x 
     \left[ \frac{\delta I_1}{\delta u^p(x)} \left( g^{pq \alpha}(u) \der{}{x^\alpha} + b^{pq\alpha}_s(u) \pder{u^s}{x^\alpha} \right) \frac{\delta I_2}{\delta u^q(x)} \right] \:, \label{eq:multi-dimensional bracket}
 \end{align}
 we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, where $\alpha = 1 , \cdots, d$. We can again introduce Christoffel symbols defined by
 \begin{align}
-    b^{i j \alpha}_k = - g^{is \alpha} \Gamma^{j \alpha}_{sk}\:,
+    b^{i j \alpha}_k \coloneqq - g^{is \alpha} \Gamma^{j \alpha}_{sk}\:,
 \end{align}
 (there is no summation over $\alpha$) and the corresponding set of covariant derivatives $\nabla^{\alpha}_j$. The first observation is that these coefficients represent coordinates of a vector under an transformation of the space coordinates $x^\alpha$.
 \todo[inline]{Skutečně se mění jenom závislost $u$ na $x^\alpha$, nebo i něco jiného? Může to platit i při nějaké obecné transformaci?}
@@ -213,7 +223,7 @@ In this section we introduce the theory of compatible metrics constructed by Moc
     \end{align}
 \end{theorem}
 
-Note that that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mokhov-compatibility}. 
+Note that that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mochov-compatibility}. 
 
 \begin{theorem}[Mutual compatibility of the metrics]
     All metrics $g^{ij \alpha}(u)$, $1 \leq \alpha \leq N$, defining a multi-dimensional Poisson bracket \eqref{eq:multi-dimensional bracket} are mutually compatible. All one-dimensional Dubrovin-Novikov brackets forming a multi-dimensional bracket are mutually compatible.

@@ -1,7 +1,7 @@
 \chapter{Systems of hydrodynamic type: one-dimensional case}
 
-In this chapter we shall prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given by Dubrovin and Novikov and can be found in \cite{Dubrovin-Novikov}. The proof itself and the preceding lemmas are based on a considerable amount of technical computations, which we shall clarify in detail in order to offer the reader a comprehensive understanding of the chapter in question.
-
+In this chapter we shall prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given in 1983 by B.A.Dubrovin and S.P.Novikov and can be found in \cite{Dubrovin-Novikov}. Since then, many authors have contributed to the further development of this theory, e.g. Grinberg in \cite{Grinberg}, Ferapontov in \cite{Ferapontov} and Mochov in \cite{Mochov}.
+The proof itself and the preceding lemmas are based on a considerable amount of technical computations, which we shall clarify in detail in order to offer the reader a comprehensive understanding of the chapter in question.
 
 
 \section{Systems of hydrodynamic type}
@@ -169,7 +169,7 @@ In particular
 
 Our goal is to specify the conditions for the Dubrovin-Novikov bracket to be Poisson bracket. The simplest property is the Leibniz rule, which is always satisfied.
 
-\todo[inline]{Na Leibnize se podívat ještě jednou.}
+\todo[inline]{Jakou to má souvislost s Leibnizem $\set{fg,h} = f \set{g,h} + \set{f,h} g $? Není toto spíš vlastnost "transformace Poissonova bivektoru jakožto tensoru"?}
 \begin{proposition}[Leibniz rule for Dubrovin-Novikov bracket]
     \begin{align}
         \label{eq:transformace-zavorka}
@@ -270,11 +270,11 @@ The choice of denotation $g^{ij}(u)$ and $\Gamma^{i}_{jk}(u)$ has its purpose. W
 
 \section{Dubrovin-Novikov theorem}
 
-Let us summarize, what we have investigated so far. We have defined Dubrovin-Novikov bracket in the way that it satisfies the Leibniz rule. It remains to investigate the skew-symmetry and Jacobi identity. For that, we defined $g^{ij}$ and $\Gamma^i_{jk}$, which transform like tensors and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e. the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric.
+Let us summarize, what we have investigated so far. We have defined Dubrovin-Novikov bracket in the way that it satisfies the Leibniz rule. It remains to investigate the skew-symmetry and Jacobi identity. For that, we have defined $g^{ij}$ and $\Gamma^i_{jk}$, which transform like tensors and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e. the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric.
 
 We are now ready to prove the key theorem of this chapter which shows that these properties are indeed equivalent. Moreover, the corresponding covariant derivative has zero curvature, which indicates that the phase space $M$ is in fact Euclidean space.
 
-\begin{theorem}[Dubrovin, Novikov] \label{Theorem-Dubrovin-Novikov-1D}
+\begin{theorem}[Dubrovin, Novikov;\cite{Dubrovin-Novikov}] \label{Theorem-Dubrovin-Novikov-1D}
     Let $g^{ij}$ be non-degenerate. Then the Dubrovin-Novikov bracket \eqref{eq:Poisson1D} is a Poisson bracket with skew-symmetry, Leibniz rule and Jacobi identity if and only if these three conditions are satisfied:
     \begin{enumerate}
         \item $g^{ij} = g^{ji}$, that is, $g^{ij}$ is a metric on the phase space $M$.
@@ -298,7 +298,7 @@ We are now ready to prove the key theorem of this chapter which shows that these
 Due to the relatively large length of the proof we divide it into four steps.
 \begin{itemize}
     \item \textbf{Step 1:} We show that the skew-symmetry of the bracket implies the symmetry of the metric $g^{ij}$ and compatibility with the Christoffel symbols $\Gamma^i_{jk}$.
-    \item \textbf{Step 2:} We formulate the conditions under witch the Jacobi identity for the bracket holds.
+    \item \textbf{Step 2:} We formulate the conditions under which the Jacobi identity for the bracket holds.
     \item \textbf{Step 3:} We show that two of these conditions implies the zero torsion and zero curvature of the covariant derivative associated to $\Gamma^i_{jk}$. That finishes the implication in one direction.
     \item \textbf{Step 4:} We prove the converse implication via the existence of the flat coordinates.
 \end{itemize}
@@ -420,17 +420,17 @@ Due to the relatively large length of the proof we divide it into four steps.
     \begin{align}
         J^{ijk}(x,y,z) =& 
         E^{ijk}(x) \delta(x-y) \delta(z-x) 
-        \\+& F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) 
-        \\+& G^{ijk}(x) \partial_x \delta(x-y) \delta (z-x) 
-        \\+& H^{ijk}(x) \partial_x \delta(x-y) \partial_x \delta (z-x) 
-        \\+& I^{ijk}(x) \delta(x-y) \partial_x \partial_x \delta (z-x)
+        \\+& F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) \:,
+        \\+& G^{ijk}(x) \partial_x \delta(x-y) \delta (z-x) \:,
+        \\+& H^{ijk}(x) \partial_x \delta(x-y) \partial_x \delta (z-x) \:,
+        \\+& I^{ijk}(x) \delta(x-y) \partial_x \partial_x \delta (z-x) \:,
     \end{align}
     where
     \begin{align}
-        E^{ijk} =& (b^{ij}_m b^{mk}_{p,s} + b^{ij}_{s,m} b^{mk} ) u^p_x u^s_x + b^{ij}_m b^{mk}_p u^p_{xx} \\
-        F^{ijk} =& (b^{ij}_{s,m} g^{mk} + g^{mk}_{,s} b^{ij}_m + b^{ij}_m b^{mk}_s)u_x^s \\
-        G^{ijk} =& g^{ij}_{,m} b^{mk}_s u^s_x \\
-        H^{ijk} =& g^{ij}_{,m} g^{mk} \\
+        E^{ijk} =& (b^{ij}_m b^{mk}_{p,s} + b^{ij}_{s,m} b^{mk} ) u^p_x u^s_x + b^{ij}_m b^{mk}_p u^p_{xx} \:, \\
+        F^{ijk} =& (b^{ij}_{s,m} g^{mk} + g^{mk}_{,s} b^{ij}_m + b^{ij}_m b^{mk}_s)u_x^s \:, \\
+        G^{ijk} =& g^{ij}_{,m} b^{mk}_s u^s_x \:,\\
+        H^{ijk} =& g^{ij}_{,m} g^{mk} \:,\\
         I^{ijk} =& b^{ij}_m g^{mk} \:.
     \end{align}
     Now the procedure is the following: firstly we have to add the cyclic permutations $J^{jki}(y,z,x)$ and $J^{kij}(z,x,y)$ to obtain $\mathcal J^{ijk}(x,y,z)$. Secondly, the resulting generalized function $\mathcal J^{ijk}(x,y,z)$ is equal to zero, i.e.
@@ -453,17 +453,13 @@ Due to the relatively large length of the proof we divide it into four steps.
     We illustrate the procedure of reduction to the one-dimensional integral on one particular expression. For instance, we have
     \begin{align*}
         \int \big[ F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) 
-        +& F^{jki}(y) \delta(y-z) \partial_y \delta(x-y) 
-        + F^{kij}(z) \delta(z-x) \partial_z \delta(y-z) \big] \times \\ 
-        \times&  p_i(x) q_j(y) r_k(z) \D x \D y \D z \:.
+        + F^{jki}(y) \delta(y-z) \partial_y \delta(x-y) \\
+        + F^{kij}(z) \delta(z-x) \partial_z \delta(y-z) \big] \,
+        p_i(x) q_j(y) r_k(z) \,\D x \D y \D z \:.
     \end{align*}
-    We use the antisymmetry of $\delta$-derivatives
-    \begin{align*}
-        \partial_x \delta(z-x) = - \partial_z \delta (z-x) \:, \:
-        \partial_y \delta(x-y) = - \partial_x \delta(x-y) \:, \: 
-        \partial_z \delta(y-z) = - \partial_y \delta (y-z) \:,
-    \end{align*}
-    and obtain
+    We use the antisymmetry $
+        \partial_x \delta(z-x) = - \partial_z \delta (z-x)$
+    and similarly in each term and then get rid of the integrals with $\D y$ and $\D z$, obtaining
     \begin{align*}
         \int \D x F^{ijk}(x) p_i q_j r'_k + \int \D x F^{jki}(x)  p'_i q_j r_k +
         \int \D x F^{kij}(x) p_i q'_j r_k \:.
@@ -488,13 +484,13 @@ Due to the relatively large length of the proof we divide it into four steps.
     \end{align}
     Note that \eqref{eq:A20} is just a cyclic permutation of \eqref{eq:A02}. If we also use the symmetry conditon \eqref{eq:skew-1} and the compatibility condition \eqref{eq:skew-2}, then the equation \eqref{eq:Jacobi-1} follows from \eqref{eq:A02}. Equation \eqref{eq:A00} has the form
     \begin{align}
-        A_00^{ijk} = B^{ijk}_s u^s_{xx} + C^{ijk}_{sp} u^s_x u^p_x \:.
+        A_{00}^{ijk} = B^{ijk}_s u^s_{xx} + C^{ijk}_{sp} u^s_x u^p_x \:.
     \end{align}
-    The expression on the right hand side is zero if and only if both $B^{ijk}_s$ and $C^{ijk}_{sp} = 0$. From the function $B^{ijk}_s$ beeing zero follows \eqref{eq:Jacobi-2} and from $C^{ijk}_{sp}$ follows \eqref{eq:Jacobi-3}. Finally, equations \eqref{eq:A01}, \eqref{eq:A10} and \eqref{eq:A11} are satisfied trivally if \eqref{eq:A00} and \eqref{eq:A02} hold.
+    The expression on the right hand side is zero if and only if both $B^{ijk}_s$ and $C^{ijk}_{sp} = 0$. From the function $B^{ijk}_s$ beeing zero follows \eqref{eq:Jacobi-2} and from $C^{ijk}_{sp}$ follows \eqref{eq:Jacobi-3}. Finally, equations \eqref{eq:A01}, \eqref{eq:A10} and \eqref{eq:A11} are satisfied automatically if \eqref{eq:A00} and \eqref{eq:A02} hold.
 \end{proof}
 
 It is useful to write once more all the equations from lemmas \vref{lemma:skew-symmetry} and \vref{lemma:Jacobi} together. Since they first appeared in \cite{Grinberg}, we refer to them as to the Grinberg conditions.
-\begin{lemma}[Grinberg conditions] \label{Grinberg conditions}
+\begin{lemma}[Grinberg conditions; \cite{Grinberg}] \label{Grinberg conditions}
     If the Dubrovin-Novikov bracket satisfies skew-symmetry and Jacobi identity, then the following conditions hold:
     \begin{align}
         &g^{ij} = g^{ji} \:, \label{eq:Grinberg-1}\\
@@ -549,7 +545,7 @@ The final step is to prove the converse statement and the corollary \vref{Coroll
 \end{proof}
 Thus the proof of the Dubrovin-Novikov theorem \vref{Theorem-Dubrovin-Novikov-1D} is finished.
 
-\section{Applications of Dubrovin-Novikov theorem}
+\section{Some consequences of Dubrovin-Novikov theorem}
 
 It follows from the theorem \vref{Theorem-Dubrovin-Novikov-1D} that we can write the original functions $f^{i}_j$ in \eqref{eq:h-system} by the Laplace-Beltrami operator.
 
@@ -577,7 +573,7 @@ It follows from the theorem \vref{Theorem-Dubrovin-Novikov-1D} that we can write
 
 Another direct application of the theorem \vref{Theorem-Dubrovin-Novikov-1D} is the sufficient condition for the determinating, whether is a given system Hamiltonian or not.
 
-\begin{theorem}[The sufficient condition the a system to be Hamiltonian]
+\begin{theorem}[The sufficient condition for a system to be Hamiltonian]
     
     A system of hydrodynamic type 
     \begin{align}

@@ -1,10 +1,12 @@
 \chapter{Geometrical preliminarities}
 
-In this chapter $M$ represents a finite-dimensional smooth manifold, $\mathcal F M$ the space of smooth functions $M \to \R$, $T_x M$ the tangent space in $x \in M$, $T M$ the tangent bundle on $M$, $T^p_q M$ the bundle of tensors of rank $(p,q)$ on $M$. We also automatically assume the so called Einstein summation over contravariant and covariant indices. Vectors, covectors and tensors of arbitrary rank are denoted (only in this chapter) by bold symbols, for the purpose of higliting the difference between the abstract indices (denoted by normal letters $i,j,\cdots$) and vector indices (denoted by bold letters $\vc A$, $\vc b$, $\cdots$)
+The goal of this chapter is to briefly revise some basic definitions and well-known facts about the pseudo-Riemannian manifolds and the Poisson structure. This important part of geometry and topology is covered by hundreds of great books. Since for the rest of the thesis we shall study mostly the work of B. A. Dubrovin and S. P. Novikov, we will recommend three monographs on modern geometry written by our heroes and A. T. Fomenko \cite{DN-Geometry1}. Another exquisite book, which has become almost cult among Czechs and Slovaks and which is worth all of the reader's attention, is the book of M.Fecko \cite{Fecko}.
 
-\section{Covariant derivative. Torsion and curvature}
+Throughout this chapter $M$ represents a finite-dimensional smooth manifold, $\mathcal F M$ the space of smooth functions $M \to \R$, $T_x M$ the tangent space in $x \in M$, $T M$ the tangent bundle on $M$, $T^p_q M$ the bundle of tensors of rank $(p,q)$ on $M$. We also automatically assume the so called Einstein summation over contravariant and covariant indices. Vectors, covectors and tensors of arbitrary rank are denoted (only in this chapter) by bold symbols, for the purpose of higliting the difference between the abstract indices (denoted by normal letters $i,j,\cdots$) and vector indices (denoted by bold letters $\vc A$, $\vc b$, $\cdots$).
 
-\begin{definition}
+\section{Pseudo-Riemannian manifolds}
+
+\begin{definition}[Metric tensor]
     A metric tensor $\vc g_{ij} \in \T^0_2 M$ is symmetric and non-degenerate, i.e.
     \begin{align}
         \vc g_{ij} =&\, \vc g_{ji} \quad \textbf{(symmetry)}\:, \\ \det \vc g_{ij} \neq&\, 0 \quad \textbf{(non-degeneracy)}\:.
@@ -17,6 +19,8 @@ Non-degeneracy of the metric $\vc g_{ij}$ allows us to define the inverse metric
 \begin{align}
     \vc g^{ij} \vc g_{jk} = \vc \delta^i_k \:.
 \end{align}
+
+A metric structure is important mainly for three things: 1. it allows to measure lenghts of vectors and angles between them, 2. together with its inverse allows to upper and lower indices of tensors, 3. it enables to build the parallel transport of tensors from one point to another and the concept of covariant derivative.
 
 \begin{definition}[Covariant derivative]
     Let $\vc a \in TM$. A covariant derivative $\nabla_{\vc a}$ in the direction $\vc a$ is an operation on $T^p_q M$ satisfying these properties:
@@ -53,7 +57,9 @@ where $\vc \Gamma^{a}_{bc}$ are the affine connection coefficients (Christoffel 
     \vc {\tilde\Gamma}^{a}_{bc} = \vc {\Gamma}^i_{jk} \pder{x^j}{\tilde  x^b} \pder{x^k}{\tilde x^c}  \pder{\tilde x^a}{x^i} + \pder{\tilde x^a}{x^m} \ppder{x^m}{\tilde x^b}{\tilde x^c} \:.
 \end{align}
 
-\begin{definition}[Torsion and Riemann tensors]
+Compared to the partial derivative in flat space, the covariant derivative brings several complicacies with it. The information on how much it differs from ordinary derivative is encoded in tensors of torsion and curvature. 
+
+\begin{definition}[Torsion and curvature tensors]
     Let $[\cdot,\cdot]$ be the Lie bracket of two vector fields.
 
     \begin{enumerate}
@@ -82,6 +88,7 @@ and Riemann tensor represents the commutator on vectors
     The torsion tensor $\vc T^i_{jk}$ of the covariant derivative $\nabla_i$ is zero if and only if the corresponding Christoffel symbols are symmetric in the lower indices, i.e. $\vc \Gamma^i_{jk} = \vc \Gamma^i_{kj}$.
 \end{proposition}
 
+Among a whole class of covariant derivatives, there is one type that is used most often: the Levi-Civita derivative.
 
 \begin{definition}[Levi-Civita covariant derivative]
     Let $M$ be a pseudo-Riemannian manifold with the metric $\vc g_{ij}$. Levi-Civita covariant derivative $\vc \nabla_k$ is defined by the following properties:
