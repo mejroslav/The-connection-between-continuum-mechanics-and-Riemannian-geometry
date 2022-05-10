@@ -1,36 +1,42 @@
 \chapter*{List of symbols}
+\todo[inline]{List of symbols.}
 \addcontentsline{toc}{chapter}{List of symbols}
 \noindent\vspace{-2\baselineskip}
 {\renewcommand{\arraystretch}{1.3}
 \begin{table}[h!]
     \begin{tabular}{c|p{0.7\linewidth}}
-        $A |_\Omega$ & Restriction of an operator $A$ to a subspace $\Omega \subset \Domain(A)$. \\
-        \makecell[tc]{$\Cont^k(\Omega, \K)$, \\ $\Cont(\Omega, \K)$} & The space of functions $\Omega \subseteq \R \to \K$ with $k$ continuous derivatives. The space of continuous functions. \\
-        $\Cont^\infty_0(\Omega, \K)$ & The space of $C^\infty$ functions with compact support in $\Omega$. \\
-        $\Domain(A)$ & The domain of operator $A$, usually dense in $\Hilb$. \\
-        $D_\nu(w)$ & The parabolic cylinder function. \\
-        $\Fourier$ & The Fourier-Plancherel operator on $L^2(\R)$. \\
-        $\hypF(\alpha, \beta; z)$ & The confluent hypergeometric function of the first kind. \\
-        $\Hilb$ & A separable Hilbert space. \\
-        $H, \; \Hf(\xi)$ & A Hamiltonian operator; a fibre of the Hamiltonian. \\
-        $H_n(x)$ & The $n$-th Hermite polynomial. \\
-        $L^p(M, \d{\mu}, V)$ & The space of $p$-integrable functions from measure space $(M, \mu)$ to vector space $V$. Specifically for $p=2$, a Hilbert space with inner product $(\psi, \phi)_{L^2} = \int_M (\psi, \phi)_V \d{\mu}$. \\
-        $L^p(\Omega)$ & As above, but $M=\Omega \subseteq \R^N$, $\mu$ is the Lebesgue measure and $V=\C$. \\
-        $L^p_\rho(\Omega)$ & A weighted Lebesgue space, a shorthand for $L^p(\Omega \subseteq \R^N, \d{\mu}, \C)$, where $\rho$ is a real function and $\mu(M) = \int_M \rho \d{\lambda}$ is a rescaling of the Lebesgue measure $\lambda$. \\
-        $L^1_{\mathrm{loc}}(\Omega)$ & The space of functions that are $L^1(K)$ for every compact $K \subset \Omega$. \\
-        $\N, \; \N_0$ & The set of positive integers; the set of non-negative integers. \\
-        $\vv P, P_x, P_y, P_z$ & Momentum operator – a self-adjoint operator, such that $P_x \, f(x,...) = -\i \pd{}{x} f(x,...) \: .$ \\
-        $\vv Q, Q_x, Q_y, Q_z$ & Position operator – a self-adjoint operator, such that $Q_x \, f(x,...) = x \, f(x,...) \: .$ \\
-        $W^{k,p}(\Omega)$ & The Sobolev space – the space of integrable functions $f$, such that $f^{(\alpha)} \in L^p(\Omega)$, where $\alpha$ is a multi-index and $|\alpha| \leq k$. \\
-        $\Gamma(z), \digamma(z)$ & The gamma function, the digamma function. \\
-        $\mu$ & A $\sigma$-finite measure, usually the Lebesgue measure. \\
-        \makecell[tc]{$\Sp(T), \SpP(T),$\\$\SpAc(T), \SpSc(T),$\\$\SpD(T), \SpE(T)$} & The spectrum of normal operator $T$; the point, absolutely continuous, singular continuous, discrete, essential spectrum of $T$. $\Sp(T) = \SpP \cup \SpAc \cup \SpSc = \SpD \cup \SpE \:$. \\
-        $\nabla, \; \nabla \times, \; \Delta$ & Gradient, rotation, Laplace operator. \\
-        $\Delta^\Omega_{\mathrm{D}}, \Delta^\Omega_{\mathrm{D},A}$ & The Dirichlet Laplacian, defined on functions from $L^2(\Omega)$ with a Dirichlet boundary condition; a “magnetic” Dirichlet Laplacian given by the vector potential $A$.
     \end{tabular}
 \end{table}
 }
 
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
+
+Geometrical formalism plays essential part in the modern classical mechanics and there are several attempts to look at other fields of physics in geometrical way, especially at hydrodynamics and thermodynamics. The Hamiltonian formalism and Poisson brackets of infinite-dimensional dynamical systems have taken hold in the mathematics community since the early seventies.
+
+In this thesis we examine the systems of hydrodynamic type which appear in a wide range of applications, not only in hydrodynamics, but also in chemical kinetics, gas dynamics and general relativity \cite{Savoldi}. These systems are quasi-linear partial differential equations of first-order
+\begin{align}
+    \pder{u^i}{t} = f^{i \alpha}_j(u) \pder{u^j}{x^\alpha} \:, \quad u^i=u^i(t, x^1, \cdots, x^d) \:, \quad i = 1, \cdots, N, \quad \alpha = 1, \cdots, d \:,
+\end{align}
+where the standard summation rule over repeated indices is assumed. On the space of fields $u^1, \cdots, u^N$ one can build a Poisson structure via the so called bracket of hydrodynamic type, or a Dubrovin-Novikov bracket of the form
+\begin{align}
+    \set{u^i(x),u^j(y)} = g^{ij \alpha}(u(x)) \partial_\alpha \delta(x-y) + b^{ij \alpha}_k (u(x)) \pder{u^k}{x^\alpha} \delta(x-y) \:,
+\end{align}
+and more generally for arbitrary pair of functionals $J_1 = \int j_1(u,u_x,u_{xx},\cdots) \, \D x$, $J_2 = \int j_2(u,u_x,u_{xx},\cdots) \, \D x$
+\begin{align}
+    \set{J_1, J_2} = \int \fder{I_1}{u^i(x)} P^{ij} \fder{I_2}{u^j(x)} \, \D x \:, \quad P^{ij} = g^{ij \alpha}(u(x)) \der{}{x^\alpha} + b^{ij \alpha}_k(u(x)) \pder{u^k}{x^\alpha} \:,
+\end{align}
+where the first-order differential operator $P^{ij}$ is called a Hamiltonian operator or a Poisson bivector of hydrodynamic type. 
+
+
+The one-dimensional case is well explored. It turns out that there is a (one would say even magical) connection between the Poisson and pseudo-Riemannian geometry. The crucial is the theorem by B. A. Dubrovin and S. P. Novikov which can be found in \cite{Dubrovin-Novikov}. The potential benefit of this thesis is to provide the proof of this theorem in detailed way due to the large ammount of technical calculations which the author could not find elsewhere. The theorem shows that the functions $g^{ij}$ and $b^{ij}_k$ form a metric and Levi-Civita connection with zero curvature, respectively. This enables writing one-dimensional systems of hydrodynamic type as
+\begin{align}
+    \pder{u^i}{t} = g ^{i s} (\nabla_s \nabla_j h ) \pder{u^j}{x} \:,
+\end{align}
+where $h$ represents the hamiltonian of the system. This forms an alternative proof of hyperbolicity, which was done by M. Pavelka, I. Peshkov and V. Klika in 2020 \cite{Pavelka}. Hyperbolicity of evolutionary equations provides local existence of solutions and also the numerical resolution which guaranties that the small perturbations of the solution due to the discretization errors do not amplify exponentially in time.
+
+The multi-dimensional case is much more complicated and up to these days it is far from beeing completely solved.
+
+The organisation of this thesis is the following. Chapters 1 and 2 are very consise and remind some basic facts about hydrodynamical systems and geometry. In Chapter 3 one-dimensional case is handled and the proof of the Dubrovin-Novikov theorem is done. In Chapter 4 we investigate the differences in the multi-dimensional case and end the discussion with the Mokhov classification theorem.
+
 

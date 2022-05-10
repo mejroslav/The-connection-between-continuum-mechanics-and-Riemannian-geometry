@@ -1,45 +1,94 @@
-\chapter{Geometry in hydrodynamics??}
+\chapter{Geometry in hydrodynamics}
 
-Liouville coordinates
+In this chapter we shall illustrate the systems of hydrodynamic type with examples.
+For the self-consistency of the Chapter 3 we come to the definition once again (Definitions \vref{def:hamiltonian-functional} and \vref{def:hamiltonian-system}), but for now let us just mention that we operate with the systems of quasi-linear partial differential equations in the form
+\begin{align}
+    \pder{u^i}{t} = \left[ g^{ij \alpha} (u) \ppder{h(u)}{u^j}{u^k} + b_k^{ij \alpha} (u) \pder{h(u)}{u^j} \right] \pder{u^k}{x^\alpha} \:,
+\end{align}
+where $u^i = u^i(t,x^1, \cdots, x^N)$ are the field variables and $h(u)$ is the density of the Hamiltonian functional
+\begin{align}
+    H = \int h(u) \, \D x \:.
+\end{align}
+We refer to the coefficients $g^{ij \alpha}(u)$ as to the metrics and to $b^{ij \alpha}_k(u)$ as to the connections. If the metric $g^{ij \alpha}$ is nondegenerate, i.e. $\det g^{ij} \neq 0$, then we can define Christoffel symbols by the standard relation \eqref{eq:Levi-Civita-gamma} and they are connected to the functions $b^{ij \alpha}_k$ via
+\begin{align}
+    b^{ij \alpha}_k = - g^{i s \alpha} \Gamma^{j \alpha}_{sk} \:.
+\end{align}
 
-\begin{example}
-    Let $u^1 = p$, $u^2 = \rho$. Then 
+All the examples can be found in \cite{Pavelka}.
+
+\begin{example}[One-dimensional isothermal system]
+    The simplest case is the one-dimensional isothermal flow where the Hamiltonian reads as
     \begin{align}
-        \gamma^{ij} = \begin{pmatrix}
-            p & 0 \\ \rho & 0
-        \end{pmatrix}
-        \:,
-        \quad
-        g^{ij} = \begin{pmatrix}
-            2p & \rho \\
-            \rho & 0
-        \end{pmatrix}
-        \:.
+        H = \int h(\rho, m) \, \D x \:,
     \end{align}
-    and the Hamiltonian is of the form
+    where $\rho$ represents the matter density and $m$ the momentum density. 
+    The field variables are $(u^1,u^2) \coloneqq (\rho,m)$.
+    The evolution equations (in the Eulerian frame) are
     \begin{align}
-        H = \int \left[ \frac{p^2}{2 \rho} + \epsilon(p) \right] \:.
+        \pder{\rho}{t} =& - \pder{}{x} \left( \rho \pder{h}{m} \right) \:, \\
+        \pder{m}{t} =& - \pder{}{x} \left( \rho \pder{h}{\rho} + m \pder{h}{m} \right) \:.
     \end{align}
+    The metric $g^{ij}$ is non-degenerate but indefinite and has the form
+    \begin{align}
+        g^{ij} = -\begin{pmatrix}
+            0 &  \rho \\
+            \rho &  2 m
+        \end{pmatrix} \:,
+    \end{align}
+    and the connections are zero except for
+    \begin{align}
+        \Gamma^{m}_{\rho \rho} = \frac{2m}{\rho^2} \:, \quad \Gamma^m_{\rho m} = \Gamma^m_{m \rho} = - \frac{1}{\rho} \:.
+    \end{align}
+    therefore
+    \begin{align}
+        b^{\rho m}_\rho = -1 \:, \quad b^{m m}_m = -1 \:,
+    \end{align}
+    The Christoffel symbols are symmetric in the lower indices, therefore the torsion of the corresponding covariant derivative is zero. One can also easily calculate that the Riemann curvature tensor is zero.
 \end{example}
 
-\begin{example}
-    Let $u^1 = p$, $u^2 = \rho$. Then 
+\begin{example}[General one-dimensional system]
+    If we include only the entropy $S$ to the system, the metric $g^{ij}$ becomes degenerate. This can be overcome by adding the entropy flux $w$. This leads to the field variables $(u^1,u^2,u^3,u^4) = (\rho,m,s,w) $. The metric has the form
     \begin{align}
-        \gamma^{ij} = \begin{pmatrix}
-            p & 0 & 0 \\ \rho & 0 & 0 \\ s & 0 & 0
-        \end{pmatrix}
-        \:,
-        \quad
-        g^{ij} = \begin{pmatrix}
-            2p & \rho & s \\
-            \rho & 0 & 0 \\
-            s & 0 & 0
-        \end{pmatrix}
-        \:.
+        g^{ij} = -\begin{pmatrix}
+            0 & \rho & 0 & 0 \\
+            \rho & 2m & s & w \\
+            0 & s & 0 & 1 \\
+            0 & w & 1 & 0
+        \end{pmatrix} \:,
     \end{align}
-    and the Hamiltonian is of the form
-    \begin{align}
-        H = \int \left[ \frac{p^2}{2 \rho} + \epsilon(p,s) \right] \:.
-    \end{align}
+    which is again symmetric, indefinite and non-degenerate.
 \end{example}
+
+\begin{example}[Three-dimensional isothermal system]
+    In three dimensions, the field variables are $(u^1,u^2,u^3,u^4) = (\rho, m_x,m_y,m_z)$ and there are three metrics of the form
+    \begin{align}
+        g^{ij x} = -\begin{pmatrix}
+            0 &  \rho & 0 & 0 \\
+            \rho &  2 m_x &  m_y & m_z \\
+            0 & m_y & 0 & 0 \\
+            0 & m_z & 0 & 0
+        \end{pmatrix}  \:, \\
+        g^{ij y} = -\begin{pmatrix}
+            0 & 0 & \rho & 0 \\
+            0 & 0 & m_x & 0\\
+            \rho & m_x & 2m_y & m_z \\
+            0 & 0 & m_z & 0
+        \end{pmatrix}  \:, \\
+        g^{ij z} = -\begin{pmatrix}
+            0 & 0 & 0 & \rho \\
+            0 & 0 & 0 & m_x \\
+            0 & 0 & 0 & m_y \\
+            \rho & m_x & m_y & 2 m_z
+        \end{pmatrix}  \:.
+    \end{align}
+    All of them are degenerate. Moreover, arbitrary linear combination
+    \begin{align}
+        c_x g^{ij x} + c_y g^{ij y} + c_z g^{ij z}
+    \end{align}
+    is again degenerate, which makes it impossible to define Levi-Civita connection.
+\end{example}
+
+
+
+\section{Hyperbolicity}
 

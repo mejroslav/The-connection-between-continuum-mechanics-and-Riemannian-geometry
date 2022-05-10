@@ -2,13 +2,14 @@
 
 When one moves to more dimensions, the theory becomes much more complicated, opposite to the one dimension, where the non-degeneracy of the bracket together with skew-symmetry and Jacobi identity leads not only to the Levi-Civita covariant derivative with zero curvature, but also to the existence of the flat coordinates.
 The questions are
+\todo[inline]{Vymyslet lepší slovo místo questions.}
 \begin{enumerate}
     \item To find conditions under which the multi-dimensional bracket is Poisson, i.e. satisfies skew-symmetry, Leibniz rule and Jacobi identity.
-    \item To find such coordinates, where the nondegenerate Poisson bracket is reduced to the constant form.
+    \item To find such coordinates, where the non-degenerate Poisson bracket is reduced to the constant form.
     \item To classify the degenerate brackets.
 \end{enumerate}
 
-The first problem was solved in 2006 by O.I.Mochov in \cite{Mochov}, where also the complete classification of nonsingular nondegenerate brackets was found. A key role in the second problem is played by the theory of compatible metrics. The classification of two-dimensional systems was given by Ferapontov, Lorenzoni and Savoldi. The main results are summarised in the Doctoral Thesis of the latter author \cite{Savoldi}.
+The first problem was solved in 2006 by O.I.Mochov in \cite{Mochov}, where also the complete classification of nonsingular nondegenerate brackets was found. A key role in the second problem is played by the theory of compatible metrics. The classification of two-dimensional systems was given by Ferapontov, Lorenzoni and Savoldi. The main results are summarised in the doctoral thesis of the latter author \cite{Savoldi}.
 
 \section{Multi-dimensional brackets. Mokhov conditions}
 
@@ -21,7 +22,7 @@ we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, wher
 \begin{align}
     b^{i j \alpha}_k \coloneqq - g^{is \alpha} \Gamma^{j \alpha}_{sk}\:,
 \end{align}
-(there is no summation over $\alpha$) and the corresponding set of covariant derivatives $\nabla^{\alpha}_j$. The first observation is that these coefficients represent coordinates of a vector under an transformation of the space coordinates $x^\alpha$.
+(there is no summation over $\alpha$) and the corresponding set of covariant derivatives $\nabla^{\alpha}_j$. The first observation is that these coefficients represent coordinates of a vector under a transformation of the space coordinates $x^\alpha$.
 \todo[inline]{Skutečně se mění jenom závislost $u$ na $x^\alpha$, nebo i něco jiného? Může to platit i při nějaké obecné transformaci?}
 \begin{proposition}[Transformation of the space coordinates]
     For any changes of the spatial variables $\tilde x^\alpha \coloneqq c^\alpha_\beta x^\beta$, where $\alpha = 1, \cdots, d$ and $\det (c^\alpha_\beta) = 1$, the metrics $g^{ij \alpha}$ and $b^{ij \alpha}_k$ transform as components of a vector.
@@ -69,7 +70,7 @@ The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations ove
 
 
 \begin{remark}
-    Let us take once again a closer look to the case of $d=1$ and compare it to the Grinberg conditions (\vref{Grinberg conditions}). The Mokhov conditions are following:
+    Let us take once again a closer look to the case of $d=1$ and compare it with the Grinberg conditions (\vref{Grinberg conditions}). The Mokhov conditions are following:
     \begin{align}
         g^{ij} =& g^{ji} \quad &\textbf{(symmetry of metric)} \:, \label{eq:Mochov1D-A}\\
         g^{ij}_{,k} =& b^{ij}_k + b^{ji}_k \quad &\textbf{(compatibility condition)} \label{eq:Mochov1D-B}\:, \\
@@ -86,8 +87,8 @@ The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations ove
         \\+ \sum_{(i,j,k)} \left[ b^{si}_q (b^{j k}_{r,s} - b^{j k}_{s,r}) + b^{s i}_r (b^{j k}_{q,s} - b^{j k}_{s,q}) \right] \nonumber
         = 0 \:.
     \end{align}
-    It is evident that \eqref{eq:Mochov1D-D} is just \eqref{eq:Mochov1D-C} with a cyclic permutation hence it holds trivially. It is not so obvious, but also true, that \eqref{eq:Mochov1D-F} follows from the compatibility condition, zero torsion and zero curvature. 
-     The last relation \eqref{eq:Mochov1D-G} is the one remaining Grinberg condition \eqref{eq:Grinberg-5}. Only if we assume non-degeneracy, it follows from the zero torsion and curvature, otherwise it must be involved as a separate assumption.
+    It is evident that \eqref{eq:Mochov1D-D} is just \eqref{eq:Mochov1D-C} with a cyclic permutation, hence it holds trivially. It is not so obvious, but also true, that \eqref{eq:Mochov1D-F} follows from the compatibility condition, zero torsion and zero curvature. 
+     The last relation \eqref{eq:Mochov1D-G} is the one remaining Grinberg condition \eqref{eq:Grinberg-5}. Only if we assume non-degeneracy, it follows from zero torsion and curvature, otherwise it must be involved as a separate assumption.
 \end{remark}
 
 
@@ -138,7 +139,7 @@ Note that $T^{i \alpha \beta}_{jk} (u)$ are transformed as tensors only in the u
     \begin{align}
         \Gamma^{j \beta}_{rs} - \Gamma^{j \alpha}_{rs} = 0 \:,
     \end{align}
-    thus follows from \eqref{eq:Mochov-C}.
+    and it follows from \eqref{eq:Mochov-C}.
 
     The equation \eqref{eq:Mochov-2} is equivalent to \eqref{eq:Mochov-D}, \eqref{eq:Mochov-3} is equivalent to \eqref{eq:Mochov-E}, \eqref{eq:Mochov-4} is equivalent to \eqref{eq:Mochov-F}. The last condition \eqref{eq:Mochov-G} is a direct consequence of the relations \eqref{eq:Mochov-A}-\eqref{eq:Mochov-F} in the non-degenerate case.
     \todo[inline]{Je potřeba to rozepisovat podrobněji?}
@@ -164,7 +165,7 @@ The Mokhov conditions \eqref{eq:Mochov-A}, \eqref{eq:Mochov-C}, \eqref{eq:Mochov
     \pder{g^\alpha}{u} = 2 b^\alpha(u) \:, \label{eq:1comp-1} \\
     g^\alpha(u) b^\beta(u) = g^\beta(u) g^\alpha(u) \label{eq:1comp-2}\:.
 \end{align}
-The last condition \eqref{eq:Mochov-F} follows from them. If we apply \eqref{eq:1comp-1} into \eqref{eq:1comp-2}, we get
+The last condition \eqref{eq:Mochov-F} follows from them. If we substitute \eqref{eq:1comp-1} into \eqref{eq:1comp-2}, we get
 \begin{align}
     \frac{1}{g^\alpha} \pder{g^\alpha}{u}= \frac{1}{g^\beta}\pder{g^\beta}{u} \:,
 \end{align}
@@ -173,7 +174,7 @@ hence
     g^\alpha(u) = 2c^\alpha g(u) \:, \quad b^\alpha(u) = c^\alpha \quad \forall \alpha = 1, \cdots d \:,
 \end{align}
 where $c^\alpha$ are arbitrary constants.
-Thus, for $g(u) \neq 0$ all the obstruction tensors are identically zero:
+Therefore, for $g(u) \neq 0$ all the obstruction tensors are identically zero:
 \begin{align}
     T^{\alpha \beta} = \Gamma^\beta - \Gamma^\alpha = -\frac{b^\alpha}{g^\alpha} + \frac{b^\beta}{g^\beta} = - \frac{1}{2 g} + \frac{1}{2g} = 0 \:.
 \end{align}
@@ -195,7 +196,7 @@ In this section we introduce the theory of compatible metrics constructed by Moc
     \begin{align}
         g^{ij}(u) = \lambda_1 g^{ij1}(u) + \lambda_2 g^{ij2}(u) \:,
     \end{align}
-    where $\lambda_{1,2}$ are arbitrary constant such that $\det g^{ij} \neq 0$, the coefficients of the corresponding Levi-Civita connections and the components of the corresponding Riemann tensors are related by the same linear formula:
+    where $\lambda_{1,2}$ are arbitrary constants such that $\det g^{ij} \neq 0$, the coefficients of the corresponding Levi-Civita connections and the components of the corresponding Riemann tensors are related by the same linear formula:
     \begin{align}
         \Gamma^{ij}_k = \lambda_1 \Gamma^{ij1}_k + \lambda_2 \Gamma^{ij2}_k \:, \label{eq:compatible-Gamma}\\
         R\indices{_a_b^k_c} = \lambda_1 R\indices{_a_b^k_c^1} + \lambda_2 R\indices{_a_b^k_c^2} \label{eq:compatible-R}\:.
@@ -223,7 +224,7 @@ In this section we introduce the theory of compatible metrics constructed by Moc
     \end{align}
 \end{theorem}
 
-Note that that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mochov-compatibility}. 
+Note that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mochov-compatibility}. 
 
 \begin{theorem}[Mutual compatibility of the metrics]
     All metrics $g^{ij \alpha}(u)$, $1 \leq \alpha \leq N$, defining a multi-dimensional Poisson bracket \eqref{eq:multi-dimensional bracket} are mutually compatible. All one-dimensional Dubrovin-Novikov brackets forming a multi-dimensional bracket are mutually compatible.

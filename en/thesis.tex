@@ -68,9 +68,8 @@
 %\usepackage{libertinus} %\usepackage[expert]{mathdesign}
 
 %%% Basic information on the thesis
-
 % Thesis title in English (exactly as in the formal assignment)
-\def\ThesisTitle{The connection between continuum mechanics and Riemannian geometry}
+\def\ThesisTitle{The Connection between Continuum Mechanics and Riemannian Geometry}
 
 % Author of the thesis
 \def\ThesisAuthor{Miroslav Burýšek}
@@ -99,17 +98,21 @@
 % An optional dedication: you can thank whomever you wish (your supervisor,
 % consultant, a person who lent the software, etc.)
 \def\Dedication{%
-Dedication.
+First of all, I would like to sincerely thank my supervisor RNDr. Michal Pavelka, Ph.D. Not only for introducing me to a topic I was not familiar with and the long sessions during which we overcame numerous difficulties to finish the core of the main proof in this thesis, but also for his approach to students and colleagues which, after all, I find to be the most valuable thing in science.
+
+I have to express my gratitude to my friends who helped me finish this thesis, especially to Michal Grňo for discussions about the mathematical ideas, to Rozka Hájková for the emmotional support throughout my whole bachelor studies and to Josef Lamken for helping me with English.
+
+Finally, I would like to thank my family and all the people I am surrounded by, who inspire me every day. I am truly standing on the shoulders of giants.
 }
 
 % Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
 \def\Abstract{%
-Abstract.
+We investigate the systems of quasilinear partial differential equations of hydrodynamic type. These equations occur mostly in hydrodynamics and continuum mechanics, but they arise in other various applications. In study of such systems one finds an intersection of Poisson and pseudo-Riemannian geometry. The existence of Poisson structure is equivalent to the existence of flat metric and Levi-Civita covariant derivative with zero curvature. Moreover, one can find special flat coordinates, where the bracket is trivial. This result was found in the eighties by Dubrovin and Novikov for the one-dimensional case and later on extended to more dimensions. In this thesis we provide the proof of the Dubrovin-Novikov theorem more detailed than in the original paper. We also conducted an overview of current knowledge in multi-dimensional case, where the theory gets much more complicated. In particular, the link between the compatible brackets and the possibility of finding flat coordinates is discussed.
 }
 
 % 3 to 5 keywords (recommended), each enclosed in curly braces
 \def\Keywords{%
-{hydrodynamics}, {geometry}
+{hydrodynamics}, {Poisson bracket}, {pseudo-Riemannian geometry}, {Dubrovin-Novikov theorem}
 }
 
 %% The hyperref package for clickable links in PDF and also for storing
@@ -142,14 +145,15 @@ Abstract.
 
 %%% Each chapter is kept in a separate file
 %\include{formal/preface}
-
-\include{chapters/Mathematical-Framework.tex}
+\input{formal/preface}
 \input{chapters/Riemann.tex}
 \input{chapters/Poisson.tex}
+\include{chapters/Hydrodynamics}
+
 
 \include{chapters/Theorem.tex}
 \input{chapters/Multi-dimensional.tex}
-%\include{formal/epilog}
+\include{formal/epilog}
 
 %%% Bibliography
 \include{bibliography}
@@ -176,8 +180,7 @@ Abstract.
 %%% source code, data files, interactive charts, etc.). Electronic attachments
 %%% should be uploaded to SIS and optionally also included in the thesis on a~CD/DVD.
 %%% Allowed file formats are specified in provision of the rector no. 72/2017.
-%\appendix
-%\chapter{Appendix}
-
+\appendix
+\include{chapters/Mathematical-Framework.tex}
 %\openright
 \end{document}

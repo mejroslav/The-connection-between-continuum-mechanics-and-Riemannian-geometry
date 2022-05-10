@@ -1,12 +1,13 @@
-\chapter{Mathematical Preliminarities}
+\chapter{Appendix}
+
 
 In this chapter, we shall revise some basic definitions and propositions of the functional calculus which we will need for the proper formulation of the hydrodynamic geometry. 
 
-Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them. For the reader who seeks for a nice introduction to this theory accompanied with several physical applications, we would recommend the book by R.P.Kanwal \cite{Kanwal}. The same applies to functional variations and the conditions on which they exist. A book written with a deep pedagogical attention on this topic is e.g. the university text by von Brunt \cite{Brunt}.
-Among physicists, however, it is convential to operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
+Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them. For the reader who seeks a nice introduction to this theory accompanied with several physical applications, we would recommend the book by R.P.Kanwal \cite{Kanwal}. The same applies to functional variations and the conditions under which they exist. A book written with a deep pedagogical attention on this topic is e.g. the university text by von Brunt \cite{Brunt}.
+Physicists, however, operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
 
 
-After introducing the concept of Gateaux and Frechet derivatives, which are suitable for arbitrary normed space, we shall take a closer look on the space of smooth functions and functionals on it.
+After introducing the concept of Gateaux and Frechet derivatives which are suitable for arbitrary normed space we shall take a closer look on the space of smooth functions and functionals on it.
 
 \section{Functional derivatives}
 
@@ -27,7 +28,7 @@ After introducing the concept of Gateaux and Frechet derivatives, which are suit
     \end{enumerate}
 \end{definition}
 
-We are intersted in such functionals, where $X$ is the space of smooth functions with The smoothness is required because the functionals would operate with derivatives, and the values beeing zero on the boundary is required because we shall use integration by parts.
+We are intersted in such functionals, where $X$ is the space of smooth functions with the appropriate boundary conditions. The smoothness is required because the functionals would operate with derivatives, and the values beeing zero on the boundary is required because we shall use integration by parts.
 
 One of possible choices is to take
 \begin{align}
@@ -60,7 +61,7 @@ The functional $\delta A[u,h]$ is linear and bounded in $h$, so the Fréchet der
 \begin{align}
     \DD_u A [h] = \delta A[u,h] \:.
 \end{align}
-To get rid of the derivatives of $h(x)$ in \eqref{eq:Gateaux}, we use integration by parts in each term of the sum (exploiting the fact that boundary terms are zero), obtaining
+To eliminate the derivatives of $h(x)$ in \eqref{eq:Gateaux} we use integration by parts in each term of the sum (exploiting the fact that boundary terms are zero), obtaining
 \begin{align}
     \DD_u A [h] = \int_\Omega \left[ \pder{a}{u}(x) - \der{}{x} \pder{a}{u'}(x) + \cdots + (-1)^k \der{^k}{x^k} \pder{a}{u^{(k)}}(x) \right] h(x) \, \D^n x \:. \label{eq:perpartes}
 \end{align}
@@ -74,17 +75,16 @@ It is natural to give a special name to the integrand in \eqref{eq:perpartes}.
     \end{align}
 \end{definition}
 
-The functional derivative can be seen as the density of the integral functional $\DD_u A$ applicated on $h$: 
+The functional derivative can be seen as the density of the integral functional $\DD_u A$ applied on $h$: 
 \begin{align}
-    \DD_u A[h] = \int_\Omega \fder{A}{u(x)} h(x) \, \D x
+    \DD_u A[h] = \int_\Omega \fder{A}{u(x)} h(x) \, \D x \:.
 \end{align}
 Since the Fréchet derivative is always linear bounded functional, another way to look at this relation is the following: $\DD_u A$ is a regular distribution represented by some smooth function $\fder{A}{u(x)}$, i.e.
 \begin{align}
     \DD_u A[h] = \dual{T_{\fder{A}{u(x)}}}{h(x)} \:.
 \end{align}
-\todo[inline]{Hodit regulární distribuce před tuhle část?}
 
-It follows from theory (CITATION) that the functional derivative beeing zero is a necessery condition for the function beeing the extremal point of the functional (given that the corresponding function is smooth enough).
+It follows from theory \cite{Brunt} that the functional derivative beeing zero is a necessery condition for the function beeing the extremal point of the functional (given that the corresponding function is smooth enough).
 
 \begin{theorem}[Euler-Lagrange equations]
     Let $v \in C^\infty(\Omega)$ such that $v(x)$ is stationary point of the functional $A$ in \eqref{eq:integral-functional}, i.e
@@ -97,7 +97,7 @@ It follows from theory (CITATION) that the functional derivative beeing zero is 
     \end{align}
 \end{theorem}
 
-The computation above gives sense to the 
+The computation above gives meaning to the 
 \begin{align}
     A[u+h] = A[u] + \dual{\fder{A}{u}}{h} + o(h)\:,
 \end{align}
@@ -177,11 +177,11 @@ In the next chapter we shall frequently use the following identities of the delt
     \end{align} 
 \end{proof}
 
-The convolution of two distributions is not so simple to construct in rigorous way. The procedure is the following. First the tensor product of distributions is defined
+The convolution of two distributions is not simple to construct in rigorous way. The procedure is the following. First the tensor product of distributions is defined
 \begin{align}
     \dual{A(x) \otimes B(y)}{\phi(x,y)} = \dual{A(x)}{\dual{B(y)}{\phi(x,y)}} \:.
 \end{align}
-The product defined in this way satisfies comutativity, associativity and it is indeed a distribution (altough the proof of these properties is non-trivial). Then the convolution of distribution is defined by
+The product defined this way satisfies comutativity, associativity and it is indeed a distribution (altough the proof of these properties is non-trivial). Then the convolution of distribution is defined by
 \begin{align}
     \dual{A \star B}{\phi(x)} = \dual{A(x) \otimes B(y)}{\phi(x+y)} \:,
 \end{align}
@@ -190,7 +190,7 @@ with additional requirements on $A \otimes B$ and $\phi$. Convolution defined in
     D^\alpha (A \star B) = D^\alpha A \star B = A \star D^\alpha B \:.
 \end{align}
 
-The convolution with $\delta$ and arbitrary distribution $A$ always exists and is equal to
+The convolution of Dirac distribution and arbitrary distribution $A$ always exists and is equal to
 \begin{align}
     A(y) \star \delta(x-y) = A(x) \:.
 \end{align}
@@ -205,11 +205,11 @@ or in physicist's notation
 The equation \eqref{eq:konvoluce-s-deltou} is very important in calculations of functional derivatives.
 \begin{example}
     Let $u(x)$ be a field variable and $F[u(x)]$ an integral functional. 
-    To compute its functional derivative w.r.t. $u(y)$ in different position $y$, we use the integral expression of $F$
+    To compute its functional derivative with respect to $u(y)$ in different position $y$, we use the integral expression of $F$
     \begin{align}
         F[u(x)] = \int \D y F[u(y)] \delta (x-y) \:.
     \end{align}
-    Its Gateaux diferential is
+    Its Gateaux derivative is
     \begin{align}
         \delta F[u,h] = \der{}{t} F[u+th]|_{t=0} = \int \D y \pder{F}{u}(y) \delta(x-y) h(y) \:,
     \end{align}
