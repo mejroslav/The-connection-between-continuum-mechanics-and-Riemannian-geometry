@@ -1,10 +1,30 @@
 \chapter*{List of symbols}
-\todo[inline]{List of symbols.}
 \addcontentsline{toc}{chapter}{List of symbols}
 \noindent\vspace{-2\baselineskip}
 {\renewcommand{\arraystretch}{1.3}
 \begin{table}[h!]
     \begin{tabular}{c|p{0.7\linewidth}}
+        $T^{ab}_{,k}$ & Partial derivative with respect to the field variable $\pder{T^{ab}}{u^k}$. \\
+        $\partial_\alpha \delta(x-y)$ & Partial derivative with respect to the spatial variable $\pder{}{x^\alpha} \delta(x-y)$. \\
+        $D^\alpha f$ & Derivative with respect to the multiindex $\alpha = (\alpha_1, \cdots, \alpha_k)$.\\
+        $u^k_\alpha$ & Partial derivative of the field variable with respect to the spatial variable $\pder{u^k}{x^\alpha}$. \\
+        $\fder{I}{u^i(x)}$ & Functional derivative of functional $I$ with respect to $u^i$ in the point $x$. \\
+        $M$ & Smooth manifold. \\
+        $\F M$ & The space of functions $C^\infty(M, \R)$. \\
+        $T_x M$ & The tangent space of the point $x \in M$. \\
+        $TM$ & The tangent bundle of $M$. \\
+        $T^p_q M$ & The bundle of tensors of rank $p,q$ on $M$. \\
+        $\vc A$ & Tensor or tensor field. \\
+        $\vc v$ & Vector or vector field. \\
+        $\nabla_{\vc a}$ & Covariant derivative in the direction $\vc a$. \\
+        $\nabla_j$ & Covariant differential. \\
+        $\wedge$ & Wedge product of skew-symmetric forms. \\
+        $d_a$ & Exterior derivative of skew-symmetric form. \\
+        $\Dom(A)$ & The domain of a functional $A$. \\
+        $\delta A(x,h)$ & The Gateaux derivative of $A$ in $x$ with respect to $h$. \\
+        $\DD_x A$ & The Fréchet differential of $A$ in $x$. \\
+        $\mathcal{D}(\Omega)$, $\mathcal{D}'(\Omega)$ & The space of functions with compact support on $\Omega$ and its dual, the space of distributions. \\
+        $\dual{T}{\psi}$ & Duality of functional $T$ and function $\psi$.
     \end{tabular}
 \end{table}
 }
@@ -12,7 +32,7 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Geometrical formalism plays essential part in the modern classical mechanics and there are several attempts to look at other fields of physics in geometrical way, especially at hydrodynamics and thermodynamics. The Hamiltonian formalism and Poisson brackets of infinite-dimensional dynamical systems have taken hold in the mathematics community since the early seventies.
+Geometrical formalism plays an essential part in modern classical mechanics and there are several attempts to look at other fields of physics in geometrical way, especially at hydrodynamics and thermodynamics. The Hamiltonian formalism and Poisson brackets of infinite-dimensional dynamical systems have taken hold in the mathematics community since the early seventies \cite{GMD}, \cite{Generic}.
 
 In this thesis we examine the systems of hydrodynamic type which appear in a wide range of applications, not only in hydrodynamics, but also in chemical kinetics, gas dynamics and general relativity \cite{Savoldi}. These systems are quasi-linear partial differential equations of first-order
 \begin{align}
@@ -29,14 +49,14 @@ and more generally for arbitrary pair of functionals $J_1 = \int j_1(u,u_x,u_{xx
 where the first-order differential operator $P^{ij}$ is called a Hamiltonian operator or a Poisson bivector of hydrodynamic type. 
 
 
-The one-dimensional case is well explored. It turns out that there is a (one would say even magical) connection between the Poisson and pseudo-Riemannian geometry. The crucial is the theorem by B. A. Dubrovin and S. P. Novikov which can be found in \cite{Dubrovin-Novikov}. The potential benefit of this thesis is to provide the proof of this theorem in detailed way due to the large ammount of technical calculations which the author could not find elsewhere. The theorem shows that the functions $g^{ij}$ and $b^{ij}_k$ form a metric and Levi-Civita connection with zero curvature, respectively. This enables writing one-dimensional systems of hydrodynamic type as
+The one-dimensional case is well explored. It turns out that there is a (one would say even magical) connection between the Poisson and pseudo-Riemannian geometry. The crucial is the theorem by B. A. Dubrovin and S. P. Novikov, which can be found in \cite{Dubrovin-Novikov}. The potential benefit of this thesis is to provide the proof of this theorem in a detailed way due to the large ammount of technical calculations which the author could not find elsewhere. The theorem shows that the functions $g^{ij}$ and $b^{ij}_k$ form a metric and Levi-Civita connection with zero curvature, respectively. This enables writing the one-dimensional systems of hydrodynamic type as
 \begin{align}
     \pder{u^i}{t} = g ^{i s} (\nabla_s \nabla_j h ) \pder{u^j}{x} \:,
 \end{align}
-where $h$ represents the hamiltonian of the system. This forms an alternative proof of hyperbolicity, which was done by M. Pavelka, I. Peshkov and V. Klika in 2020 \cite{Pavelka}. Hyperbolicity of evolutionary equations provides local existence of solutions and also the numerical resolution which guaranties that the small perturbations of the solution due to the discretization errors do not amplify exponentially in time.
+where $h$ represents the hamiltonian of the system. This forms an alternative proof of hyperbolicity, which was done by M. Pavelka, I. Peshkov and V. Klika in 2020 \cite{Pavelka}. Hyperbolicity of evolutionary equations provides local existence of solutions and also the numerical resolution, which guarantees that the small perturbations of the solution due to the discretization errors do not amplify exponentially in time.
 
-The multi-dimensional case is much more complicated and up to these days it is far from beeing completely solved.
+The multi-dimensional case is much more complicated, and it is far from being completely solved up to these days,.
 
-The organisation of this thesis is the following. Chapters 1 and 2 are very consise and remind some basic facts about hydrodynamical systems and geometry. In Chapter 3 one-dimensional case is handled and the proof of the Dubrovin-Novikov theorem is done. In Chapter 4 we investigate the differences in the multi-dimensional case and end the discussion with the Mokhov classification theorem.
+The organization of this thesis is the following. Chapters 1 and 2 are very concise and remind some basic facts about hydrodynamical systems and geometry. In Chapter 3, the one-dimensional case is handled, and the proof of the Dubrovin-Novikov theorem is done. In Chapter 4, we investigate the differences in the multi-dimensional case and end the discussion with the Mokhov classification theorem.
 
 

@@ -1,15 +1,14 @@
 \chapter{Systems of hydrodynamic type:  multi-dimensional case}
 
 When one moves to more dimensions, the theory becomes much more complicated, opposite to the one dimension, where the non-degeneracy of the bracket together with skew-symmetry and Jacobi identity leads not only to the Levi-Civita covariant derivative with zero curvature, but also to the existence of the flat coordinates.
-The questions are
-\todo[inline]{Vymyslet lepší slovo místo questions.}
+The objectives are the following:
 \begin{enumerate}
-    \item To find conditions under which the multi-dimensional bracket is Poisson, i.e. satisfies skew-symmetry, Leibniz rule and Jacobi identity.
+    \item To find conditions under which the multi-dimensional bracket is Poisson, i.e., satisfies skew-symmetry, Leibniz rule, and Jacobi identity.
     \item To find such coordinates, where the non-degenerate Poisson bracket is reduced to the constant form.
     \item To classify the degenerate brackets.
 \end{enumerate}
 
-The first problem was solved in 2006 by O.I.Mochov in \cite{Mochov}, where also the complete classification of nonsingular nondegenerate brackets was found. A key role in the second problem is played by the theory of compatible metrics. The classification of two-dimensional systems was given by Ferapontov, Lorenzoni and Savoldi. The main results are summarised in the doctoral thesis of the latter author \cite{Savoldi}.
+The first problem was solved in 2006 by O. I. Mochov in \cite{Mochov}, where also the complete classification of nonsingular non-degenerate brackets was found. The theory of compatible metrics plays a key role in the second problem.  The classification of two-dimensional systems was given by Ferapontov, Lorenzoni and Savoldi. The main results are summarised in the doctoral thesis of the latter author \cite{Savoldi}. We shall present some of the ideas here, following mainly the two authors mentioned above.
 
 \section{Multi-dimensional brackets. Mokhov conditions}
 
@@ -23,7 +22,6 @@ we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, wher
     b^{i j \alpha}_k \coloneqq - g^{is \alpha} \Gamma^{j \alpha}_{sk}\:,
 \end{align}
 (there is no summation over $\alpha$) and the corresponding set of covariant derivatives $\nabla^{\alpha}_j$. The first observation is that these coefficients represent coordinates of a vector under a transformation of the space coordinates $x^\alpha$.
-\todo[inline]{Skutečně se mění jenom závislost $u$ na $x^\alpha$, nebo i něco jiného? Může to platit i při nějaké obecné transformaci?}
 \begin{proposition}[Transformation of the space coordinates]
     For any changes of the spatial variables $\tilde x^\alpha \coloneqq c^\alpha_\beta x^\beta$, where $\alpha = 1, \cdots, d$ and $\det (c^\alpha_\beta) = 1$, the metrics $g^{ij \alpha}$ and $b^{ij \alpha}_k$ transform as components of a vector.
 \end{proposition}
@@ -42,7 +40,7 @@ we have a set of metrics $g^{ij \alpha}$ and connections $b^{ij \alpha}_k$, wher
 
 The formulation of the generalized form of the Dubrovin-Novikov theorem (Theorem \vref{Theorem-Dubrovin-Novikov-1D}) is given (without proof) by Mokhov in \cite{Mochov}.
 
-\begin{theorem}[Mokhov conditions]
+\begin{theorem}[Mokhov conditions; \cite{Mochov}]
     A Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket} is a Poisson bracket if and only if the following relations for the coefficients are fulfilled:
     \begin{align}
         g^{ij \alpha} = g^{ji \alpha} \:, \label{eq:Mochov-A} \\
@@ -65,7 +63,7 @@ The formulation of the generalized form of the Dubrovin-Novikov theorem (Theorem
 \end{theorem}
 The summations $\sum_{(\alpha, \beta)}$ and $\sum_{(i,j,k)}$ mean summations over all cyclic permutations of the indicated indices. Note that in \eqref{eq:Mochov-C}-\eqref{eq:Mochov-G} the indices $\alpha$ and $\beta$ do not have to be distinct indices (the cyclic permutation $\sum_{(\alpha, \beta)}$ can be ommited in that case). Thus, in particular, we get an important lemma.
 \begin{lemma}
-    Every summand on the right-side of the multi-dimensional bracket \eqref{eq:multi-dimensional bracket} is one-dimensional Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket 1D}, i.e. each multidimensional bracket of the form \eqref{eq:multi-dimensional bracket} is always the sum of one-dimensional brackets \eqref{eq:Dubrovin-Novikov bracket 1D} with respect to each of the independent variables $x^\alpha$.
+    Every summand on the right-side of the multi-dimensional bracket \eqref{eq:multi-dimensional bracket} is one-dimensional Dubrovin-Novikov bracket \eqref{eq:Dubrovin-Novikov bracket 1D}, i.e., each multidimensional bracket of the form \eqref{eq:multi-dimensional bracket} is always the sum of one-dimensional brackets \eqref{eq:Dubrovin-Novikov bracket 1D} with respect to each of the independent variables $x^\alpha$.
 \end{lemma}
 
 
@@ -115,7 +113,7 @@ Note that $T^{i \alpha \beta}_{jk} (u)$ are transformed as tensors only in the u
 \end{proof}
 
 
-\begin{theorem}[Mokhov]
+\begin{theorem}[Mokhov; \cite{Mochov}]
     Flat non-degenerate metrics $g^{ij \alpha}$ define a multidimensional Poisson bracket if and only if the following relations are fulfilled:
     \begin{align}
         T^{ijk \alpha \beta}(u) =& T^{kji \alpha \beta}(u) \:, \label{eq:Mochov-1}\\
@@ -142,11 +140,9 @@ Note that $T^{i \alpha \beta}_{jk} (u)$ are transformed as tensors only in the u
     and it follows from \eqref{eq:Mochov-C}.
 
     The equation \eqref{eq:Mochov-2} is equivalent to \eqref{eq:Mochov-D}, \eqref{eq:Mochov-3} is equivalent to \eqref{eq:Mochov-E}, \eqref{eq:Mochov-4} is equivalent to \eqref{eq:Mochov-F}. The last condition \eqref{eq:Mochov-G} is a direct consequence of the relations \eqref{eq:Mochov-A}-\eqref{eq:Mochov-F} in the non-degenerate case.
-    \todo[inline]{Je potřeba to rozepisovat podrobněji?}
 \end{proof}
 
-\begin{example}[Classification of one-component brackets]
-    
+\begin{example}[Classification of one-component brackets; \cite{Mochov}]
 
 It is not complicated to obtain a complete classification of all one-component brackets
 \begin{align}
@@ -189,7 +185,7 @@ The degenerate case is also trivial. If for some $\alpha$ is $g^\alpha(u) = 0$, 
 
 \section{Compatible brackets}
 
-In this section we introduce the theory of compatible metrics constructed by Mochov in \cite{Mochov} and show that the study of non-degenerate multi-dimensional brackets is connected to the study of compatible one-dimensional brackets. 
+In this section, we introduce the theory of compatible metrics constructed by Mochov and show that the study of non-degenerate multi-dimensional brackets is connected to the study of compatible one-dimensional brackets. All the proofs can be found in \cite{Mochov}. 
 
 \begin{definition}[Compatible metrics]
     Let $g^{ij1}(u)$ and $g^{ij2}(u)$ be non-degenerate psudo-Riemannian metrics with Levi-Civita connections $\Gamma^{ij1}_k(u)$, $\Gamma^{ij2}_k(u)$. We say that $g^{ij1}$ and $g^{ij2}$ are compatible if for any linear combination of these metrics
@@ -218,39 +214,24 @@ In this section we introduce the theory of compatible metrics constructed by Moc
 \end{definition}
 
 \begin{theorem}[Vanishing of the Nijenhuis tensor]
-    The metrics $g^{ij1}(u)$ and $g^{ij2}(u)$ are almost compatible if and only if the Nijenhuis tensor of the L-affinor is zero, i.e.
+    The metrics $g^{ij1}(u)$ and $g^{ij2}(u)$ are almost compatible if and only if the Nijenhuis tensor of the L-affinor is zero, i.e.,
     \begin{align}
         N^i_{jk} \coloneqq L^s_j L^{i}_{k,s} - L^s_k L^{i}_{j,s} - L^i_s L^s_{k,j} - L^i_s L^s_{j,k} = 0 \:.
     \end{align}
 \end{theorem}
 
-Note that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mochov-compatibility}. 
+Note that there are examples of metrics that are only almost compatible, but not compatible, and for which the Nijenhuis tensor is zero \cite{Mochov-compatibility}]. 
 
-\begin{theorem}[Mutual compatibility of the metrics]
+\begin{theorem}[Mutual compatibility of the metrics; \cite{Mochov}] 
     All metrics $g^{ij \alpha}(u)$, $1 \leq \alpha \leq N$, defining a multi-dimensional Poisson bracket \eqref{eq:multi-dimensional bracket} are mutually compatible. All one-dimensional Dubrovin-Novikov brackets forming a multi-dimensional bracket are mutually compatible.
 \end{theorem}
-\todo[inline]{Podívat se na důkaz tohoto.}
-\begin{proof}
-    The equation \eqref{eq:Mochov-1} is equivalent to \eqref{eq:Mochov-C} and also to the vanishing of the obstruction tensor, witch means
-    \begin{align}
-        \Gamma^{i\alpha}_{jk} = \Gamma^{i \beta}_{jk} \:.
-    \end{align}
-    Hence their linear combination is also Levi-Civita connection for the same linear combination of metrics.
-    The equation \eqref{eq:Mochov-3} is equivalent to \eqref{eq:Mochov-E} and thus to
-    \begin{align}
-        R\indices{_a_b^k_l^\alpha} =  R\indices{_a_b^k_l^\beta} \:.
-    \end{align}
-\end{proof}
 
-\begin{theorem}[Mokhov classification theorem]
-    If for a nondegenerate multidimensional Poisson bracket one of the metrics $g^{ij \alpha}(u)$ forms nonsingular pairs with all the remaining metrics, i.e.
-    \begin{align}
-        \:,
-    \end{align}
-    then this Poisson bracket can be reduced to a constant form by a local change of coordinates.
+\begin{definition}[Nonsingular pair of metrics]
+    A pair of metrics $g^{ij 1}(u)$ and $g^{ij 2}(u)$ is called nonsingular if all eigenvalues of this pair of metrics, i.e., the roots of the equation $\det (g^{ij 1}(u)- \lambda g^{ij 2}(u)) = 0$, are distinct.
+\end{definition}
+
+\begin{theorem}[Mokhov classification theorem; \cite{Mochov}]
+    If for a non-degenerate multidimensional Poisson bracket one of the metrics $g^{ij \alpha}(u)$ forms nonsingular pairs with all the remaining metrics, then this Poisson bracket can be reduced to a constant form by a local change of coordinates.
 \end{theorem}
 
-\begin{proof}
-    \todo{inline}[podívat se na důkaz]
-\end{proof}
-
+The theory of singular non-degenerate brackets  and also all degenerate brackets is still not complete at present. 

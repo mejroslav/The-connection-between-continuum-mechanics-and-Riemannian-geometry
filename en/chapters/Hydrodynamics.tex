@@ -1,9 +1,9 @@
 \chapter{Geometry in hydrodynamics}
 
-In this chapter we shall illustrate the systems of hydrodynamic type with examples.
+In this chapter, we shall illustrate the systems of hydrodynamic type with examples.
 For the self-consistency of the Chapter 3 we come to the definition once again (Definitions \vref{def:hamiltonian-functional} and \vref{def:hamiltonian-system}), but for now let us just mention that we operate with the systems of quasi-linear partial differential equations in the form
 \begin{align}
-    \pder{u^i}{t} = \left[ g^{ij \alpha} (u) \ppder{h(u)}{u^j}{u^k} + b_k^{ij \alpha} (u) \pder{h(u)}{u^j} \right] \pder{u^k}{x^\alpha} \:,
+    \pder{u^i}{t} = \left[ g^{ij \alpha} (u) \ppder{h(u)}{u^j}{u^k} + b_k^{ij \alpha} (u) \pder{h(u)}{u^j} \right] \pder{u^k}{x^\alpha} \:, \quad i = 1, \cdots , N \:, \quad \alpha = 1, \cdots , d \:,
 \end{align}
 where $u^i = u^i(t,x^1, \cdots, x^N)$ are the field variables and $h(u)$ is the density of the Hamiltonian functional
 \begin{align}
@@ -13,10 +13,9 @@ We refer to the coefficients $g^{ij \alpha}(u)$ as to the metrics and to $b^{ij 
 \begin{align}
     b^{ij \alpha}_k = - g^{i s \alpha} \Gamma^{j \alpha}_{sk} \:.
 \end{align}
+The following examples can be found in \cite{Pavelka}.
 
-All the examples can be found in \cite{Pavelka}.
-
-\begin{example}[One-dimensional isothermal system]
+\begin{example}[One-dimensional isothermal system] \label{example:1D isothermal}
     The simplest case is the one-dimensional isothermal flow where the Hamiltonian reads as
     \begin{align}
         H = \int h(\rho, m) \, \D x \:,
@@ -88,7 +87,60 @@ All the examples can be found in \cite{Pavelka}.
     is again degenerate, which makes it impossible to define Levi-Civita connection.
 \end{example}
 
-
-
 \section{Hyperbolicity}
 
+The quasi-linear first order system of the form
+\begin{align}
+    A^{ij} \pder{u^j}{t} = B^{ij \alpha}(u) \pder{u^j}{x^\alpha}
+\end{align}
+is called symmetric hyperbolic if the matrix $A^{ij}$ is positive symmetric and $B^{ij \alpha}$ is symmetric in $i,j$ indices for each $\alpha$. If the system is symmetric hyperbolic, then the solution of the initial value problem exists, is unique, and depends continuously on initial data along arbitrary non-characteristic hypersurfaces \cite{Pavelka}. The hyperbolicity is also useful for various numerical resolutions. More on this topic can be found in \cite{Toro}. 
+
+The usual way to show symmetric hyperbolicity of a system is the Godunov-Boillat theorem \cite{Pavelka}. If the system is written in conservative form
+\begin{align}
+    \pder{u^i}{t} = - \pder{J^{i \alpha}(u)}{x^\alpha} \:, \label{eq:conservative}
+\end{align}
+the total energy density $h(u)$ is a convex function of the state variables and if there is an extra conservation law implied by the evolution equations
+\begin{align}
+    \pder{h}{t} = - \pder{J^{h \alpha}}{x^\alpha} = - \pder{J^{h \alpha}}{u^i} \pder{u^i}{x^\alpha} = - \pder{h}{u^j} \pder{J^{j \alpha}}{u^k} \pder{u^k}{x^\alpha} \:,
+\end{align}
+then the so called compatibility condition is satisfied:
+\begin{align}
+    \pder{J^{e \alpha}}{u^i} = \pder{h}{u^j} \pder{J^{j \alpha}}{u^i} \:.
+\end{align}
+We can then introduce the conjugate variables $p_i$ by the Legendre transformation 
+\begin{align}
+    p_i \coloneqq \pder{h}{u^i} \:, \quad L \coloneqq - h + p_i u^i \:, \quad u^i \coloneqq \pder{L}{p_i} \:.
+\end{align}
+Then the evolution equations can be rewritten as
+\begin{align}
+    \ppder{L}{p_i}{p_j} \pder{p^j}{t} = \ppder{\tilde J^\alpha}{p_i}{p_j} \pder{p^j}{x^\alpha} \:, \quad \tilde J^\alpha \coloneqq - J^{h \alpha}(p) + \pder{h}{u^j} J^{j \alpha}(p) \:,
+\end{align}
+which is a symmetric hyperbolic system. 
+
+This procedure fails in systems with mixtures. For example, the system
+\begin{align}
+    g^{ij} = - \begin{pmatrix}
+        0 & \rho_1 & 0 & 0 \\
+        \rho_1 &  2 m_1  & 0 & 0 \\
+        0 & 0 & 0 & \rho_2 \\
+        0 & 0 & \rho_2 & 2 m_2
+    \end{pmatrix}
+\end{align}
+does not allow any condition such as \eqref{eq:conservative} \cite{Generic}. For these systems one cannot use the Godunov-Boillat theorem. 
+
+There is an alternative approach, which was shown in \cite{Pavelka} for the \\one-dimensional case. Assuming that one can write the one-dimensional system in the form
+\begin{align}
+    \pder{u^i}{t} = (g^{is} \nabla_s \nabla_k h) \pder{u^k}{t} \:, \label{eq:nabla-nabla}
+\end{align}
+then this system can be symmetrized by multiplying it by the covariant Hessian of energy. If we denote
+\begin{align}
+    e_{ij} \coloneqq \nabla_i \nabla_j h \:,
+\end{align}
+then we obtain the equations
+\begin{align}
+    e_{ij} \pder{u^j}{t} = e_{ij} g^{jk} e_{km} \pder{u^m}{x} \:.
+\end{align}
+In addition, if we assume that the energy $h$ is convex, then $e_{ij}$ is positive symmetric matrix and this implies the hyperbolicity of such system. In Chapter 3 we show that the possibility of writing the equation \eqref{eq:nabla-nabla} is exactly a direct consequence of the Dubrovin-Novikov theorem, see Theorem \vref{theorem:covariant}. 
+
+If the covariant Hessian of energy is positive definite, it works, but is is not trivial to show
+that convex energy has positive definite covariant Hessian. It seems that taking theorem (2.4) from \cite{Rapcsak}, geodesic convexity is equivalent with convexity in our case, since we have no curvature (i.e. it is constant). The geodesic convexity is equivalent to the positive semi-definiteness of the covariant Hessian in the torsion-free case (our case). 

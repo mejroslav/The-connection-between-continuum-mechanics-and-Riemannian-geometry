@@ -1,7 +1,7 @@
 \chapter{Systems of hydrodynamic type: one-dimensional case}
 
-In this chapter we prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given in 1983 by B. A. Dubrovin and S. P. Novikov and can be found in \cite{Dubrovin-Novikov}. Since then, many authors have contributed to the further development of this theory, e.g. Grinberg in \cite{Grinberg}, Ferapontov in \cite{Ferapontov} and Mochov in \cite{Mochov}.
-The proof itself and the preceding lemmas are based on a considerable amount of technical computations which we shall clarify in detail in order to offer the reader a comprehensive understanding of the chapter in question.
+In this chapter we prove the theorem of the connection between the hydrodynamic Poisson bracket and the metrics found in the homogeneous system of hydrodynamic type. The original result was given in 1983 by B. A. Dubrovin and S. P. Novikov and can be found in \cite{Dubrovin-Novikov}. Since then, many authors have contributed to the further development of this theory, e.g., Grinberg in \cite{Grinberg}, Ferapontov in \cite{Ferapontov} and Mochov in \cite{Mochov}.
+The proof itself and the preceding lemmas are based on a considerable amount of technical computations which we shall clarify in detail to offer the reader a comprehensive understanding of the chapter in question.
 
 
 \section{Systems of hydrodynamic type}
@@ -48,7 +48,7 @@ It was Riemann who noticed that the functions $f^{i \alpha}_j$ in \eqref{eq:h-sy
 
 According to the previous lemma if we denote the space of points $(t,x^\alpha) \subset \R \times \R^N$ as some manifold $M$, then the unknown variables $u^i(t,x^\alpha)$ can be seen as the local coordinates of that manifold. The functions $f^{i \alpha}_j$ are transformed as tensors of the type $(1,1)$ in the $i$ and $j$ indices.
 
-In hydrodynamics, the functions $f^{i \alpha}_j$ are of a special form given by the energy of the system. Such systems will be the object of our investigation and we shall introduce a much more richer geometry for them - the geometry of Poisson brackets.
+In hydrodynamics, the functions $f^{i \alpha}_j$ are of a special form given by the energy of the system. Such systems will be the object of our investigation, and we shall introduce a much richer geometry for them - the geometry of Poisson brackets.
 
 \begin{definition}[Functional of hydrodynamic type] \label{def:hamiltonian-functional}
     The functional of hydrodynamic type is a functional of the form
@@ -62,8 +62,8 @@ In hydrodynamics, the functions $f^{i \alpha}_j$ are of a special form given by 
 \begin{definition}[Hamiltonian system of hydrodynamic type] \label{def:hamiltonian-system}
     The Hamiltonian system of hydrodynamic type is a system of the form
         \begin{align}
-            u^i_t (x) = 
-            \left[ g^{ij \alpha} [u(x)] \ppder{h(u)}{u^j}{u^k} + b_k^{ij \alpha} [u(x)] \pder{h(u)}{u^j} \right] u_\alpha^k(x) \:, \label{eq:Hamiltonian-system-of-h-t}
+            \pder{u^i}{t} = 
+            \left[ g^{ij \alpha} [u(x)] \ppder{h(u)}{u^j}{u^k} + b_k^{ij \alpha} [u(x)] \pder{h(u)}{u^j} \right] \pder{u^k}{x^\alpha} \:, \label{eq:Hamiltonian-system-of-h-t}
         \end{align}
         where $H[u]$ is the functional of the hydrodynamic type and $h$ the Hamiltonian density.
 \end{definition}
@@ -91,26 +91,26 @@ It is useful to write down the explicit form of the bracket of two field variabl
 \end{proposition}
 
 \begin{proof}
-    \begin{align*}
-        \set{u^i(x), u^j(y)} = \int \D \xi \fder{u^i(x)}{u^p(\xi)} \left( g^{pq \alpha}[u\xi)] \der{}{\xi^\alpha} + b^{pq \alpha}_s[u(\xi)] \pder{u^s}{\xi^\alpha} \right) \fder{u^j(y)}{u^q(\xi)}
-        \\ = \int \D \xi \delta(x-\xi) \left[ g^{ij \alpha}[u(\xi)] \partial_\alpha \delta(y-\xi) + b^{ij \alpha}_s[u(\xi)] u^s_\alpha \delta(y- \xi) \right] 
-        \\ = g^{ij \alpha} [u(x)] \delta_\alpha(x-y) + b_k^{ij \alpha} [u(x)] u_\alpha^k(x) \delta(x-y) \:.
-    \end{align*}
+    \begin{align}
+        \set{u^i(x), u^j(y)} =& \int \D \xi \fder{u^i(x)}{u^p(\xi)} \left( g^{pq \alpha}[u\xi)] \der{}{\xi^\alpha} + b^{pq \alpha}_s[u(\xi)] \pder{u^s}{\xi^\alpha} \right) \fder{u^j(y)}{u^q(\xi)} \nonumber
+        \\ =& \int \D \xi \delta(x-\xi) \left[ g^{ij \alpha}[u(\xi)] \partial_\alpha \delta(y-\xi) + b^{ij \alpha}_s[u(\xi)] u^s_\alpha \delta(y- \xi) \right] \nonumber
+        \\ =& g^{ij \alpha} [u(x)] \delta_\alpha(x-y) + b_k^{ij \alpha} [u(x)] u_\alpha^k(x) \delta(x-y) \:.
+    \end{align}
 \end{proof}
 
 \begin{proposition}[Time evolution of the field variables]
     The Hamiltonian system of hydrodynamic type can be written as
     \begin{align}
-        u^i_t(x) = \set{u^i,H} \:.
+        \pder{u^i}{t} = \set{u^i,H} \:.
     \end{align}
 \end{proposition}
 \begin{proof}
-    \begin{align*}
+    \begin{align}
         &\set{u^i(x),H} 
-        = \int \D \xi \fder{u^i(x)}{u^p(\xi)} \left[ g^{pq \alpha}[u(\xi)] \der{}{\xi} + b^{pq \alpha}_m [u(\xi)] \pder{u^m}{\xi^\alpha} \right] \fder{H}{u^q(\xi)} 
-        \\ =& \int \D \xi \int \D y \delta(x-\xi) \left[  g^{ij \alpha} [u(\xi)] \der{}{\xi} \pder{h}{u^j}(\xi)  + b^{ij \alpha}_k [u(\xi)] u^k_\alpha \pder{h}{u^j} (\xi) \right] \delta(y-\xi)
+        = \int \D \xi \fder{u^i(x)}{u^p(\xi)} \left[ g^{pq \alpha}[u(\xi)] \der{}{\xi} + b^{pq \alpha}_m [u(\xi)] \pder{u^m}{\xi^\alpha} \right] \fder{H}{u^q(\xi)} \nonumber 
+        \\ =& \int \D \xi \int \D y \delta(x-\xi) \left[  g^{ij \alpha} [u(\xi)] \der{}{\xi} \pder{h}{u^j}(\xi)  + b^{ij \alpha}_k [u(\xi)] u^k_\alpha \pder{h}{u^j} (\xi) \right] \delta(y-\xi) \nonumber
         \\ =& \left[ g^{ij \alpha} [u(x)] \pder{^2 h}{u^j \partial u^k}(x)  + b^{ij \alpha}_k(u(x)) \pder{h}{u^j}(x) \right] \pder{u^k}{x^\alpha} \:,
-    \end{align*}
+    \end{align}
     which is the right-hand side of \eqref{eq:Hamiltonian-system-of-h-t}.
 \end{proof}
 
@@ -150,12 +150,12 @@ The bracket of two field variables forms a tensor as well.
     Applying this to the definition of the Dubrovin-Novikov bracket \eqref{eq:Poisson1D}, we have
     \begin{align}
         \set{v^p(u^i(x)),v^q(u^j(y))} 
-        =& \int \D x' \int \D y' \underbrace{\fder{v^p}{u^i(x')} }_{\pder{v^p}{u^i}(x') \delta(x-x')} \set{u^i(x'),u^j(y')} \underbrace{\fder{v^q}{u^j(y')} }_{\pder{v^q}{u^j}(y') \delta(y-y')}
+        =& \int \D x' \int \D y' \underbrace{\fder{v^p}{u^i(x')} }_{\pder{v^p}{u^i}(x') \delta(x-x')} \set{u^i(x'),u^j(y')} \underbrace{\fder{v^q}{u^j(y')} }_{\pder{v^q}{u^j}(y') \delta(y-y')} \nonumber
         = \\ =& \pder{v^p}{u^i}(x) \pder{v^q}{u^j}(y) \set{u^i(x),u^j(y)} \:.
     \end{align}
 \end{proof}
 
-Our goal is to specify the conditions for the Dubrovin-Novikov bracket to be Poisson bracket. The simplest property is the transformation rule which is satisfied as long as the product of two functionals exists.
+Our goal is to specify the conditions for the Dubrovin-Novikov bracket to be Poisson bracket. The most straightforward property is the transformation rule which is satisfied as long as the product of two functionals exists.
 
 \begin{proposition}[Transformation rule for the bracket]
     \begin{align}
@@ -166,15 +166,15 @@ Our goal is to specify the conditions for the Dubrovin-Novikov bracket to be Poi
 \begin{proof}
     Assuming that all equalities below are true,
     \begin{align}
-        \int \fder{AB}{u(x)} h(x) \, \D x = \der{}{\lambda} \big|_{\lambda = 0} \left[ A(u+ \lambda h) B(u+ \lambda h) \right] 
-        \\ = B(u) \der{}{\lambda} \big|_{\lambda = 0} A(u+ \lambda h) + A(u) \der{}{\lambda} \big|_{\lambda = 0} B(u+ \lambda h)
-        \\ = B(u) \int \fder{A}{u} h(x) \, \D x + A(u) \int \fder{B}{u} h(x) \, \D x \:,
+        &\int \fder{AB}{u(x)} h(x) \, \D x = \der{}{\lambda} \big|_{\lambda = 0} \left[ A(u+ \lambda h) B(u+ \lambda h) \right] \nonumber
+        \\ =& B(u) \der{}{\lambda} \big|_{\lambda = 0} A(u+ \lambda h) + A(u) \der{}{\lambda} \big|_{\lambda = 0} B(u+ \lambda h) \nonumber
+        \\ =& B(u) \int \fder{A}{u} h(x) \, \D x + A(u) \int \fder{B}{u} h(x) \, \D x \:,
     \end{align}
     the transformation property follows immediately from the definition of the bracket \eqref{eq:Dubrovin-Novikov bracket 1D}.
 \end{proof}
 
 
-Skew-symmetry and Jacobi identity for the bracket are not easy to investigate. In order to do that, we introduce pseudo-Riemann structure on this space. We focus on the case, where the system is non-degenerate and thus allows to upper and lower indices of tensors.
+Skew-symmetry and Jacobi identity for the bracket are not easy to investigate. In order to do that, we introduce a pseudo-Riemann structure on this space. We focus on the case, where the system is non-degenerate and thus allows to raise and lower indices of tensors.
 
 \begin{definition}[Non-degenerate systems]
     We say that the Dubrovin-Novikov bracket and the corresponding system are non-degenerate if $\det(g^{ij}) \neq 0$.
@@ -258,14 +258,14 @@ The choice of denotation $g^{ij}(u)$ and $\Gamma^{i}_{jk}(u)$ has its purpose wh
 
 \section{Dubrovin-Novikov theorem}
 
-Let us summarize what we have investigated so far. We have defined the Dubrovin-Novikov bracket in the way that it satisfies the transformation rule. It remains to investigate the skew-symmetry and Jacobi identity. For that we have defined $g^{ij}$ and $\Gamma^i_{jk}$ which transform as tensors and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e. the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric.
+Let us summarize what we have investigated so far. We have defined the Dubrovin-Novikov bracket in the way that it satisfies the transformation rule. It remains to investigate the skew-symmetry and Jacobi identity. For that, we have defined $g^{ij}$ and $\Gamma^i_{jk}$ which transform as tensors, and Christoffel symbols, respectively. It remains to show that $g^{ij}$ is indeed symmetric and $\Gamma^i_{jk}$ is the Levi-Civita connection, i.e., the corresponding covariant derivative $\nabla_j$ has zero torsion and is compatible with the metric.
 
-We are now ready to prove the key theorem of this chapter which shows that these properties are indeed equivalent. Moreover, the corresponding covariant derivative has zero curvature, which indicates that the phase space $M$ is in fact Euclidean space.
+We are now ready to prove the critical theorem of this chapter, which shows that these properties are indeed equivalent. Moreover, the corresponding covariant derivative has zero curvature, indicating that the phase space $M$ can be regarded as the Euclidean space.
 
 \begin{theorem}[Dubrovin, Novikov;\cite{Dubrovin-Novikov}] \label{Theorem-Dubrovin-Novikov-1D}
     Let $g^{ij}$ be non-degenerate. Then the Dubrovin-Novikov bracket \eqref{eq:Poisson1D} is a Poisson bracket with skew-symmetry, transformation rule and Jacobi identity if and only if these three conditions are satisfied:
     \begin{enumerate}
-        \item $g^{ij} = g^{ji}$, that is, $g^{ij}$ is a metric on the phase space $M$.
+        \item $g^{ij} = g^{ji}$, that is, $g^{ij}$ forms an inverse metric on the phase space $M$.
         \item $\Gamma^{i}_{jk} = \Gamma^i_{kj}$, that is, $\Gamma^{i}_{jk}$ are Christoffel symbols corresponding to the Levi-Civita covariant derivative compatible with $g^{ij}$.
         \item The covariant derivative corresponding to $\Gamma^{i}_{jk}$ has zero curvature.
     \end{enumerate}
@@ -283,11 +283,11 @@ We are now ready to prove the key theorem of this chapter which shows that these
     The only local invariant of Poisson bracket is the signature of the metric $g^{ij}(u)$.
 \end{corollary}
 
-Due to the relatively large length of the proof we divide it into four steps.
+Due to the relatively large length of the proof, we divide it into four steps.
 \begin{itemize}
     \item \textbf{Step 1:} We show that the skew-symmetry of the bracket implies the symmetry of the metric $g^{ij}$ and compatibility with the Christoffel symbols $\Gamma^i_{jk}$.
     \item \textbf{Step 2:} We formulate the conditions under which the Jacobi identity for the bracket holds.
-    \item \textbf{Step 3:} We show that two of these conditions implies zero torsion and zero curvature of the covariant derivative associated to $\Gamma^i_{jk}$. That finishes the implication in one direction.
+    \item \textbf{Step 3:} We show that two of these conditions implies zero torsion and zero curvature of the covariant derivative associated with $\Gamma^i_{jk}$. That finishes the implication in one direction.
     \item \textbf{Step 4:} We prove the converse implication via the existence of the flat coordinates.
 \end{itemize}
 
@@ -315,8 +315,8 @@ Due to the relatively large length of the proof we divide it into four steps.
     \end{align}
     The skew-symmetry is then
     \begin{align}
-        0 = \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)} = \nonumber
-        \\= \left[ g^{ij}[u(x)]  - g^{ji}[u(x)] \right] \partial_x \delta(x-y) + \left[ b^{ij}_k - \pder{g^{ji}}{u^k}  + b^{ji}_k  \right] \pder{u^k}{x} \delta(x-y) \:.
+        0 =& \set{u^i(x),u^j(y)} + \set{u^j(y),u^i(x)}  \nonumber
+        \\=& \left[ g^{ij}[u(x)]  - g^{ji}[u(x)] \right] \partial_x \delta(x-y) + \left[ b^{ij}_k - \pder{g^{ji}}{u^k}  + b^{ji}_k  \right] \pder{u^k}{x} \delta(x-y) \:.
     \end{align}
     The right-hand side is equal to zero if and only if
     \begin{align}
@@ -349,11 +349,11 @@ Due to the relatively large length of the proof we divide it into four steps.
         g^{ij}_{,m} = \pder{g^{ij}}{u^m} \:, \quad b^{ij}_{k,m} = \pder{b^{ij}_k}{u^m} \:, \quad u^k_x = \pder{u^k}{x}  \:.
     \end{align}
     One of the Jacobiators reads as
-    \begin{align*}
+    \begin{align}
         J^{ijk}(x,y,z) =
         \int \D \xi \fder{\set{u^i(x),u^j(y)}}{u^m(\xi)} 
         \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \fder{u^k(z)}{u^n(\xi)}  \:.
-    \end{align*}
+    \end{align}
     The functional derivatives are
     \begin{align}
         \fder{u^k(z)}{u^n(\xi)} = \delta^k_n \delta(z-\xi) \:,
@@ -369,40 +369,41 @@ Due to the relatively large length of the proof we divide it into four steps.
         J^{ijk}(x,y,z) = J_1^{ijk}(x,y,z) + J_2^{ijk}(x,y,z) \:,
     \end{align}
     where
-    \begin{align*}
-        & J_1^{ijk}(x,y,z) = \int \D \xi  \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right]   \\ 
-        & \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)  \:, 
-    \end{align*}
+    \begin{align}
+        & J_1^{ijk}(x,y,z) = \int \D \xi  \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) \delta(x-\xi) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \delta(x-\xi) \right] \times \nonumber \\ 
+        & \times \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)  \:, 
+    \end{align}
     and 
-    \begin{align*}
+    \begin{align}
         J_2^{ijk}(x,y,z) = - \int \D \xi b^{ij}_m(x) \delta(x-y) \partial_\xi \delta(x-\xi) \left[ g^{mn}(\xi) \partial_\xi + b^{mn}_p \partial_\xi u^p \cdot \right] \delta^k_n \delta(z-\xi)  \:.
-    \end{align*}
+    \end{align}
     In $J_1$ we use integration with $\delta(x-\xi)$ and get rid of the integral:
-    \begin{align*}
-        J_1^{ijk}(x,y,z) =& \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] 
-        \left[ g^{mk}(\xi) \partial_x + b^{mk}_p \partial_x u^p \cdot \right] \delta(z-x)
+    \begin{align}
+        &J_1^{ijk}(x,y,z) = \nonumber
+        \\=& \left[ g^{ij}_{,m}(x) \partial_x \delta(x-y) + b^{ij}_{k,m}(x) u^k_x \delta(x-y) \right] 
+        \left[ g^{mk}(\xi) \partial_x + b^{mk}_p \partial_x u^p \cdot \right] \delta(z-x) \nonumber
         \\
-        =& \left[ g^{ij}_{,m} g^{mk} \partial_x \delta(x-y) + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \right] \partial_x \delta(z-x) + 
-        \\
+        =& \left[ g^{ij}_{,m} g^{mk} \partial_x \delta(x-y) + b^{ij}_{k,m} g^{mk} u^k_x \delta(x-y) \right] \partial_x \delta(z-x) + \nonumber
+        \\ 
         +& \left[ g^{ij}_{,m} b^{mk}_p u^p_x \partial_x \delta(x-y) + b^{ij}_{k,m} b^{mk}_p u_x^p  u_x^k \delta(x-y) \right] \delta(z-x) \:.
-    \end{align*}
+    \end{align}
 
     In $J_2$ we first apply integration by parts to eliminate $\partial_\xi \delta(x-\xi)$ and then integrate:
-    \begin{align*}
-        J_2^{ijk}(x,y,z) 
-        =& \int \D \xi b^{ij}_m(x) \delta(x-y) \delta(x-\xi) \partial_\xi \left[ g^{mk}(\xi) \partial_\xi \delta(z-\xi) + b^{mk}_p \partial_\xi u^p \delta(z-\xi) \right]
-        \\ =& b^{ij}_m(x) \delta(x-y) \partial_x \left[ g^{mn}(x) \partial_x \delta(z-x) + b^{mn}_p \partial_x u^p \delta(z-x) \right]
-        \\ =& b^{ij}_m(x) \delta(x-y) \big[ g^{mk}_{,s} u^s_x \partial_x \delta (z-x) + g^{mk} \partial_x \partial_x \delta (z-x) 
+    \begin{align}
+        &J_2^{ijk}(x,y,z) = \nonumber
+        \\=& \int \D \xi b^{ij}_m(x) \delta(x-y) \delta(x-\xi) \partial_\xi \left[ g^{mk}(\xi) \partial_\xi \delta(z-\xi) + b^{mk}_p \partial_\xi u^p \delta(z-\xi) \right] \nonumber
+        \\ =& b^{ij}_m(x) \delta(x-y) \partial_x \left[ g^{mn}(x) \partial_x \delta(z-x) + b^{mn}_p \partial_x u^p \delta(z-x) \right] \nonumber
+        \\ =& b^{ij}_m(x) \delta(x-y) \big[ g^{mk}_{,s} u^s_x \partial_x \delta (z-x) + g^{mk} \partial_x \partial_x \delta (z-x) \nonumber
         \\ +& b^{mk}_{p,s}(x) u^s_x u^p_x \delta (z-x) + b^{mn}_{p}(x) u^p_{xx} \delta (z-x) + b^{mk}_{p}(x) u^p_x \partial_x \delta (z-x) \big] \:,
-    \end{align*}
+    \end{align}
     This leads to
-    \begin{align*}
+    \begin{align}
         J_2^{ijk}(x,y,z) =& b^{ij}_m g^{mk}_{,s} u^s_x \delta (x-y) \partial_x \delta (z-x) 
-        + b^{ij}_m g^{mk} \delta(x-y) \partial_x \partial_x \delta (z-x) 
+        + b^{ij}_m g^{mk} \delta(x-y) \partial_x \partial_x \delta (z-x) \nonumber
         \\ +& b^{ij}_m b^{mk}_{p,s} u^s_x u^p_x \delta (x-y) \delta (z-x)
-        + b^{ij}_m b^{mn}_p u^p_{xx} \delta (x-y) \delta(z-x) 
+        + b^{ij}_m b^{mn}_p u^p_{xx} \delta (x-y) \delta(z-x) \nonumber 
         \\ +& b^{ij}_m b^{mk}_p u^p_x \delta(x-y) \partial_x \delta(z-x) \:.
-    \end{align*}
+    \end{align}
 
     After some adjustments we finish with the following terms
     \begin{align}
@@ -437,27 +438,27 @@ Due to the relatively large length of the proof we divide it into four steps.
     \begin{align}
         A^{ijk}_{ab} = 0 \quad \forall a,b = 0,1,2 \:.
     \end{align}
-    From this condition we shall obtain zero torsion and curvature.
-    We illustrate the procedure of reduction to the one-dimensional integral on one particular expression. For instance, we have
-    \begin{align*}
+    From this condition, we shall obtain zero torsion and curvature.
+    We illustrate the reduction procedure to the one-dimensional integral on one particular expression. For instance, we have
+    \begin{align}
         \int \big[ F^{ijk}(x) \delta(x-y) \partial_x \delta(z-x) 
-        + F^{jki}(y) \delta(y-z) \partial_y \delta(x-y) \\
+        + F^{jki}(y) \delta(y-z) \partial_y \delta(x-y) \nonumber \\
         + F^{kij}(z) \delta(z-x) \partial_z \delta(y-z) \big] \,
         p_i(x) q_j(y) r_k(z) \,\D x \D y \D z \:.
-    \end{align*}
+    \end{align}
     We use the antisymmetry $
         \partial_x \delta(z-x) = - \partial_z \delta (z-x)$
     and similarly in each term and then eliminate the integrals with $\D y$ and $\D z$, obtaining
-    \begin{align*}
+    \begin{align}
         \int \D x F^{ijk}(x) p_i q_j r'_k + \int \D x F^{jki}(x)  p'_i q_j r_k +
         \int \D x F^{kij}(x) p_i q'_j r_k \:.
-    \end{align*}
+    \end{align}
     In the term containing $p'_i$ we perform integration by parts. The result is
-    \begin{align*}
+    \begin{align}
         \int \D x (F^{ijk}-F^{jki}) p_i q_j  r'_k +
         \int \D x (F^{kij}-F^{jki}) p_i q'_j r_k -
         \int \D x \partial_x F^{jki} p_i q_j r_k \:.
-    \end{align*}
+    \end{align}
     In this particular case, we end up with terms, which contribute to $A^{ijk}_{01}$, $A^{ijk}_{10}$ and $A^{ijk}_{00}$, respectively. Other terms in $\mathcal J^{ijk}(x,y,z)$ are handled in similar way.
 
     The list of the resulting functions is the following:
@@ -474,7 +475,7 @@ Due to the relatively large length of the proof we divide it into four steps.
     \begin{align}
         A_{00}^{ijk} = B^{ijk}_s u^s_{xx} + C^{ijk}_{sp} u^s_x u^p_x \:.
     \end{align}
-    The expression on the right hand side is zero if and only if both $B^{ijk}_s$ and $C^{ijk}_{sp}$ are equal to zero. From the function $B^{ijk}_s$ beeing zero follows \eqref{eq:Jacobi-2} and from $C^{ijk}_{sp}$ follows \eqref{eq:Jacobi-3}. Finally, equations \eqref{eq:A01}, \eqref{eq:A10} and \eqref{eq:A11} are satisfied automatically if \eqref{eq:A00} and \eqref{eq:A02} hold.
+    The expression on the right hand side is zero if and only if both $B^{ijk}_s$ and $C^{ijk}_{sp}$ are equal to zero. From the function $B^{ijk}_s$ being zero follows \eqref{eq:Jacobi-2} and from $C^{ijk}_{sp}$ follows \eqref{eq:Jacobi-3}. Finally, equations \eqref{eq:A01}, \eqref{eq:A10} and \eqref{eq:A11} are satisfied automatically if \eqref{eq:A00} and \eqref{eq:A02} hold.
 \end{proof}
 
 It is useful to write once more all the equations from lemmas \vref{lemma:skew-symmetry} and \vref{lemma:Jacobi} together. Since they first appeared in \cite{Grinberg}, we refer to them as to the Grinberg conditions.
@@ -489,7 +490,7 @@ It is useful to write once more all the equations from lemmas \vref{lemma:skew-s
     \end{align}
 \end{lemma}
 
-Until now we have not assumed non-degeneracy of the bracket. Note that non-degeneracy allows to use $\Gamma^{i}_{jk} = - g_{js} b^{si}_k$, since in the degenerate case the inverse $g_{js}$ does not exist. If we reformulate the Grinberg conditions in terms of $\Gamma^{i}_{jk}$, we get the compatiblity, zero torsion and curvature.
+Until now, we have not assumed non-degeneracy of the bracket. Note that non-degeneracy allows to use $\Gamma^{i}_{jk} = - g_{js} b^{si}_k$, since in the degenerate case the inverse $g_{js}$ does not exist. If we reformulate the Grinberg conditions in terms of $\Gamma^{i}_{jk}$, we get the compatibility, zero torsion, and curvature.
 
 \begin{lemma}[Step 3: Zero curvature and torsion]
     If the Grinberg conditions hold and the $g^{ij}$ is non-degenerate, then $g^{ij}$ is a metric, the covariant derivative $\nabla_i$ associate with $\Gamma^{i}_{jk}$ is compatible with $g^{ij}$ and it has zero torsion and curvature, i.e. $\nabla_i$ is a Levi-Civita covariant derivative with zero curvature.
@@ -505,7 +506,7 @@ Until now we have not assumed non-degeneracy of the bracket. Note that non-degen
     \begin{align}
         g^{mk} g^{sj} \Gamma^i_{ms} = g^{mk} g^{sj} \Gamma^i_{sm} \:.
     \end{align}
-    Hence the Christoffel symbols are symmetric in the lower indices, which implies that the covariant derivative corresponding to them has zero torsion.
+    Hence the Christoffel symbols are symmetric in the lower indices, implying that the covariant derivative corresponding to them has zero torsion.
 
     Zero curvature follows from \eqref{eq:Grinberg-4}, which reads as
     \begin{align}
@@ -525,7 +526,7 @@ The final step is to prove the converse statement and the corollary \vref{Coroll
 \end{lemma}
 
 \begin{proof}
-    If $\nabla$ has zero torsion and curvature, there are coordinates $w^i=w^i(u^1,\dots,u^N)$ for $i=1,\dots,N$ such that $g^{ij} \eqqcolon \eta^{ij} =\const$ a $b^{ij}_k = 0$. In these coordinates
+    If $\nabla$ has zero torsion and curvature, there are coordinates\\ $w^i=w^i(u^1,\dots,u^N)$ for $i=1,\dots,N$ such that $g^{ij} \eqqcolon \eta^{ij} =\const$ a $b^{ij}_k = 0$. In these coordinates
     \begin{align}
         \set{w^i(x),w^j(y)} = \eta^{ij} \partial_x \delta(x-y) \:.
     \end{align}
@@ -533,7 +534,7 @@ The final step is to prove the converse statement and the corollary \vref{Coroll
 \end{proof}
 Thus the proof of the Dubrovin-Novikov theorem \vref{Theorem-Dubrovin-Novikov-1D} is finished.
 
-The coordinates in which Poisson bracket can be reduced to the constant form do not always have a physical interpretation. There is another class of coordinates which is common in various applications. Coordinates $u^1, \cdots, u^N$ are called Liouville if the metric $g^{ij}$ and the connection $b^{ij}_k$ have the form
+The coordinates in which Poisson bracket can be reduced to the constant form do not always have a physical interpretation \cite{Dubrovin-Novikov}. There is another class of coordinates, which is common in various applications. Coordinates $u^1, \cdots, u^N$ are called Liouville if the metric $g^{ij}$ and the connection $b^{ij}_k$ have the form
 \begin{align}
     g^{ij}(u) = \gamma^{ij}(u)+ \gamma^{ji}(u) \:, \quad b^{ij}_k(u) = \gamma^{ji}_{,k}(u) \:. 
 \end{align}
@@ -542,13 +543,27 @@ In those coordinates the Poisson bivector has the form
     \set{u^i(x),u^j(y)} = \left[ \gamma^{ij}(u(y)) + \gamma^{ji}(u(x)) \right] \delta'(x-y) \:.
 \end{align}
 
+\begin{example}[One-dimensional isothermal system]
+    In Example \vref{example:1D isothermal} we illustrated the one-dimensional isothermal system with $u^1 = \rho$, $u^2 = m$. These coordinates are in fact Liouville:
+    \begin{align}
+        \gamma^{ij} = -\begin{pmatrix}
+            0 & 0 \\
+            \rho & m
+        \end{pmatrix} \:, \quad
+        g^{ij} = \begin{pmatrix}
+            0 & \rho \\
+            \rho & 2m 
+        \end{pmatrix} \:.
+    \end{align}
+\end{example}
 
-\begin{example}
-    Consider the one-dimensional hydrodynamics provided by Poisson brackets with $u^1 = p$ (momentum density), $u^2 = \rho$ (mass density) and $u^3 = s$ (entropy density). The Hamiltonian has the form
+
+\begin{example}[More general system, \cite{Dubrovin-Novikov}]
+    The one-dimensional hydrodynamics with $(u^1,u^2,u^3) = (\rho, m, s)$. The Hamiltonian has the form
     \begin{align}
         H = \int \left[ \frac{p^2}{2 \rho} + \epsilon(\rho,s) \right] \, \D x \:,
     \end{align}
-    where $\epsilon(\rho,s)$ is the energy density. The coordinates are in fact Liouville:
+    where $\epsilon(\rho,s)$ is the energy density. These coordinates are in fact Liouville:
     \begin{align}
         \gamma^{ij} = \begin{pmatrix}
             p & 0 & 0 \\ \rho & 0 & 0 \\ s & 0 & 0
@@ -561,8 +576,9 @@ In those coordinates the Poisson bivector has the form
     \end{align}
 \end{example}
 
+The direct consequence of the Dubrovin-Novikov theorem \vref{Theorem-Dubrovin-Novikov-1D} is the possibility of writing the original equations in covariant form.
 
-\begin{proposition}[Hamiltonian system in the covariant form]
+\begin{theorem}[Hamiltonian system in the covariant form] \label{theorem:covariant}
     Given Hamiltonian system of hydrodynamic type
     \begin{align}
         \pder{u^i}{t} = f^i_k(u) \pder{u^k}{x} \:, \quad f^i_k(u) = g^{ij}(u) \ppder{h}{u^j}{u^k} - g^{is}(u) \Gamma^j_{sk}(u) \pder{h}{u^j} \:, \label{eq:hamiltonovsky-system}
@@ -572,9 +588,9 @@ In those coordinates the Poisson bivector has the form
         f^i_k(u) = \nabla^i \nabla_k h(u) \:, 
     \end{align}
     where $\nabla_j$ is Levi-Civita covariant derivative compatible with $g_{ij}$ and $\nabla^i = g^{is} \nabla_s$. 
-\end{proposition}
+\end{theorem}
 \begin{proof}
-    Since $h$ is ordinary function, application of $\nabla_k$ is just the partial derivative w.r.t. $u^k$:
+    Since $h$ is ordinary function, application of $\nabla_k$ is just the partial derivative with respect to $u^k$:
     \begin{align}
         \nabla_k h(u) =& \pder{h}{u^k} \:.
     \end{align}

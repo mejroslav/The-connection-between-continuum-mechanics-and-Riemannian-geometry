@@ -1,17 +1,14 @@
 \chapter{Appendix}
 
+In this chapter, we shall revise some basic definitions and propositions of the functional calculus that we will need to properly formulate the hydrodynamic geometry.
 
-In this chapter, we shall revise some basic definitions and propositions of the functional calculus which we will need for the proper formulation of the hydrodynamic geometry. 
-
-Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them. For the reader who seeks a nice introduction to this theory accompanied with several physical applications, we would recommend the book by R.P.Kanwal \cite{Kanwal}. The same applies to functional variations and the conditions under which they exist. A book written with a deep pedagogical attention on this topic is e.g. the university text by von Brunt \cite{Brunt}.
+Over the last century, modern mathematics has worked to develop the theory of generalized functions - distributions, including Dirac's delta distributions and operations with them. For the reader who seeks a nice introduction to this theory accompanied by several physical applications, we would recommend the book by R.P.Kanwal \cite{Kanwal}. The same applies to functional variations and the conditions under which they exist. A book written with  deep pedagogical attention on this topic is e.g., the university text by von Brunt \cite{Brunt}.
 Physicists, however, operate with delta distributions as they would with "ordinary" functions, using dualities as integrals and functional variations as ordinary derivatives.
 
 
 After introducing the concept of Gateaux and Frechet derivatives which are suitable for arbitrary normed space we shall take a closer look on the space of smooth functions and functionals on it.
 
 \section{Functional derivatives}
-
-\todo[inline]{přidat nějaký kontext}
 
 \begin{definition}[Gateaux and Frechet derivative]
     Let $X$ be a normed space, $A: X \to \R$ a functional and $x \in \Dom(A)$.
@@ -28,11 +25,15 @@ After introducing the concept of Gateaux and Frechet derivatives which are suita
     \end{enumerate}
 \end{definition}
 
-We are intersted in such functionals, where $X$ is the space of smooth functions with the appropriate boundary conditions. The smoothness is required because the functionals would operate with derivatives, and the values beeing zero on the boundary is required because we shall use integration by parts.
+We are interested in such functionals, where $X$ is the space of smooth functions with the appropriate boundary conditions. The smoothness is required because the functionals would operate with derivatives, and the values being zero on the boundary is required because we shall use integration by parts.
 
 One of possible choices is to take
 \begin{align}
-    X^k \coloneqq \set{f \in C^k(\Omega) \,|\, \DD^\alpha f = 0 \text{ on } \partial \Omega \text{ for } |\alpha| = 1, \cdots, k-1 } \:.
+    X^k \coloneqq \set{f \in C^k(\Omega) \,|\, \DD^\alpha f = 0 \text{ on } \partial \Omega \text{ for } |\alpha| = 1, \cdots, k-1 } \:,
+\end{align}
+where $\alpha$ is a multiindex and
+\begin{align}
+    D^\alpha f = \frac{\partial^{|\alpha|} f}{\partial x_1^{\alpha_1} \partial x_2^{\alpha_2} \cdots \partial x^{\alpha_N}_N} \:.
 \end{align}
 This space can be equipped with the usual supremum norm
 \begin{align}
@@ -84,7 +85,7 @@ Since the Fréchet derivative is always linear bounded functional, another way t
     \DD_u A[h] = \dual{T_{\fder{A}{u(x)}}}{h(x)} \:.
 \end{align}
 
-It follows from theory \cite{Brunt} that the functional derivative beeing zero is a necessery condition for the function beeing the extremal point of the functional (given that the corresponding function is smooth enough).
+It follows from theory \cite{Brunt} that the functional derivative being zero is a necessary condition for the function being the extremal point of the functional (given that the corresponding function is smooth enough).
 
 \begin{theorem}[Euler-Lagrange equations]
     Let $v \in C^\infty(\Omega)$ such that $v(x)$ is stationary point of the functional $A$ in \eqref{eq:integral-functional}, i.e
@@ -133,11 +134,7 @@ Note that if two regular distributions satisfy $T_a = T_b$, then $a=b$ almost ev
 \begin{definition}[Derivatives of distributions]
     Let $T \in \dis(\Omega)$ be a distribution. We define its derivative by
     \begin{align}
-        \dual{D^\alpha T}{\phi} = (-1)^{|\alpha|} \dual{T}{D^\alpha \phi} \:,
-    \end{align}
-    where $\alpha$ is a multiindex and
-    \begin{align}
-        D^\alpha f = \frac{\partial^{|\alpha|} f}{\partial x_1^{\alpha_1} \partial x_2^{\alpha_2} \cdots \partial x^{\alpha_N}_N} \:.
+        \dual{D^\alpha T}{\phi} = (-1)^{|\alpha|} \dual{T}{D^\alpha \phi} \:.
     \end{align}
 \end{definition}
 
