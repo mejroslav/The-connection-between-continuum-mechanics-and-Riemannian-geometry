@@ -93,7 +93,7 @@ The quasi-linear first order system of the form
 \begin{align}
     A^{ij} \pder{u^j}{t} = B^{ij \alpha}(u) \pder{u^j}{x^\alpha}
 \end{align}
-is called symmetric hyperbolic if the matrix $A^{ij}$ is positive symmetric and $B^{ij \alpha}$ is symmetric in $i,j$ indices for each $\alpha$. If the system is symmetric hyperbolic, then the solution of the initial value problem exists, is unique, and depends continuously on initial data along arbitrary non-characteristic hypersurfaces \cite{Pavelka}. The hyperbolicity is also useful for various numerical resolutions. More on this topic can be found in \cite{Toro}. 
+is called symmetric hyperbolic if the matrix $A^{ij}$ is positive symmetric and $B^{ij \alpha}$ is symmetric in $i,j$ indices for each $\alpha$. If the system is symmetric hyperbolic, then the solution of the initial value problem exists, is unique, and depends continuously on initial data along arbitrary non-characteristic hypersurfaces \cite{Pavelka}. Hyperbolicity is also helpful for various numerical resolutions. More on this topic can be found in \cite{Toro}. 
 
 The usual way to show symmetric hyperbolicity of a system is the Godunov-Boillat theorem \cite{Pavelka}. If the system is written in conservative form
 \begin{align}
@@ -140,7 +140,28 @@ then we obtain the equations
 \begin{align}
     e_{ij} \pder{u^j}{t} = e_{ij} g^{jk} e_{km} \pder{u^m}{x} \:.
 \end{align}
-In addition, if we assume that the energy $h$ is convex, then $e_{ij}$ is positive symmetric matrix and this implies the hyperbolicity of such system. In Chapter 3 we show that the possibility of writing the equation \eqref{eq:nabla-nabla} is exactly a direct consequence of the Dubrovin-Novikov theorem, see Theorem \vref{theorem:covariant}. 
+In addition, if we assume that the energy $h$ is convex, then $e_{ij}$ is a positive symmetric matrix, which implies the hyperbolicity of such system. In Chapter 3, we show that the possibility of writing the equation \eqref{eq:nabla-nabla} is a direct consequence of the Dubrovin-Novikov theorem, see Theorem \vref{theorem:covariant}. 
 
-If the covariant Hessian of energy is positive definite, it works, but is is not trivial to show
-that convex energy has positive definite covariant Hessian. It seems that taking theorem (2.4) from \cite{Rapcsak}, geodesic convexity is equivalent with convexity in our case, since we have no curvature (i.e. it is constant). The geodesic convexity is equivalent to the positive semi-definiteness of the covariant Hessian in the torsion-free case (our case). 
+If the covariant Hessian of energy is positive definite, the procedure above works, but it is not trivial to show
+that convex energy has a positive definite covariant Hessian. Here we present some ideas from \cite{Rapcsak} that could help to shed light on this problem.
+
+\begin{definition}[Geodesic convex set]
+    Let $M$ be a smooth manifold. A set $A \subset M$ is said to be geodesic convex if any two points of $A$ are joined by a geodesic belonging to $A$.
+\end{definition}
+
+\begin{definition}[Geodesic convex function]
+    Let $A \subset M$ be a geodesic convex set. The function $f : A \to \R$ is said to be geodesic convex if its restrictions to all geodesic arcs belonging to $A$ are convex in the arc length parameter.
+\end{definition}
+
+If $f$ is a geodesic convex function, $\gamma(s)$ is a geodesic curve, $s \in [0,b]$, joining the two arbitrary points $m_1, m_2 \in A$, $\gamma(0) = m_1$, $\gamma(b) = m_2$, and $s$ is the arc length parameter, then the following inequality holds:
+\begin{align}
+    f(\gamma(tb)) \leq (1-t) f(\gamma(0)) + t f(\gamma(b)) \:, \quad 0 \leq t \leq 1 \:.
+\end{align}
+
+\begin{theorem}[Geodesic convexity; \cite{Rapcsak}]
+    The geodesic convexity of a function $f : M \to \R$ coincides with the convexity in a coordinate neighborhood of every point if and only if the manifold $M$ has a constant curvature, that is, in the cases of Euclidean geometries, Riemannian elliptic geometries, and Bolyai-Lobachevsky hyperbolic geometries.
+\end{theorem}
+
+The proof of this theorem is short and straightforward, but it requires introducing more technical definitions. Therefore we do not list it here.  
+
+By the Dubrovin-Novikov theorem (\vref{Theorem-Dubrovin-Novikov-1D}), the space of field variables $M$ is Euclidean, so the geodesic convexity is equivalent to convexity in our case. The geodesic convexity is equivalent to the positive semi-definiteness of the covariant Hessian in the torsion-free case. 
